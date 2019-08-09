@@ -10,3 +10,27 @@ E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\Game Of Life\obj\Debug\Game Of Life.
 E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\Game Of Life\obj\Debug\Game Of Life.exe
 E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\Game Of Life\obj\Debug\Game Of Life.xml
 E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\Game Of Life\obj\Debug\Game Of Life.pdb
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\bin\Debug\Game Of Life.exe.config
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\bin\Debug\Game Of Life.exe
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\bin\Debug\Game Of Life.pdb
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\bin\Debug\Game Of Life.xml
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\obj\Debug\Game Of Life.vbprojAssemblyReference.cache
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\obj\Debug\Game_Of_Life.Form1.resources
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\obj\Debug\Game_Of_Life.Resources.resources
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\obj\Debug\Game Of Life.vbproj.GenerateResource.cache
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\obj\Debug\Game Of Life.vbproj.CoreCompileInputs.cache
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\obj\Debug\Game Of Life.exe
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\obj\Debug\Game Of Life.xml
+C:\Users\183mm QF L4a1\Desktop\SDD MAJIR  WOKR\0\SDD-Major-Work-master\Game Of Life\obj\Debug\Game Of Life.pdb
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\bin\Debug\Game Of Life.exe.config
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\bin\Debug\Game Of Life.exe
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\bin\Debug\Game Of Life.pdb
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\bin\Debug\Game Of Life.xml
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\obj\Debug\Game Of Life.vbprojAssemblyReference.cache
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\obj\Debug\Game_Of_Life.Form1.resources
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\obj\Debug\Game_Of_Life.Resources.resources
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\obj\Debug\Game Of Life.vbproj.GenerateResource.cache
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\obj\Debug\Game Of Life.vbproj.CoreCompileInputs.cache
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\obj\Debug\Game Of Life.exe
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\obj\Debug\Game Of Life.xml
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\0.1\Game Of Life\obj\Debug\Game Of Life.pdb
