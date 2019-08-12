@@ -4,6 +4,7 @@
     Dim SideLength As Integer
     Dim TempGrid(50, 50, 2) As Integer
     Dim Started As Boolean
+    Dim Outofbounds As Boolean
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Started = False
         SideLength = Me.Bounds.Height / 60
@@ -71,36 +72,36 @@
     Private Sub updatetimer_Tick(sender As Object, e As EventArgs) Handles updatetimer.Tick
         Dim neighbours As Integer
 
-        For x = 2 To 49
-            For y = 2 To 49
+        For x = 1 To 50
+            For y = 1 To 50
                 neighbours = 0
                 If Checked(x, y, 1) = 0 Then
                     Checkneighbours(x, y, neighbours)
 
                     If neighbours = 3 Then
                         TempGrid(x, y, 1) = 1
-                        Console.WriteLine("Dead Cell Regenerated at :" + CStr(x) + " " + CStr(y))
+                        'Console.WriteLine("Dead Cell Regenerated at :" + CStr(x) + " " + CStr(y))
                     End If
                 ElseIf Checked(x, y, 1) = 1 Then
                     Checkneighbours(x, y, neighbours)
-                    Console.WriteLine("checking live cell")
-                    Console.WriteLine("neighbours:" + CStr(neighbours))
+                    'Console.WriteLine("checking live cell")
+                    'Console.WriteLine("neighbours:" + CStr(neighbours))
                     If neighbours < 2 Then
                         TempGrid(x, y, 1) = 0
-                        Console.WriteLine("Live Cell Killed at :" + CStr(x) + " " + CStr(y))
+                        'Console.WriteLine("Live Cell Killed at :" + CStr(x) + " " + CStr(y))
                     ElseIf neighbours = 2 Or neighbours = 3 Then
                         TempGrid(x, y, 1) = 1
-                        Console.WriteLine("Live Cell living at :" + CStr(x) + " " + CStr(y))
+                        'Console.WriteLine("Live Cell living at :" + CStr(x) + " " + CStr(y))
                     ElseIf neighbours > 3 Then
                         TempGrid(x, y, 1) = 0
-                        Console.WriteLine("Live Cell overpopulated at :" + CStr(x) + " " + CStr(y))
+                        'Console.WriteLine("Live Cell overpopulated at :" + CStr(x) + " " + CStr(y))
                     End If
                 End If
             Next
         Next
 
-        For x = 2 To 49
-            For y = 2 To 49
+        For x = 1 To 50
+            For y = 1 To 50
                 If TempGrid(x, y, 1) = 0 Then
                     Checked(x, y, 1) = 0
                     Grid(x, y).BackColor = Color.White
@@ -118,44 +119,55 @@
         'If Checked(x, y, 1) = 1 Then
         '    Console.WriteLine(CStr(x) + " " + CStr(y) + " Is checked!")
         'End If
+        Outofbounds = False
+        If x - 1 < 1 Or x + 1 > 50 Or y - 1 < 1 Or y + 1 > 50 Then
+            Outofbounds = True
+        Else
+            If Checked(x - 1, y + 1, 1) = 1 Then
+                neighbours = neighbours + 1
+                'Console.WriteLine("Neighbour Found!")
+            End If
+            If Checked(x, y + 1, 1) = 1 Then
+                neighbours = neighbours + 1
+                'Console.WriteLine("Neighbour Found!")
+            End If
+            If Checked(x + 1, y + 1, 1) = 1 Then
+                neighbours = neighbours + 1
+                'Console.WriteLine("Neighbour Found!")
+            End If
+            If Checked(x - 1, y, 1) = 1 Then
+                neighbours = neighbours + 1
+                'Console.WriteLine("Neighbour Found!")
+            End If
+            If Checked(x + 1, y, 1) = 1 Then
+                neighbours = neighbours + 1
+                'Console.WriteLine("Neighbour Found!")
+            End If
+            If Checked(x - 1, y - 1, 1) = 1 Then
+                neighbours = neighbours + 1
+                'Console.WriteLine("Neighbour Found!")
+            End If
+            If Checked(x, y - 1, 1) = 1 Then
+                neighbours = neighbours + 1
+                'Console.WriteLine("Neighbour Found!")
+            End If
+            If Checked(x + 1, y - 1, 1) = 1 Then
+                neighbours = neighbours + 1
+                'Console.WriteLine("Neighbour Found!")
+            End If
+        End If
 
-        If Checked(x - 1, y + 1, 1) = 1 Then
-            neighbours = neighbours + 1
-            Console.WriteLine("Neighbour Found!")
-        End If
-        If Checked(x, y + 1, 1) = 1 Then
-            neighbours = neighbours + 1
-            Console.WriteLine("Neighbour Found!")
-        End If
-        If Checked(x + 1, y + 1, 1) = 1 Then
-            neighbours = neighbours + 1
-            Console.WriteLine("Neighbour Found!")
-        End If
-        If Checked(x - 1, y, 1) = 1 Then
-            neighbours = neighbours + 1
-            Console.WriteLine("Neighbour Found!")
-        End If
-        If Checked(x + 1, y, 1) = 1 Then
-            neighbours = neighbours + 1
-            Console.WriteLine("Neighbour Found!")
-        End If
-        If Checked(x - 1, y - 1, 1) = 1 Then
-            neighbours = neighbours + 1
-            Console.WriteLine("Neighbour Found!")
-        End If
-        If Checked(x, y - 1, 1) = 1 Then
-            neighbours = neighbours + 1
-            Console.WriteLine("Neighbour Found!")
-        End If
-        If Checked(x + 1, y - 1, 1) = 1 Then
-            neighbours = neighbours + 1
-            Console.WriteLine("Neighbour Found!")
-        End If
+
+
         If neighbours > 0 Then
-            Console.WriteLine("Total Neighbours for: " + CStr(x) + " " + CStr(y) + " is " + CStr(neighbours))
+            'Console.WriteLine("Total Neighbours for: " + CStr(x) + " " + CStr(y) + " is " + CStr(neighbours))
         End If
 
 
 
+    End Sub
+
+    Private Sub Speedcontrol_Scroll(sender As Object, e As EventArgs) Handles Speedcontrol.Scroll
+        updatetimer.Interval = Speedcontrol.Value
     End Sub
 End Class
