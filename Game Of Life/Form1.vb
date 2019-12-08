@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-    Dim Grid(50, 50) As Button
+    Dim Grid(50, 50) As Label
     Dim Checked(50, 50, 2) As Integer
     Dim SideLength As Integer
     Dim TempGrid(50, 50, 2) As Integer
@@ -10,12 +10,13 @@
         SideLength = Me.Bounds.Height / 60
         For x = 1 To 50
             For y = 1 To 50
-                Grid(x, y) = New Button
+                Grid(x, y) = New Label
                 Grid(x, y).Location = New Point(x * SideLength, y * SideLength)
                 Grid(x, y).Size = New Size(SideLength, SideLength)
                 Grid(x, y).FlatStyle = FlatStyle.Flat
                 Grid(x, y).BackgroundImageLayout = ImageLayout.Zoom
                 Grid(x, y).BackColor = Color.White
+                Grid(x, y).BorderStyle = BorderStyle.FixedSingle
                 Controls.Add(Grid(x, y))
                 Checked(x, y, 1) = 0
                 TempGrid(x, y, 1) = 0
@@ -34,11 +35,11 @@
         If Checked(xpos, ypos, 1) = 0 Then
             Grid(xpos, ypos).BackColor = Color.Black
             Checked(xpos, ypos, 1) = 1
-            Console.WriteLine("checked value " + "at " + CStr(xpos) + "and " + CStr(ypos))
+            'Console.WriteLine("checked value " + "at " + CStr(xpos) + "and " + CStr(ypos))
         ElseIf Checked(xpos, ypos, 1) = 1 Then
             Grid(xpos, ypos).BackColor = Color.White
             Checked(xpos, ypos, 1) = 0
-            Console.WriteLine("unchecked value " + "at " + CStr(xpos) + "and " + CStr(ypos))
+            'Console.WriteLine("unchecked value " + "at " + CStr(xpos) + "and " + CStr(ypos))
         End If
 
 
