@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.btnstartstop = New System.Windows.Forms.Button()
@@ -30,15 +30,27 @@ Partial Class Form1
         Me.updatetimer = New System.Windows.Forms.Timer(Me.components)
         Me.Speedcontrol = New System.Windows.Forms.TrackBar()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnpreset = New System.Windows.Forms.Button()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.PresetGroupBox = New System.Windows.Forms.GroupBox()
+        Me.rbtntub = New System.Windows.Forms.RadioButton()
+        Me.rbtnboat = New System.Windows.Forms.RadioButton()
+        Me.rbtnblock = New System.Windows.Forms.RadioButton()
+        Me.btnopen = New System.Windows.Forms.Button()
+        Me.btnsave = New System.Windows.Forms.Button()
         CType(Me.Speedcontrol, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PresetGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnstartstop
         '
-        Me.btnstartstop.Location = New System.Drawing.Point(1202, 99)
+        Me.btnstartstop.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnstartstop.Location = New System.Drawing.Point(1617, 128)
         Me.btnstartstop.Margin = New System.Windows.Forms.Padding(2)
         Me.btnstartstop.Name = "btnstartstop"
-        Me.btnstartstop.Size = New System.Drawing.Size(64, 33)
+        Me.btnstartstop.Size = New System.Drawing.Size(85, 46)
         Me.btnstartstop.TabIndex = 0
         Me.btnstartstop.Text = "Start"
         Me.btnstartstop.UseVisualStyleBackColor = True
@@ -46,7 +58,7 @@ Partial Class Form1
         'lblx
         '
         Me.lblx.AutoSize = True
-        Me.lblx.Location = New System.Drawing.Point(1227, 200)
+        Me.lblx.Location = New System.Drawing.Point(1686, 57)
         Me.lblx.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblx.Name = "lblx"
         Me.lblx.Size = New System.Drawing.Size(0, 13)
@@ -55,7 +67,7 @@ Partial Class Form1
         'lbly
         '
         Me.lbly.AutoSize = True
-        Me.lbly.Location = New System.Drawing.Point(1227, 228)
+        Me.lbly.Location = New System.Drawing.Point(1686, 85)
         Me.lbly.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbly.Name = "lbly"
         Me.lbly.Size = New System.Drawing.Size(0, 13)
@@ -63,9 +75,10 @@ Partial Class Form1
         '
         'btnreset
         '
-        Me.btnreset.Location = New System.Drawing.Point(1202, 171)
+        Me.btnreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnreset.Location = New System.Drawing.Point(1720, 128)
         Me.btnreset.Name = "btnreset"
-        Me.btnreset.Size = New System.Drawing.Size(75, 23)
+        Me.btnreset.Size = New System.Drawing.Size(85, 46)
         Me.btnreset.TabIndex = 3
         Me.btnreset.Text = "Reset"
         Me.btnreset.UseVisualStyleBackColor = True
@@ -76,7 +89,7 @@ Partial Class Form1
         '
         'Speedcontrol
         '
-        Me.Speedcontrol.Location = New System.Drawing.Point(1144, 377)
+        Me.Speedcontrol.Location = New System.Drawing.Point(1603, 234)
         Me.Speedcontrol.Maximum = 1000
         Me.Speedcontrol.Minimum = 1
         Me.Speedcontrol.Name = "Speedcontrol"
@@ -88,17 +101,125 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(1192, 332)
+        Me.Label1.Location = New System.Drawing.Point(1612, 187)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 25)
+        Me.Label1.Size = New System.Drawing.Size(203, 25)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Speed"
+        Me.Label1.Text = "Speed (delay in ms)"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(1612, 266)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(24, 25)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "1"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(1791, 266)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(60, 25)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "1000"
+        '
+        'btnpreset
+        '
+        Me.btnpreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpreset.Location = New System.Drawing.Point(1612, 317)
+        Me.btnpreset.Name = "btnpreset"
+        Me.btnpreset.Size = New System.Drawing.Size(203, 67)
+        Me.btnpreset.TabIndex = 8
+        Me.btnpreset.Text = "Preset patterns"
+        Me.btnpreset.UseVisualStyleBackColor = True
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        '
+        'PresetGroupBox
+        '
+        Me.PresetGroupBox.Controls.Add(Me.rbtntub)
+        Me.PresetGroupBox.Controls.Add(Me.rbtnboat)
+        Me.PresetGroupBox.Controls.Add(Me.rbtnblock)
+        Me.PresetGroupBox.Location = New System.Drawing.Point(1612, 390)
+        Me.PresetGroupBox.Name = "PresetGroupBox"
+        Me.PresetGroupBox.Size = New System.Drawing.Size(203, 302)
+        Me.PresetGroupBox.TabIndex = 9
+        Me.PresetGroupBox.TabStop = False
+        Me.PresetGroupBox.Text = "GroupBox1"
+        Me.PresetGroupBox.Visible = False
+        '
+        'rbtntub
+        '
+        Me.rbtntub.AutoSize = True
+        Me.rbtntub.Location = New System.Drawing.Point(5, 86)
+        Me.rbtntub.Name = "rbtntub"
+        Me.rbtntub.Size = New System.Drawing.Size(44, 17)
+        Me.rbtntub.TabIndex = 11
+        Me.rbtntub.TabStop = True
+        Me.rbtntub.Text = "Tub"
+        Me.rbtntub.UseVisualStyleBackColor = True
+        '
+        'rbtnboat
+        '
+        Me.rbtnboat.AutoSize = True
+        Me.rbtnboat.Location = New System.Drawing.Point(6, 142)
+        Me.rbtnboat.Name = "rbtnboat"
+        Me.rbtnboat.Size = New System.Drawing.Size(47, 17)
+        Me.rbtnboat.TabIndex = 12
+        Me.rbtnboat.TabStop = True
+        Me.rbtnboat.Text = "Boat"
+        Me.rbtnboat.UseVisualStyleBackColor = True
+        '
+        'rbtnblock
+        '
+        Me.rbtnblock.AutoSize = True
+        Me.rbtnblock.Location = New System.Drawing.Point(6, 36)
+        Me.rbtnblock.Name = "rbtnblock"
+        Me.rbtnblock.Size = New System.Drawing.Size(52, 17)
+        Me.rbtnblock.TabIndex = 10
+        Me.rbtnblock.TabStop = True
+        Me.rbtnblock.Text = "Block"
+        Me.rbtnblock.UseVisualStyleBackColor = True
+        '
+        'btnopen
+        '
+        Me.btnopen.Location = New System.Drawing.Point(1733, 719)
+        Me.btnopen.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnopen.Name = "btnopen"
+        Me.btnopen.Size = New System.Drawing.Size(61, 38)
+        Me.btnopen.TabIndex = 11
+        Me.btnopen.Text = "open"
+        Me.btnopen.UseVisualStyleBackColor = True
+        '
+        'btnsave
+        '
+        Me.btnsave.Location = New System.Drawing.Point(1624, 719)
+        Me.btnsave.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnsave.Name = "btnsave"
+        Me.btnsave.Size = New System.Drawing.Size(69, 36)
+        Me.btnsave.TabIndex = 10
+        Me.btnsave.Text = "save"
+        Me.btnsave.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1415, 647)
+        Me.ClientSize = New System.Drawing.Size(1904, 1042)
+        Me.Controls.Add(Me.btnopen)
+        Me.Controls.Add(Me.btnsave)
+        Me.Controls.Add(Me.PresetGroupBox)
+        Me.Controls.Add(Me.btnpreset)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Speedcontrol)
         Me.Controls.Add(Me.btnreset)
@@ -109,6 +230,8 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Speedcontrol, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PresetGroupBox.ResumeLayout(False)
+        Me.PresetGroupBox.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -121,4 +244,14 @@ Partial Class Form1
     Friend WithEvents updatetimer As Timer
     Friend WithEvents Speedcontrol As TrackBar
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btnpreset As Button
+    Friend WithEvents ImageList1 As ImageList
+    Public WithEvents PresetGroupBox As GroupBox
+    Friend WithEvents rbtntub As RadioButton
+    Friend WithEvents rbtnboat As RadioButton
+    Friend WithEvents rbtnblock As RadioButton
+    Friend WithEvents btnopen As Button
+    Friend WithEvents btnsave As Button
 End Class

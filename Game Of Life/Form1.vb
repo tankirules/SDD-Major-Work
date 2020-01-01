@@ -5,9 +5,14 @@
     Dim TempGrid(50, 50, 2) As Integer
     Dim Started As Boolean
     Dim Outofbounds As Boolean
+    Dim PresetVisible As Boolean
+    Dim Username As String
+    Dim password As String
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Started = False
         SideLength = Me.Bounds.Height / 60
+        PresetVisible = False
         For x = 1 To 50
             For y = 1 To 50
                 Grid(x, y) = New Label
@@ -170,5 +175,174 @@
 
     Private Sub Speedcontrol_Scroll(sender As Object, e As EventArgs) Handles Speedcontrol.Scroll
         updatetimer.Interval = Speedcontrol.Value
+    End Sub
+
+    Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
+        If PresetVisible = False Then
+            PresetVisible = True
+            PresetGroupBox.Visible = True
+        ElseIf PresetVisible = True Then
+            PresetVisible = False
+            PresetGroupBox.Visible = False
+        End If
+    End Sub
+    Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+        Dim UPD As New InputUPDForm
+        Dim result As DialogResult
+        Dim tempx, tempy As String
+
+        If UPD.ShowDialog(Me) <> DialogResult.Cancel And UPD.ClosedproperlyInput = True Then
+            Username = UPD.txtusername.Text
+            password = UPD.txtpassword.Text
+
+            Dim SaveFile As New SaveFileDialog With {
+            .Title = "Save Current board State",
+            .Filter = "Grid State File|*.gsf|All files|*.*",
+            .FileName = "Board_State"
+        }
+            If SaveFile.ShowDialog() <> DialogResult.Cancel Then
+                Using FS As New IO.StreamWriter(SaveFile.FileName)
+                    FS.WriteLine("Username:" + Username)
+                    FS.WriteLine("Password:" + password)
+                    For x = 0 To 50
+                        For y = 0 To 50
+                            If Checked(x, y, 1) = 1 Then
+                                If CStr(x).Length = 1 Then
+                                    tempx = "0" + CStr(x)
+                                Else
+                                    tempx = x
+                                End If
+                                If CStr(y).Length = 1 Then
+                                    tempy = "0" + CStr(y)
+                                Else
+                                    tempy = y
+                                End If
+                                FS.WriteLine(tempx + "," + tempy)
+                            End If
+                        Next
+                    Next
+                End Using
+
+
+
+            End If
+        Else
+            MsgBox("Saving Grid State Canceled")
+        End If
+
+
+
+
+
+
+    End Sub
+
+    Private Sub btnopen_Click(sender As Object, e As EventArgs) Handles btnopen.Click
+        Dim fd As OpenFileDialog = New OpenFileDialog()
+        Dim strFileName As String
+        Dim valid As Boolean
+        Dim tempstring As String
+        Dim tempx, tempy As String
+        Dim loadedu, loadedp As String
+        Dim enteredu, enteredp As String
+        Dim UPD As New ValidateUPDForm
+        Dim result As DialogResult
+        Dim coordsvalid As Boolean
+        valid = False
+        tempx = ""
+        tempy = ""
+
+
+        fd.Title = "Load Saved Grid State"
+        fd.InitialDirectory = "C:\"
+        fd.Filter = "Grid State File|*.gsf|All files|*.*"
+
+
+        If fd.ShowDialog() = DialogResult.OK Then
+            strFileName = fd.FileName
+            Dim loadedfile() As String = IO.File.ReadAllLines(strFileName)
+            If loadedfile(0).Contains("Username:") And loadedfile(1).Contains("Password:") Then
+
+                result = UPD.ShowDialog(Me)
+                If result = Windows.Forms.DialogResult.OK And UPD.Closedproperlyvalidate = True Then
+                    enteredu = UPD.txtusername.Text
+                    enteredp = UPD.txtpassword.Text
+                    loadedu = loadedfile(0)
+                    loadedu = loadedu.Remove(0, 9)
+                    loadedp = loadedfile(1)
+                    loadedp = loadedp.Remove(0, 9)
+                    For x = 1 To 50
+                        For y = 1 To 50
+                            Checked(x, y, 1) = 0
+                            Grid(x, y).BackColor = Color.White
+                        Next
+                    Next
+
+                    If enteredu = loadedu And enteredp = loadedp Then
+                        valid = True
+                        For i = 2 To loadedfile.Length - 1
+                            coordsvalid = True
+                            tempx = ""
+                            tempy = ""
+                            tempstring = loadedfile(i)
+                            Console.WriteLine("tempstring at loadedfile" + CStr(i) + "is : " + tempstring)
+                            If tempstring(2) <> "," Or tempstring.Length <> 5 Then
+                                MsgBox("Loaded file has invalid coordinate format!")
+                                Console.WriteLine("Loaded file has invalid coordinate format!")
+                                valid = False
+                                Exit For
+                            Else
+
+                                Console.WriteLine("passed comma coordinate test")
+                                For h = 0 To 1
+                                    If IsNumeric(tempstring(h)) = False Then
+                                        coordsvalid = False
+                                    End If
+                                    tempx = tempx + tempstring(h)
+                                Next
+                                For g = 3 To 4
+                                    If IsNumeric(tempstring(g)) = False Then
+                                        coordsvalid = False
+                                    End If
+                                    tempy = tempy + tempstring(g)
+                                Next
+                                If coordsvalid = False Then
+                                    valid = False
+                                    MsgBox("Invalid coordinates! Loading Stopped!")
+                                    Exit For
+                                End If
+                                If CInt(tempx) < 0 Or CInt(tempx) > 50 Or CInt(tempy) < 0 Or CInt(tempy) > 50 Then
+                                    valid = False
+                                    MsgBox("Coordinates out of range!")
+                                    Exit For
+                                End If
+
+
+                                Console.WriteLine("tempx is " + tempx + "and tempy is " + tempy)
+                                Checked(CInt(tempx), CInt(tempy), 1) = 1
+                                Grid(CInt(tempx), CInt(tempy)).BackColor = Color.Black
+                                Console.WriteLine("Checked black at :" + tempx + " , " + tempy)
+
+                            End If
+                        Next
+                    Else
+                        MsgBox("Username/Password Incorrect!")
+                    End If
+                Else
+                    MsgBox("Save file not loaded!")
+
+                End If
+
+            Else
+                MsgBox("Loaded file has invalid Username/Password format!")
+                Console.WriteLine("Loaded file has invalid Username/Password format!")
+                valid = False
+            End If
+
+        End If
+
+
+
+
     End Sub
 End Class

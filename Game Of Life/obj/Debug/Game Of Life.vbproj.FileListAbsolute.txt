@@ -58,3 +58,16 @@ C:\Users\183mm QF L4a1\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\D
 C:\Users\183mm QF L4a1\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.exe
 C:\Users\183mm QF L4a1\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.xml
 C:\Users\183mm QF L4a1\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.pdb
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\bin\Debug\Game Of Life.exe.config
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\bin\Debug\Game Of Life.exe
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\bin\Debug\Game Of Life.pdb
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\bin\Debug\Game Of Life.xml
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.vbprojAssemblyReference.cache
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.Form1.resources
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.Resources.resources
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.vbproj.GenerateResource.cache
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.vbproj.CoreCompileInputs.cache
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.exe
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.xml
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.pdb
+C:\Users\Daniel_2\Source\Repos\tankirules\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.ValidateUPDForm.resources
