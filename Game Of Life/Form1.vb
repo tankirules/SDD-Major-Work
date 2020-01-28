@@ -1,15 +1,20 @@
 ﻿Public Class Form1
     Dim Grid(50, 50) As Label
-    Dim Checked(50, 50, 2) As Integer
+    Dim Checked(50, 50) As Integer
     Dim SideLength As Integer
-    Dim TempGrid(50, 50, 2) As Integer
+    Dim TempGrid(50, 50) As Integer
     Dim Started As Boolean
     Dim Outofbounds As Boolean
     Dim PresetVisible As Boolean
     Dim Username As String
     Dim password As String
+    Dim uncheckedcolor, checkedcolor As Color
+    Dim supercancer As Boolean
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        supercancer = False
+        uncheckedcolor = Color.White
+        checkedcolor = Color.Black
         Started = False
         SideLength = Me.Bounds.Height / 60
         PresetVisible = False
@@ -20,11 +25,11 @@
                 Grid(x, y).Size = New Size(SideLength, SideLength)
                 Grid(x, y).FlatStyle = FlatStyle.Flat
                 Grid(x, y).BackgroundImageLayout = ImageLayout.Zoom
-                Grid(x, y).BackColor = Color.White
+                Grid(x, y).BackColor = uncheckedcolor
                 Grid(x, y).BorderStyle = BorderStyle.FixedSingle
                 Controls.Add(Grid(x, y))
-                Checked(x, y, 1) = 0
-                TempGrid(x, y, 1) = 0
+                Checked(x, y) = 0
+                TempGrid(x, y) = 0
                 '0 Is Not checked, 1 Is checked - Set all squares To Not be checked
                 AddHandler Grid(x, y).Click, AddressOf Grid_Select
             Next
@@ -37,13 +42,13 @@
         ypos = CInt(sender.location.y) / SideLength
         lblx.Text = "X Pos: " + CStr(xpos)
         lbly.Text = "Y Pos: " + CStr(ypos)
-        If Checked(xpos, ypos, 1) = 0 Then
-            Grid(xpos, ypos).BackColor = Color.Black
-            Checked(xpos, ypos, 1) = 1
+        If Checked(xpos, ypos) = 0 Then
+            Grid(xpos, ypos).BackColor = checkedcolor
+            Checked(xpos, ypos) = 1
             'Console.WriteLine("checked value " + "at " + CStr(xpos) + "and " + CStr(ypos))
-        ElseIf Checked(xpos, ypos, 1) = 1 Then
-            Grid(xpos, ypos).BackColor = Color.White
-            Checked(xpos, ypos, 1) = 0
+        ElseIf Checked(xpos, ypos) = 1 Then
+            Grid(xpos, ypos).BackColor = uncheckedcolor
+            Checked(xpos, ypos) = 0
             'Console.WriteLine("unchecked value " + "at " + CStr(xpos) + "and " + CStr(ypos))
         End If
 
@@ -64,9 +69,9 @@
     Private Sub resetgrid()
         For x = 1 To 50
             For y = 1 To 50
-                Grid(x, y).BackColor = Color.White
-                Checked(x, y, 1) = 0
-                TempGrid(x, y, 1) = 0
+                Grid(x, y).BackColor = uncheckedcolor
+                Checked(x, y) = 0
+                TempGrid(x, y) = 0
             Next
         Next
     End Sub
@@ -77,29 +82,29 @@
 
     Private Sub updatetimer_Tick(sender As Object, e As EventArgs) Handles updatetimer.Tick
         Dim neighbours As Integer
-
+        Console.WriteLine("checked color is " + checkedcolor.ToString)
         For x = 1 To 50
             For y = 1 To 50
                 neighbours = 0
-                If Checked(x, y, 1) = 0 Then
+                If Checked(x, y) = 0 Then
                     Checkneighbours(x, y, neighbours)
 
                     If neighbours = 3 Then
-                        TempGrid(x, y, 1) = 1
+                        TempGrid(x, y) = 1
                         'Console.WriteLine("Dead Cell Regenerated at :" + CStr(x) + " " + CStr(y))
                     End If
-                ElseIf Checked(x, y, 1) = 1 Then
+                ElseIf Checked(x, y) = 1 Then
                     Checkneighbours(x, y, neighbours)
                     'Console.WriteLine("checking live cell")
                     'Console.WriteLine("neighbours:" + CStr(neighbours))
                     If neighbours < 2 Then
-                        TempGrid(x, y, 1) = 0
+                        TempGrid(x, y) = 0
                         'Console.WriteLine("Live Cell Killed at :" + CStr(x) + " " + CStr(y))
                     ElseIf neighbours = 2 Or neighbours = 3 Then
-                        TempGrid(x, y, 1) = 1
+                        TempGrid(x, y) = 1
                         'Console.WriteLine("Live Cell living at :" + CStr(x) + " " + CStr(y))
                     ElseIf neighbours > 3 Then
-                        TempGrid(x, y, 1) = 0
+                        TempGrid(x, y) = 0
                         'Console.WriteLine("Live Cell overpopulated at :" + CStr(x) + " " + CStr(y))
                     End If
                 End If
@@ -108,12 +113,12 @@
 
         For x = 1 To 50
             For y = 1 To 50
-                If TempGrid(x, y, 1) = 0 Then
-                    Checked(x, y, 1) = 0
-                    Grid(x, y).BackColor = Color.White
-                ElseIf TempGrid(x, y, 1) = 1 Then
-                    Checked(x, y, 1) = 1
-                    Grid(x, y).BackColor = Color.Black
+                If TempGrid(x, y) = 0 Then
+                    Checked(x, y) = 0
+                    Grid(x, y).BackColor = uncheckedcolor
+                ElseIf TempGrid(x, y) = 1 Then
+                    Checked(x, y) = 1
+                    Grid(x, y).BackColor = checkedcolor
                 End If
             Next
         Next
@@ -129,35 +134,35 @@
         If x - 1 < 1 Or x + 1 > 50 Or y - 1 < 1 Or y + 1 > 50 Then
             Outofbounds = True
         Else
-            If Checked(x - 1, y + 1, 1) = 1 Then
+            If Checked(x - 1, y + 1) = 1 Then
                 neighbours = neighbours + 1
                 'Console.WriteLine("Neighbour Found!")
             End If
-            If Checked(x, y + 1, 1) = 1 Then
+            If Checked(x, y + 1) = 1 Then
                 neighbours = neighbours + 1
                 'Console.WriteLine("Neighbour Found!")
             End If
-            If Checked(x + 1, y + 1, 1) = 1 Then
+            If Checked(x + 1, y + 1) = 1 Then
                 neighbours = neighbours + 1
                 'Console.WriteLine("Neighbour Found!")
             End If
-            If Checked(x - 1, y, 1) = 1 Then
+            If Checked(x - 1, y) = 1 Then
                 neighbours = neighbours + 1
                 'Console.WriteLine("Neighbour Found!")
             End If
-            If Checked(x + 1, y, 1) = 1 Then
+            If Checked(x + 1, y) = 1 Then
                 neighbours = neighbours + 1
                 'Console.WriteLine("Neighbour Found!")
             End If
-            If Checked(x - 1, y - 1, 1) = 1 Then
+            If Checked(x - 1, y - 1) = 1 Then
                 neighbours = neighbours + 1
                 'Console.WriteLine("Neighbour Found!")
             End If
-            If Checked(x, y - 1, 1) = 1 Then
+            If Checked(x, y - 1) = 1 Then
                 neighbours = neighbours + 1
                 'Console.WriteLine("Neighbour Found!")
             End If
-            If Checked(x + 1, y - 1, 1) = 1 Then
+            If Checked(x + 1, y - 1) = 1 Then
                 neighbours = neighbours + 1
                 'Console.WriteLine("Neighbour Found!")
             End If
@@ -178,13 +183,7 @@
     End Sub
 
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
-        If PresetVisible = False Then
-            PresetVisible = True
-            PresetGroupBox.Visible = True
-        ElseIf PresetVisible = True Then
-            PresetVisible = False
-            PresetGroupBox.Visible = False
-        End If
+
     End Sub
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
         Dim UPD As New InputUPDForm
@@ -206,7 +205,7 @@
                     FS.WriteLine("Password:" + password)
                     For x = 0 To 50
                         For y = 0 To 50
-                            If Checked(x, y, 1) = 1 Then
+                            If Checked(x, y) = 1 Then
                                 If CStr(x).Length = 1 Then
                                     tempx = "0" + CStr(x)
                                 Else
@@ -273,8 +272,8 @@
                     loadedp = loadedp.Remove(0, 9)
                     For x = 1 To 50
                         For y = 1 To 50
-                            Checked(x, y, 1) = 0
-                            Grid(x, y).BackColor = Color.White
+                            Checked(x, y) = 0
+                            Grid(x, y).BackColor = uncheckedcolor
                         Next
                     Next
 
@@ -319,8 +318,8 @@
 
 
                                 Console.WriteLine("tempx is " + tempx + "and tempy is " + tempy)
-                                Checked(CInt(tempx), CInt(tempy), 1) = 1
-                                Grid(CInt(tempx), CInt(tempy)).BackColor = Color.Black
+                                Checked(CInt(tempx), CInt(tempy)) = 1
+                                Grid(CInt(tempx), CInt(tempy)).BackColor = checkedcolor
                                 Console.WriteLine("Checked black at :" + tempx + " , " + tempy)
 
                             End If
@@ -345,4 +344,152 @@
 
 
     End Sub
+
+
+
+
+    Private Sub RGB_CheckedChanged(sender As Object, e As EventArgs) Handles RGB.CheckedChanged
+        SuperCancerRGB.Checked = True
+        If RGB.Checked = True Then
+            RGBtimer.Start()
+            Console.WriteLine("rgb timer started")
+        Else
+            RGBtimer.Stop()
+            RGBtimer0.Stop()
+            RGBtimer1.Stop()
+            RGBtimerto1.Stop()
+            RGBtimerto0.Stop()
+            RGBtimer2.Stop()
+            RGBtimerto2.Stop()
+        End If
+    End Sub
+
+    Private Sub RGBtimerto0_Tick(sender As Object, e As EventArgs) Handles RGBtimerto0.Tick
+        RGBtimer0.Start()
+    End Sub
+
+    Private Sub RGBtimer_Tick(sender As Object, e As EventArgs) Handles RGBtimer.Tick
+        For x = 1 To (Int((50) * Rnd()) + 1)
+            For y = 1 To (Int((50) * Rnd()) + 1)
+                If Checked(x, y) = 1 Then
+                    Grid(x, y).BackColor = Color.Red
+                    checkedcolor = Color.Red
+                Else
+                    If supercancer = True Then
+                        Grid(x, y).BackColor = Color.Yellow
+                        uncheckedcolor = Color.Yellow
+                    End If
+                End If
+            Next
+        Next
+
+        RGBtimerto0.Start()
+    End Sub
+
+    Private Sub RGBtimer0_Tick(sender As Object, e As EventArgs) Handles RGBtimer0.Tick
+        btnopen.ForeColor = Color.Blue
+        btnopen.BackColor = Color.Yellow
+        btnsave.ForeColor = Color.Magenta
+        btnsave.BackColor = Color.Red
+        btnstartstop.ForeColor = Color.Yellow
+        btnstartstop.BackColor = Color.Green
+        btnreset.ForeColor = Color.Blue
+        btnreset.BackColor = Color.Magenta
+        Label1.ForeColor = Color.Yellow
+        Label1.BackColor = Color.Blue
+        Speedcontrol.ForeColor = Color.Red
+        Speedcontrol.BackColor = Color.Green
+        Me.BackColor = Color.Yellow
+        For x = (Int((50) * Rnd()) + 1) To 1 Step -1
+            For y = 1 To (Int((50) * Rnd()) + 1)
+                If Checked(x, y) = 1 Then
+                    Grid(x, y).BackColor = Color.Green
+                    checkedcolor = Color.Green
+
+                Else
+                    If supercancer = True Then
+                        Grid(x, y).BackColor = Color.Purple
+                        uncheckedcolor = Color.Purple
+                    End If
+                End If
+            Next
+        Next
+        RGBtimerto1.Start()
+    End Sub
+
+    Private Sub RGBtimerto1_Tick(sender As Object, e As EventArgs) Handles RGBtimerto1.Tick
+        RGBtimer1.Start()
+    End Sub
+
+    Private Sub SuperCancerRGB_CheckedChanged(sender As Object, e As EventArgs) Handles SuperCancerRGB.CheckedChanged
+        RGB.Checked = True
+        supercancer = SuperCancerRGB.Checked
+    End Sub
+
+    Private Sub RGBtimer2_Tick(sender As Object, e As EventArgs) Handles RGBtimer2.Tick
+        btnopen.ForeColor = Color.Yellow
+        btnopen.BackColor = Color.Red
+        btnsave.ForeColor = Color.Orange
+        btnsave.BackColor = Color.Black
+        btnstartstop.ForeColor = Color.Magenta
+        btnstartstop.BackColor = Color.Green
+        btnreset.ForeColor = Color.Cyan
+        btnreset.BackColor = Color.Aqua
+        Label1.ForeColor = Color.Linen
+        Label1.BackColor = Color.PaleGreen
+        Speedcontrol.ForeColor = Color.DarkOliveGreen
+        Speedcontrol.BackColor = Color.Gold
+        Me.BackColor = Color.Pink
+
+        For y = (Int((50) * Rnd()) + 1) To 1 Step -1
+            For x = (Int((50) * Rnd()) + 1) To 1 Step -1
+
+                If Checked(x, y) = 1 Then
+                    Grid(x, y).BackColor = Color.Orange
+                    checkedcolor = Color.Orange
+                Else
+                    If supercancer = True Then
+                        Grid(x, y).BackColor = Color.Blue
+                        uncheckedcolor = Color.Blue
+                    End If
+                End If
+            Next
+        Next
+    End Sub
+
+    Private Sub RGBtimerto2_Tick(sender As Object, e As EventArgs) Handles RGBtimerto2.Tick
+        RGBtimer2.Start()
+    End Sub
+
+    Private Sub RGBtimer1_Tick(sender As Object, e As EventArgs) Handles RGBtimer1.Tick
+        btnopen.ForeColor = Color.Tomato
+        btnopen.BackColor = Color.Honeydew
+        btnsave.ForeColor = Color.LightSalmon
+        btnsave.BackColor = Color.Azure
+        btnstartstop.ForeColor = Color.BlueViolet
+        btnstartstop.BackColor = Color.DarkKhaki
+        btnreset.ForeColor = Color.Maroon
+        btnreset.BackColor = Color.Cornsilk
+        Label1.ForeColor = Color.Olive
+        Label1.BackColor = Color.MintCream
+        Speedcontrol.ForeColor = Color.Teal
+        Speedcontrol.BackColor = Color.RosyBrown
+        Me.BackColor = Color.Green
+
+        For x = 50 To 1 Step -1
+            For y = (Int((50) * Rnd()) + 1) To 1 Step -1
+                If Checked(x, y) = 1 Then
+                    Grid(x, y).BackColor = Color.Blue
+                    checkedcolor = Color.Blue
+                Else
+                    If supercancer = True Then
+                        Grid(x, y).BackColor = Color.Green
+                        uncheckedcolor = Color.Green
+                    End If
+                End If
+            Next
+        Next
+        RGBtimerto2.Start()
+    End Sub
+
 End Class
