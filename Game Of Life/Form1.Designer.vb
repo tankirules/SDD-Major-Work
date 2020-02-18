@@ -36,15 +36,9 @@ Partial Class Form1
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btnopen = New System.Windows.Forms.Button()
         Me.btnsave = New System.Windows.Forms.Button()
-        Me.RGBtimer0 = New System.Windows.Forms.Timer(Me.components)
-        Me.RGBtimer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.RGBtimer = New System.Windows.Forms.Timer(Me.components)
-        Me.RGB = New System.Windows.Forms.CheckBox()
-        Me.RGBtimerto1 = New System.Windows.Forms.Timer(Me.components)
-        Me.RGBtimerto0 = New System.Windows.Forms.Timer(Me.components)
-        Me.SuperCancerRGB = New System.Windows.Forms.CheckBox()
-        Me.RGBtimer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.RGBtimerto2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Tickspeedcalculator = New System.Windows.Forms.Timer(Me.components)
+        Me.lbltickspeed = New System.Windows.Forms.Label()
         CType(Me.Speedcontrol, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -134,7 +128,7 @@ Partial Class Form1
         'btnpreset
         '
         Me.btnpreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnpreset.Location = New System.Drawing.Point(1612, 317)
+        Me.btnpreset.Location = New System.Drawing.Point(1612, 352)
         Me.btnpreset.Name = "btnpreset"
         Me.btnpreset.Size = New System.Drawing.Size(203, 67)
         Me.btnpreset.TabIndex = 8
@@ -167,64 +161,36 @@ Partial Class Form1
         Me.btnsave.Text = "save"
         Me.btnsave.UseVisualStyleBackColor = True
         '
-        'RGBtimer0
+        'Label4
         '
-        Me.RGBtimer0.Interval = 90
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.Label4.Location = New System.Drawing.Point(1501, 324)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(192, 25)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "Actual Tick Speed:"
         '
-        'RGBtimer1
+        'Tickspeedcalculator
         '
-        Me.RGBtimer1.Interval = 90
+        Me.Tickspeedcalculator.Interval = 1000
         '
-        'RGBtimer
+        'lbltickspeed
         '
-        Me.RGBtimer.Interval = 90
-        '
-        'RGB
-        '
-        Me.RGB.AutoSize = True
-        Me.RGB.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RGB.Location = New System.Drawing.Point(1624, 425)
-        Me.RGB.Name = "RGB"
-        Me.RGB.Size = New System.Drawing.Size(92, 35)
-        Me.RGB.TabIndex = 12
-        Me.RGB.Text = "RGB"
-        Me.RGB.UseVisualStyleBackColor = True
-        '
-        'RGBtimerto1
-        '
-        Me.RGBtimerto1.Interval = 30
-        '
-        'RGBtimerto0
-        '
-        Me.RGBtimerto0.Interval = 30
-        '
-        'SuperCancerRGB
-        '
-        Me.SuperCancerRGB.AutoSize = True
-        Me.SuperCancerRGB.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SuperCancerRGB.Location = New System.Drawing.Point(1617, 480)
-        Me.SuperCancerRGB.Name = "SuperCancerRGB"
-        Me.SuperCancerRGB.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.SuperCancerRGB.Size = New System.Drawing.Size(176, 35)
-        Me.SuperCancerRGB.TabIndex = 13
-        Me.SuperCancerRGB.Text = "Vomit Mode"
-        Me.SuperCancerRGB.UseVisualStyleBackColor = True
-        '
-        'RGBtimer2
-        '
-        Me.RGBtimer2.Interval = 25
-        '
-        'RGBtimerto2
-        '
-        Me.RGBtimerto2.Interval = 20
+        Me.lbltickspeed.AutoSize = True
+        Me.lbltickspeed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.lbltickspeed.Location = New System.Drawing.Point(1699, 324)
+        Me.lbltickspeed.Name = "lbltickspeed"
+        Me.lbltickspeed.Size = New System.Drawing.Size(0, 25)
+        Me.lbltickspeed.TabIndex = 15
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1042)
-        Me.Controls.Add(Me.SuperCancerRGB)
-        Me.Controls.Add(Me.RGB)
+        Me.Controls.Add(Me.lbltickspeed)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnopen)
         Me.Controls.Add(Me.btnsave)
         Me.Controls.Add(Me.btnpreset)
@@ -259,13 +225,7 @@ Partial Class Form1
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents btnopen As Button
     Friend WithEvents btnsave As Button
-    Friend WithEvents RGBtimer0 As Timer
-    Friend WithEvents RGBtimer1 As Timer
-    Friend WithEvents RGBtimer As Timer
-    Friend WithEvents RGB As CheckBox
-    Friend WithEvents RGBtimerto1 As Timer
-    Friend WithEvents RGBtimerto0 As Timer
-    Friend WithEvents SuperCancerRGB As CheckBox
-    Friend WithEvents RGBtimer2 As Timer
-    Friend WithEvents RGBtimerto2 As Timer
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Tickspeedcalculator As Timer
+    Friend WithEvents lbltickspeed As Label
 End Class
