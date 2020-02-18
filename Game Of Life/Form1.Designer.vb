@@ -143,22 +143,24 @@ Partial Class Form1
         '
         'btnopen
         '
+        Me.btnopen.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
         Me.btnopen.Location = New System.Drawing.Point(1733, 719)
         Me.btnopen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnopen.Name = "btnopen"
-        Me.btnopen.Size = New System.Drawing.Size(61, 38)
+        Me.btnopen.Size = New System.Drawing.Size(87, 66)
         Me.btnopen.TabIndex = 11
-        Me.btnopen.Text = "open"
+        Me.btnopen.Text = "Export Grid"
         Me.btnopen.UseVisualStyleBackColor = True
         '
         'btnsave
         '
-        Me.btnsave.Location = New System.Drawing.Point(1624, 719)
+        Me.btnsave.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.btnsave.Location = New System.Drawing.Point(1597, 719)
         Me.btnsave.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsave.Name = "btnsave"
-        Me.btnsave.Size = New System.Drawing.Size(69, 36)
+        Me.btnsave.Size = New System.Drawing.Size(105, 66)
         Me.btnsave.TabIndex = 10
-        Me.btnsave.Text = "save"
+        Me.btnsave.Text = "Import Grid"
         Me.btnsave.UseVisualStyleBackColor = True
         '
         'Label4

@@ -9,4 +9,5 @@
         Me.DialogResult = Windows.Forms.DialogResult.OK
 
     End Sub
+
 End Class

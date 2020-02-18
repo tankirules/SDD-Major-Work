@@ -13,6 +13,7 @@
     Dim Timesupdated As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Timesupdated = 0
         Tickspeedcalculator.Start()
         supercancer = False
@@ -48,11 +49,9 @@
         If Checked(xpos, ypos) = 0 Then
             Grid(xpos, ypos).BackColor = checkedcolor
             Checked(xpos, ypos) = 1
-            'Console.WriteLine("checked value " + "at " + CStr(xpos) + "and " + CStr(ypos))
         ElseIf Checked(xpos, ypos) = 1 Then
             Grid(xpos, ypos).BackColor = uncheckedcolor
             Checked(xpos, ypos) = 0
-            'Console.WriteLine("unchecked value " + "at " + CStr(xpos) + "and " + CStr(ypos))
         End If
 
 
@@ -233,7 +232,7 @@
 
             End If
         Else
-            MsgBox("Saving Grid State Canceled")
+            MsgBox("Exporting Grid State Canceled")
         End If
 
 
