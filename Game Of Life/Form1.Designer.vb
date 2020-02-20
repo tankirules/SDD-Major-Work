@@ -128,7 +128,7 @@ Partial Class Form1
         'btnpreset
         '
         Me.btnpreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnpreset.Location = New System.Drawing.Point(1612, 352)
+        Me.btnpreset.Location = New System.Drawing.Point(1579, 375)
         Me.btnpreset.Name = "btnpreset"
         Me.btnpreset.Size = New System.Drawing.Size(203, 67)
         Me.btnpreset.TabIndex = 8
@@ -149,7 +149,7 @@ Partial Class Form1
         Me.btnopen.Name = "btnopen"
         Me.btnopen.Size = New System.Drawing.Size(87, 66)
         Me.btnopen.TabIndex = 11
-        Me.btnopen.Text = "Export Grid"
+        Me.btnopen.Text = "Import Grid"
         Me.btnopen.UseVisualStyleBackColor = True
         '
         'btnsave
@@ -160,7 +160,7 @@ Partial Class Form1
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(105, 66)
         Me.btnsave.TabIndex = 10
-        Me.btnsave.Text = "Import Grid"
+        Me.btnsave.Text = "Export Grid"
         Me.btnsave.UseVisualStyleBackColor = True
         '
         'Label4

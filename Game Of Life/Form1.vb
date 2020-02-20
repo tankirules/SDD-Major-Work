@@ -1,5 +1,8 @@
-﻿Public Class Form1
-    Dim Grid(50, 50) As Label
+﻿Imports System.IO
+Imports System.Text
+Public Class Form1
+
+    Dim Grid(50, 50) As Panel
     Dim Checked(50, 50) As Integer
     Dim SideLength As Integer
     Dim TempGrid(50, 50) As Integer
@@ -13,6 +16,15 @@
     Dim Timesupdated As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim Path As String = "c:\Gameoflife\presets.txt"
+
+        If System.IO.File.Exists(Path) Then
+        Else
+            Dim fs As FileStream = File.Create(Path)
+            My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
+        End If
+
+
 
         Timesupdated = 0
         Tickspeedcalculator.Start()
@@ -24,10 +36,10 @@
         PresetVisible = False
         For x = 1 To 50
             For y = 1 To 50
-                Grid(x, y) = New Label
+                Grid(x, y) = New Panel
                 Grid(x, y).Location = New Point(x * SideLength, y * SideLength)
                 Grid(x, y).Size = New Size(SideLength, SideLength)
-                Grid(x, y).FlatStyle = FlatStyle.Flat
+
                 Grid(x, y).BackgroundImageLayout = ImageLayout.Zoom
                 Grid(x, y).BackColor = uncheckedcolor
                 Grid(x, y).BorderStyle = BorderStyle.FixedSingle
@@ -85,7 +97,7 @@
     Private Sub updatetimer_Tick(sender As Object, e As EventArgs) Handles updatetimer.Tick
         Timesupdated = Timesupdated + 1
         Dim neighbours As Integer
-        Console.WriteLine("checked color is " + checkedcolor.ToString)
+
         For x = 1 To 50
             For y = 1 To 50
                 neighbours = 0
@@ -140,38 +152,8 @@
             Outofbounds = True
             neighbours = -100
         Else
-            If Checked(x - 1, y + 1) = 1 Then
-                neighbours = neighbours + 1
-                'Console.WriteLine("Neighbour Found!")
-            End If
-            If Checked(x, y + 1) = 1 Then
-                neighbours = neighbours + 1
-                'Console.WriteLine("Neighbour Found!")
-            End If
-            If Checked(x + 1, y + 1) = 1 Then
-                neighbours = neighbours + 1
-                'Console.WriteLine("Neighbour Found!")
-            End If
-            If Checked(x - 1, y) = 1 Then
-                neighbours = neighbours + 1
-                'Console.WriteLine("Neighbour Found!")
-            End If
-            If Checked(x + 1, y) = 1 Then
-                neighbours = neighbours + 1
-                'Console.WriteLine("Neighbour Found!")
-            End If
-            If Checked(x - 1, y - 1) = 1 Then
-                neighbours = neighbours + 1
-                'Console.WriteLine("Neighbour Found!")
-            End If
-            If Checked(x, y - 1) = 1 Then
-                neighbours = neighbours + 1
-                'Console.WriteLine("Neighbour Found!")
-            End If
-            If Checked(x + 1, y - 1) = 1 Then
-                neighbours = neighbours + 1
-                'Console.WriteLine("Neighbour Found!")
-            End If
+            neighbours = Checked(x - 1, y + 1) + Checked(x, y + 1) + Checked(x + 1, y + 1) + Checked(x - 1, y) + Checked(x + 1, y) + Checked(x - 1, y - 1) + Checked(x, y - 1) + Checked(x + 1, y - 1)
+
         End If
 
 
@@ -188,9 +170,7 @@
         updatetimer.Interval = Speedcontrol.Value
     End Sub
 
-    Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
 
-    End Sub
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
         Dim UPD As New InputUPDForm
         Dim result As DialogResult
@@ -340,7 +320,7 @@
 
             Else
                 MsgBox("Loaded file has invalid Username/Password format!")
-                Console.WriteLine("Loaded file has invalid Username/Password format!")
+
                 valid = False
             End If
 
@@ -352,21 +332,14 @@
     End Sub
 
 
-
-
-
-
-
-
-
-
-
-
     Private Sub Tickspeedcalculator_Tick(sender As Object, e As EventArgs) Handles Tickspeedcalculator.Tick
         lbltickspeed.Text = CStr(Timesupdated)
         Timesupdated = 0
     End Sub
 
-
+    Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
+        Dim Preset As Presetchooser
+        Presetchooser.Show()
+    End Sub
 
 End Class
