@@ -132,7 +132,7 @@ Partial Class Form1
         Me.btnpreset.Name = "btnpreset"
         Me.btnpreset.Size = New System.Drawing.Size(203, 67)
         Me.btnpreset.TabIndex = 8
-        Me.btnpreset.Text = "Preset patterns(no work)"
+        Me.btnpreset.Text = "Preset patterns"
         Me.btnpreset.UseVisualStyleBackColor = True
         '
         'ImageList1

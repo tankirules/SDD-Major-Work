@@ -101,12 +101,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="PatternChoose.Designer.vb">
-      <DependentUpon>PatternChoose.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PatternChoose.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Presetchooser.Designer.vb">
       <DependentUpon>Presetchooser.vb</DependentUpon>
     </Compile>
@@ -132,9 +126,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PatternChoose.resx">
-      <DependentUpon>PatternChoose.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presetchooser.resx">
       <DependentUpon>Presetchooser.vb</DependentUpon>

@@ -3,16 +3,14 @@
     Dim SideLength As Integer
     Dim presetchecked(50, 50) As Integer
     Dim closedproperlyinput As Boolean
-    Dim preset0(50, 50) As Panel
-    Dim preset1(50, 50) As Panel
-    Dim preset2(50, 50) As Panel
-    Dim preset3(50, 50) As Panel
-    Dim preset4(50, 50) As Panel
-    Dim preset5(50, 50) As Panel
-    Dim smallgridlength As Integer
+    Dim preset0(50, 50) As Integer
+    Dim preset1(50, 50) As Integer
+    Dim preset2(50, 50) As Integer
+    Dim preset3(50, 50) As Integer
+    Dim preset4(50, 50) As Integer
+    Dim preset5(50, 50) As Integer
 
     Private Sub Presetchooser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        smallgridlength = Me.Bounds.Height / 180
         closedproperlyinput = False
         SideLength = Me.Bounds.Height / 60
         For x = 1 To 50

@@ -89,3 +89,6 @@ C:\Users\daniel.pan\Desktop\SDD\MAJOR OWRK\SDD-Major-Work-master\Game Of Life\ob
 C:\Users\daniel.pan\Desktop\SDD\MAJOR OWRK\SDD-Major-Work-master\Game Of Life\obj\Debug\Game Of Life.xml
 C:\Users\daniel.pan\Desktop\SDD\MAJOR OWRK\SDD-Major-Work-master\Game Of Life\obj\Debug\Game Of Life.pdb
 C:\Users\daniel.pan\Desktop\SDD\MAJOR OWRK\SDD-Major-Work-master\Game Of Life\obj\Debug\Game_Of_Life.Presetchooser.resources
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\Github\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.InputUPDForm.resources
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\Github\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.Presetchooser.resources
+E:\SCHOOL STUFF\SDD\MAJOR WORK\Game Of Life\Github\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.ValidateUPDForm.resources

@@ -18,10 +18,11 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim Path As String = "c:\Gameoflife\presets.txt"
 
-        If System.IO.File.Exists(Path) Then
+        If File.Exists(Path) Then
         Else
-            Dim fs As FileStream = File.Create(Path)
             My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
+            Dim fs As FileStream = File.Create(Path)
+
         End If
 
 

@@ -35,7 +35,7 @@ Partial Class ValidateUPDForm
         Me.btnsubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.btnsubmit.ForeColor = System.Drawing.SystemColors.Desktop
         Me.btnsubmit.Location = New System.Drawing.Point(111, 155)
-        Me.btnsubmit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnsubmit.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsubmit.Name = "btnsubmit"
         Me.btnsubmit.Size = New System.Drawing.Size(68, 37)
         Me.btnsubmit.TabIndex = 5
@@ -46,20 +46,20 @@ Partial Class ValidateUPDForm
         '
         Me.txtpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.txtpassword.Location = New System.Drawing.Point(111, 117)
-        Me.txtpassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtpassword.Margin = New System.Windows.Forms.Padding(2)
         Me.txtpassword.Name = "txtpassword"
         Me.txtpassword.Size = New System.Drawing.Size(138, 23)
         Me.txtpassword.TabIndex = 4
+        Me.txtpassword.UseSystemPasswordChar = True
         '
         'txtusername
         '
         Me.txtusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.txtusername.Location = New System.Drawing.Point(111, 66)
-        Me.txtusername.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtusername.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusername.Name = "txtusername"
         Me.txtusername.Size = New System.Drawing.Size(138, 23)
         Me.txtusername.TabIndex = 3
-        Me.txtusername.UseSystemPasswordChar = True
         '
         'Label3
         '
@@ -102,7 +102,7 @@ Partial Class ValidateUPDForm
         Me.Controls.Add(Me.btnsubmit)
         Me.Controls.Add(Me.txtpassword)
         Me.Controls.Add(Me.txtusername)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "ValidateUPDForm"
         Me.Text = "ValidateUPDForm"
         Me.ResumeLayout(False)
