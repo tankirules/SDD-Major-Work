@@ -190,8 +190,8 @@ Public Class Form1
                 Using FS As New IO.StreamWriter(SaveFile.FileName)
                     FS.WriteLine("Username:" + Username)
                     FS.WriteLine("Password:" + password)
-                    For x = 0 To 50
-                        For y = 0 To 50
+                    For x = 1 To 50
+                        For y = 1 To 50
                             If Checked(x, y) = 1 Then
                                 If CStr(x).Length = 1 Then
                                     tempx = "0" + CStr(x)

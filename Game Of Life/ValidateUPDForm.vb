@@ -10,11 +10,12 @@
         Me.DialogResult = Windows.Forms.DialogResult.OK
     End Sub
 
-    Private Sub txtpassword_TextChanged(sender As Object, e As EventArgs) Handles txtpassword.TextChanged
 
-    End Sub
-
-    Private Sub txtusername_TextChanged(sender As Object, e As EventArgs) Handles txtusername.TextChanged
-
+    Private Sub btnshowhide_Click(sender As Object, e As EventArgs) Handles btnshowhide.Click
+        If txtpassword.UseSystemPasswordChar = False Then
+            txtpassword.UseSystemPasswordChar = True
+        Else
+            txtpassword.UseSystemPasswordChar = False
+        End If
     End Sub
 End Class

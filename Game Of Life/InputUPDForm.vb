@@ -10,4 +10,12 @@
 
     End Sub
 
+
+    Private Sub btnshowhide_Click(sender As Object, e As EventArgs) Handles btnshowhide.Click
+        If txtpassword.UseSystemPasswordChar = False Then
+            txtpassword.UseSystemPasswordChar = True
+        Else
+            txtpassword.UseSystemPasswordChar = False
+        End If
+    End Sub
 End Class

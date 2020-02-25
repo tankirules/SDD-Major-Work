@@ -87,7 +87,7 @@ Partial Class Form1
         '
         'Speedcontrol
         '
-        Me.Speedcontrol.Location = New System.Drawing.Point(1603, 234)
+        Me.Speedcontrol.Location = New System.Drawing.Point(1617, 215)
         Me.Speedcontrol.Maximum = 1000
         Me.Speedcontrol.Minimum = 1
         Me.Speedcontrol.Name = "Speedcontrol"
@@ -101,9 +101,9 @@ Partial Class Form1
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(1612, 187)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(203, 25)
+        Me.Label1.Size = New System.Drawing.Size(205, 25)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Speed (delay in ms)"
+        Me.Label1.Text = "Updates per second"
         '
         'Label2
         '
@@ -111,9 +111,9 @@ Partial Class Form1
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(1612, 266)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(24, 25)
+        Me.Label2.Size = New System.Drawing.Size(36, 25)
         Me.Label2.TabIndex = 6
-        Me.Label2.Text = "1"
+        Me.Label2.Text = "64"
         '
         'Label3
         '

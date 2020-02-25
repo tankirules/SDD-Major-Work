@@ -28,13 +28,14 @@ Partial Class ValidateUPDForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnshowhide = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnsubmit
         '
         Me.btnsubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.btnsubmit.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.btnsubmit.Location = New System.Drawing.Point(111, 155)
+        Me.btnsubmit.Location = New System.Drawing.Point(136, 155)
         Me.btnsubmit.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsubmit.Name = "btnsubmit"
         Me.btnsubmit.Size = New System.Drawing.Size(68, 37)
@@ -85,17 +86,28 @@ Partial Class ValidateUPDForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label1.Location = New System.Drawing.Point(107, 29)
+        Me.Label1.Location = New System.Drawing.Point(124, 29)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 20)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Importing "
         '
+        'btnshowhide
+        '
+        Me.btnshowhide.FlatAppearance.BorderSize = 0
+        Me.btnshowhide.Image = Global.Game_Of_Life.My.Resources.Resources.smallereyes
+        Me.btnshowhide.Location = New System.Drawing.Point(254, 113)
+        Me.btnshowhide.Name = "btnshowhide"
+        Me.btnshowhide.Size = New System.Drawing.Size(30, 30)
+        Me.btnshowhide.TabIndex = 9
+        Me.btnshowhide.UseVisualStyleBackColor = True
+        '
         'ValidateUPDForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.ClientSize = New System.Drawing.Size(314, 291)
+        Me.Controls.Add(Me.btnshowhide)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -116,4 +128,5 @@ Partial Class ValidateUPDForm
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnshowhide As Button
 End Class

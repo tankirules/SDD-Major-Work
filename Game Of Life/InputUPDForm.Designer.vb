@@ -28,6 +28,7 @@ Partial Class InputUPDForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnshowhide = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtusername
@@ -53,7 +54,7 @@ Partial Class InputUPDForm
         '
         Me.btnsubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.btnsubmit.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.btnsubmit.Location = New System.Drawing.Point(111, 163)
+        Me.btnsubmit.Location = New System.Drawing.Point(138, 173)
         Me.btnsubmit.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsubmit.Name = "btnsubmit"
         Me.btnsubmit.Size = New System.Drawing.Size(68, 35)
@@ -91,11 +92,22 @@ Partial Class InputUPDForm
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Username:"
         '
+        'btnshowhide
+        '
+        Me.btnshowhide.FlatAppearance.BorderSize = 0
+        Me.btnshowhide.Image = Global.Game_Of_Life.My.Resources.Resources.smallereyes
+        Me.btnshowhide.Location = New System.Drawing.Point(251, 120)
+        Me.btnshowhide.Name = "btnshowhide"
+        Me.btnshowhide.Size = New System.Drawing.Size(30, 30)
+        Me.btnshowhide.TabIndex = 6
+        Me.btnshowhide.UseVisualStyleBackColor = True
+        '
         'InputUPDForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.ClientSize = New System.Drawing.Size(314, 291)
+        Me.Controls.Add(Me.btnshowhide)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -116,4 +128,5 @@ Partial Class InputUPDForm
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents btnshowhide As Button
 End Class

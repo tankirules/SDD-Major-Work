@@ -23,6 +23,9 @@ Partial Class Presetchooser
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnsave = New System.Windows.Forms.Button()
+        Me.btneditname = New System.Windows.Forms.Button()
+        Me.btnsavepreset = New System.Windows.Forms.Button()
         Me.rbtnpreset6 = New System.Windows.Forms.RadioButton()
         Me.rbtnpreset5 = New System.Windows.Forms.RadioButton()
         Me.rbtnpreset4 = New System.Windows.Forms.RadioButton()
@@ -30,15 +33,15 @@ Partial Class Presetchooser
         Me.rbtnpreset2 = New System.Windows.Forms.RadioButton()
         Me.rbtnpreset1 = New System.Windows.Forms.RadioButton()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.btneditpattern = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnresetgrid = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.btneditpattern)
+        Me.GroupBox1.Controls.Add(Me.btnsave)
+        Me.GroupBox1.Controls.Add(Me.btneditname)
+        Me.GroupBox1.Controls.Add(Me.btnsavepreset)
         Me.GroupBox1.Controls.Add(Me.rbtnpreset6)
         Me.GroupBox1.Controls.Add(Me.rbtnpreset5)
         Me.GroupBox1.Controls.Add(Me.rbtnpreset4)
@@ -52,6 +55,33 @@ Partial Class Presetchooser
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Choose Preset"
+        '
+        'btnsave
+        '
+        Me.btnsave.Location = New System.Drawing.Point(225, 634)
+        Me.btnsave.Name = "btnsave"
+        Me.btnsave.Size = New System.Drawing.Size(125, 69)
+        Me.btnsave.TabIndex = 8
+        Me.btnsave.Text = "Save Data to File"
+        Me.btnsave.UseVisualStyleBackColor = True
+        '
+        'btneditname
+        '
+        Me.btneditname.Location = New System.Drawing.Point(292, 553)
+        Me.btneditname.Name = "btneditname"
+        Me.btneditname.Size = New System.Drawing.Size(223, 75)
+        Me.btneditname.TabIndex = 7
+        Me.btneditname.Text = "Edit Pattern Name"
+        Me.btneditname.UseVisualStyleBackColor = True
+        '
+        'btnsavepreset
+        '
+        Me.btnsavepreset.Location = New System.Drawing.Point(7, 553)
+        Me.btnsavepreset.Name = "btnsavepreset"
+        Me.btnsavepreset.Size = New System.Drawing.Size(279, 75)
+        Me.btnsavepreset.TabIndex = 6
+        Me.btnsavepreset.Text = "Save Current grid to Preset"
+        Me.btnsavepreset.UseVisualStyleBackColor = True
         '
         'rbtnpreset6
         '
@@ -128,29 +158,21 @@ Partial Class Presetchooser
         Me.Button1.Text = "Grid"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'btneditpattern
+        'btnresetgrid
         '
-        Me.btneditpattern.Location = New System.Drawing.Point(7, 553)
-        Me.btneditpattern.Name = "btneditpattern"
-        Me.btneditpattern.Size = New System.Drawing.Size(143, 59)
-        Me.btneditpattern.TabIndex = 6
-        Me.btneditpattern.Text = "Edit Pattern"
-        Me.btneditpattern.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(292, 553)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(143, 59)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Edit Pattern"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnresetgrid.Location = New System.Drawing.Point(333, 906)
+        Me.btnresetgrid.Name = "btnresetgrid"
+        Me.btnresetgrid.Size = New System.Drawing.Size(125, 69)
+        Me.btnresetgrid.TabIndex = 9
+        Me.btnresetgrid.Text = "Reset Grid"
+        Me.btnresetgrid.UseVisualStyleBackColor = True
         '
         'Presetchooser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1042)
+        Me.Controls.Add(Me.btnresetgrid)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Presetchooser"
@@ -172,6 +194,8 @@ Partial Class Presetchooser
     Friend WithEvents rbtnpreset3 As RadioButton
     Friend WithEvents rbtnpreset2 As RadioButton
     Friend WithEvents rbtnpreset1 As RadioButton
-    Friend WithEvents Button2 As Button
-    Friend WithEvents btneditpattern As Button
+    Friend WithEvents btneditname As Button
+    Friend WithEvents btnsavepreset As Button
+    Friend WithEvents btnsave As Button
+    Friend WithEvents btnresetgrid As Button
 End Class
