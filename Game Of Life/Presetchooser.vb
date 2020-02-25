@@ -95,12 +95,15 @@
     End Sub
 
     Private Sub btnresetgrid_Click(sender As Object, e As EventArgs) Handles btnresetgrid.Click
+        cleargrid()
         For x = 1 To 50
             For y = 1 To 50
-                Grid(x, y).BackColor = Color.White
                 presetchecked(x, y) = 0
             Next
         Next
+
+
+
     End Sub
 
     Private Sub btnsavepreset_Click(sender As Object, e As EventArgs) Handles btnsavepreset.Click
@@ -125,12 +128,92 @@
 
             Next
         Next
+    End Sub
+
+    Private Sub rbtnpreset1_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset1.CheckedChanged
+        cleargrid()
+        If rbtnpreset1.Checked Then
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset1(x, y) = 1 Then
+                        Grid(x, y).BackColor = Color.Black
+                    End If
+                Next
+            Next
+        End If
+    End Sub
+
+    Private Sub rbtnpreset2_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset2.CheckedChanged
+        cleargrid()
+        If rbtnpreset2.Checked Then
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset2(x, y) = 1 Then
+                        Grid(x, y).BackColor = Color.Black
+                    End If
+                Next
+            Next
+        End If
+    End Sub
+
+    Private Sub rbtnpreset3_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset3.CheckedChanged
+        cleargrid()
+        If rbtnpreset3.Checked Then
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset3(x, y) = 1 Then
+                        Grid(x, y).BackColor = Color.Black
+                    End If
+                Next
+            Next
+        End If
+    End Sub
+
+    Private Sub rbtnpreset4_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset4.CheckedChanged
+        cleargrid()
+        If rbtnpreset4.Checked Then
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset4(x, y) = 1 Then
+                        Grid(x, y).BackColor = Color.Black
+                    End If
+                Next
+            Next
+        End If
+    End Sub
+
+    Private Sub rbtnpreset5_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset5.CheckedChanged
+        cleargrid()
+        If rbtnpreset5.Checked Then
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset5(x, y) = 1 Then
+                        Grid(x, y).BackColor = Color.Black
+                    End If
+                Next
+            Next
+        End If
+    End Sub
+
+    Private Sub rbtnpreset6_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset6.CheckedChanged
+        cleargrid()
+        If rbtnpreset6.Checked Then
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset6(x, y) = 1 Then
+                        Grid(x, y).BackColor = Color.Black
+                    End If
+                Next
+            Next
+        End If
+    End Sub
+    Private Sub cleargrid()
         For x = 1 To 50
             For y = 1 To 50
                 Grid(x, y).BackColor = Color.White
-                presetchecked(x, y) = 0
             Next
         Next
     End Sub
+
 
 End Class
