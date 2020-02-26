@@ -14,8 +14,10 @@ Public Class Form1
     Dim uncheckedcolor, checkedcolor As Color
     Dim supercancer As Boolean
     Dim Timesupdated As Integer
+    Dim isdown As Boolean
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        isdown = False
         Dim Path As String = "c:\Gameoflife\presets.txt"
 
         If File.Exists(Path) Then
@@ -49,9 +51,21 @@ Public Class Form1
                 TempGrid(x, y) = 0
                 '0 Is Not checked, 1 Is checked - Set all squares To Not be checked
                 AddHandler Grid(x, y).Click, AddressOf Grid_Select
+                AddHandler Grid(x, y).MouseEnter, AddressOf Mouse_Enter
+                AddHandler Grid(x, y).MouseDown, AddressOf Mouse_Down
+
             Next
         Next
 
+    End Sub
+    Private Sub Mouse_Down(sender As Object, e As MouseEventArgs)
+        If e.Button = MouseButtons.Right Then
+            If isdown = False Then
+                isdown = True
+            ElseIf isdown = True Then
+                isdown = False
+            End If
+        End If
     End Sub
     Private Sub Grid_Select(sender As Object, e As EventArgs)
         Dim xpos, ypos As Integer
@@ -59,6 +73,7 @@ Public Class Form1
         ypos = CInt(sender.location.y) / SideLength
         lblx.Text = "X Pos: " + CStr(xpos)
         lbly.Text = "Y Pos: " + CStr(ypos)
+
         If Checked(xpos, ypos) = 0 Then
             Grid(xpos, ypos).BackColor = checkedcolor
             Checked(xpos, ypos) = 1
@@ -66,6 +81,19 @@ Public Class Form1
             Grid(xpos, ypos).BackColor = uncheckedcolor
             Checked(xpos, ypos) = 0
         End If
+
+
+    End Sub
+    Private Sub Mouse_Enter(sender As Object, e As EventArgs)
+        Dim xpos, ypos As Integer
+        xpos = CInt(sender.location.x) / SideLength
+        ypos = CInt(sender.location.y) / SideLength
+
+        If isdown Then
+            Grid(xpos, ypos).BackColor = checkedcolor
+            Checked(xpos, ypos) = 1
+        End If
+
 
 
     End Sub
