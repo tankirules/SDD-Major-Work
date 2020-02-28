@@ -33,11 +33,13 @@ Partial Class Presetchooser
         Me.rbtnpreset2 = New System.Windows.Forms.RadioButton()
         Me.rbtnpreset1 = New System.Windows.Forms.RadioButton()
         Me.btnresetgrid = New System.Windows.Forms.Button()
+        Me.btncenter = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btncenter)
         Me.GroupBox1.Controls.Add(Me.btnsave)
         Me.GroupBox1.Controls.Add(Me.btneditname)
         Me.GroupBox1.Controls.Add(Me.btnsavepreset)
@@ -158,6 +160,15 @@ Partial Class Presetchooser
         Me.btnresetgrid.Text = "Reset Grid"
         Me.btnresetgrid.UseVisualStyleBackColor = True
         '
+        'btncenter
+        '
+        Me.btncenter.Location = New System.Drawing.Point(24, 645)
+        Me.btncenter.Name = "btncenter"
+        Me.btncenter.Size = New System.Drawing.Size(131, 46)
+        Me.btncenter.TabIndex = 10
+        Me.btncenter.Text = "Set Center"
+        Me.btncenter.UseVisualStyleBackColor = True
+        '
         'Presetchooser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -187,4 +198,5 @@ Partial Class Presetchooser
     Friend WithEvents btnsavepreset As Button
     Friend WithEvents btnsave As Button
     Friend WithEvents btnresetgrid As Button
+    Friend WithEvents btncenter As Button
 End Class
