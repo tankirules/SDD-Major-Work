@@ -49,16 +49,25 @@
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
         If centerbeingset = True Then
-            If cpreset1 = True Or cpreset2 = True Or cpreset3 = True Or cpreset4 = True Or cpreset5 = True Or cpreset6 = True Then
-                btncenter.Text = "Set Center"
-                centerbeingset = False
-                MsgBox("You have already set a center for this preset!")
+            If rbtnpreset1.Checked And cpreset1 = True Then
+                centeralreadyset()
+            ElseIf rbtnpreset2.Checked And cpreset2 = True Then
+                centeralreadyset()
+            ElseIf rbtnpreset3.Checked And cpreset3 = True Then
+                centeralreadyset()
+            ElseIf rbtnpreset4.Checked And cpreset4 = True Then
+                centeralreadyset()
+            ElseIf rbtnpreset5.Checked And cpreset5 = True Then
+                centeralreadyset()
+            ElseIf rbtnpreset6.Checked And cpreset6 = True Then
+                centeralreadyset()
 
             Else
                 Grid(xpos, ypos).BackColor = Color.Yellow
                 presetchecked(xpos, ypos) = 2
                 centerbeingset = False
                 MsgBox("Center set!")
+                btncenter.Text = "Set Center"
                 If rbtnpreset1.Checked = True Then
                     cpreset1 = True
                 ElseIf rbtnpreset2.Checked = True Then
@@ -73,7 +82,7 @@
                     cpreset6 = True
 
 
-                    btncenter.Text = "Set Center"
+
                 End If
 
 
@@ -109,31 +118,7 @@
         End If
     End Sub
 
-    Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
-        Dim tempx, tempy As String
-        Using FS As New IO.StreamWriter("C:\Gameoflife\presets.txt")
-            FS.WriteLine("P1" + rbtnpreset1.Text)
-            For x = 1 To 50
-                For y = 1 To 50
-                    If preset1(x, y) = 1 Then
-                        If CStr(x).Length = 1 Then
-                            tempx = "0" + CStr(x)
-                        Else
-                            tempx = x
-                        End If
-                        If CStr(y).Length = 1 Then
-                            tempy = "0" + CStr(y)
-                        Else
-                            tempy = y
-                        End If
-                        FS.WriteLine(tempx + "," + tempy)
-                    End If
-                Next
-            Next
 
-
-        End Using
-    End Sub
 
     Private Sub btnresetgrid_Click(sender As Object, e As EventArgs) Handles btnresetgrid.Click
         cleargrid()
@@ -332,5 +317,241 @@
 
             Next
         Next
+    End Sub
+    Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+        Dim tempx, tempy As String
+        Using FS As New IO.StreamWriter("C:\Gameoflife\presets.txt")
+            'save preset1
+            FS.WriteLine("P1" + rbtnpreset1.Text)
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset1(x, y) = 2 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine("c" + tempx + "," + tempy)
+                        Exit For
+                    End If
+                Next
+            Next
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset1(x, y) = 1 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine(tempx + "," + tempy)
+                    End If
+                Next
+            Next
+            'save preset 2
+            FS.WriteLine("P2" + rbtnpreset2.Text)
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset2(x, y) = 2 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine("c" + tempx + "," + tempy)
+                        Exit For
+                    End If
+                Next
+            Next
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset2(x, y) = 1 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine(tempx + "," + tempy)
+                    End If
+                Next
+            Next
+            'save preset3
+            FS.WriteLine("P3" + rbtnpreset3.Text)
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset3(x, y) = 2 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine("c" + tempx + "," + tempy)
+                        Exit For
+                    End If
+                Next
+            Next
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset3(x, y) = 1 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine(tempx + "," + tempy)
+                    End If
+                Next
+            Next
+            'save preset 4
+            FS.WriteLine("P4" + rbtnpreset4.Text)
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset3(x, y) = 2 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine("c" + tempx + "," + tempy)
+                        Exit For
+                    End If
+                Next
+            Next
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset4(x, y) = 1 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine(tempx + "," + tempy)
+                    End If
+                Next
+            Next
+            'save preset 5
+            FS.WriteLine("P5" + rbtnpreset5.Text)
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset5(x, y) = 2 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine("c" + tempx + "," + tempy)
+                        Exit For
+                    End If
+                Next
+            Next
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset5(x, y) = 1 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine(tempx + "," + tempy)
+                    End If
+                Next
+            Next
+            'save preset 6
+            FS.WriteLine("P6" + rbtnpreset6.Text)
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset6(x, y) = 2 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine("c" + tempx + "," + tempy)
+                        Exit For
+                    End If
+                Next
+            Next
+            For x = 1 To 50
+                For y = 1 To 50
+                    If preset6(x, y) = 1 Then
+                        If CStr(x).Length = 1 Then
+                            tempx = "0" + CStr(x)
+                        Else
+                            tempx = x
+                        End If
+                        If CStr(y).Length = 1 Then
+                            tempy = "0" + CStr(y)
+                        Else
+                            tempy = y
+                        End If
+                        FS.WriteLine(tempx + "," + tempy)
+                    End If
+                Next
+            Next
+
+
+
+
+        End Using
+    End Sub
+    Private Sub centeralreadyset()
+        btncenter.Text = "Set Center"
+        centerbeingset = False
+        MsgBox("You have already set a center for this preset!")
     End Sub
 End Class
