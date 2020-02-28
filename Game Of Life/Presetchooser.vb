@@ -49,25 +49,35 @@
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
         If centerbeingset = True Then
-            Grid(xpos, ypos).BackColor = Color.Yellow
-            presetchecked(xpos, ypos) = 2
-            centerbeingset = False
-            MsgBox("Center set!")
-            If rbtnpreset1.Checked = True Then
-                cpreset1 = True
-            ElseIf rbtnpreset2.Checked = True Then
-                cpreset2 = True
-            ElseIf rbtnpreset3.Checked = True Then
-                cpreset3 = True
-            ElseIf rbtnpreset4.Checked = True Then
-                cpreset4 = True
-            ElseIf rbtnpreset5.Checked = True Then
-                cpreset5 = True
-            ElseIf rbtnpreset6.Checked = True Then
-                cpreset6 = True
+            If cpreset1 = True Or cpreset2 = True Or cpreset3 = True Or cpreset4 = True Or cpreset5 = True Or cpreset6 = True Then
+                btncenter.Text = "Set Center"
+                centerbeingset = False
+                MsgBox("You have already set a center for this preset!")
+
+            Else
+                Grid(xpos, ypos).BackColor = Color.Yellow
+                presetchecked(xpos, ypos) = 2
+                centerbeingset = False
+                MsgBox("Center set!")
+                If rbtnpreset1.Checked = True Then
+                    cpreset1 = True
+                ElseIf rbtnpreset2.Checked = True Then
+                    cpreset2 = True
+                ElseIf rbtnpreset3.Checked = True Then
+                    cpreset3 = True
+                ElseIf rbtnpreset4.Checked = True Then
+                    cpreset4 = True
+                ElseIf rbtnpreset5.Checked = True Then
+                    cpreset5 = True
+                ElseIf rbtnpreset6.Checked = True Then
+                    cpreset6 = True
+
+
+                    btncenter.Text = "Set Center"
+                End If
+
 
             End If
-
         Else
             If presetchecked(xpos, ypos) = 0 Then
                 Grid(xpos, ypos).BackColor = Color.Black
@@ -77,7 +87,6 @@
                 presetchecked(xpos, ypos) = 0
             End If
         End If
-
 
 
     End Sub
