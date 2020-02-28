@@ -167,6 +167,12 @@
         templist.Clear()
         Dim centercheck As String
         Dim ptemplist As New List(Of Array)
+        ptemplist.Add(ptemp1)
+        ptemplist.Add(ptemp2)
+        ptemplist.Add(ptemp3)
+        ptemplist.Add(ptemp4)
+        ptemplist.Add(ptemp5)
+        ptemplist.Add(ptemp6)
 
         For Each ptemparray As Array In ptemplist
             centercheck = ""
