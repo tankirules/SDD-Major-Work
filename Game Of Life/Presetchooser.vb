@@ -164,8 +164,21 @@
         For i = 0 To ptemp6.length - 1
             ptemp6(i) = CStr(ptemp6(i))
         Next
+        templist.Clear()
+        Dim centercheck As String
+        Dim ptemplist As New List(Of Array)
 
+        For Each ptemparray As Array In ptemplist
+            centercheck = ""
+            If ptemparray.Length > 1 Then
+                centercheck = ptemparray(1)
+                If ptemparray(0) <> "c" Then
+                    MsgBox("Center coordinates corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
+                End If
 
+            End If
+
+        Next
 
 
 
