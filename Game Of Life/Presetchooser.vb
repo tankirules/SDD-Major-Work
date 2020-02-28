@@ -12,8 +12,15 @@
 
     Dim cpreset1, cpreset2, cpreset3, cpreset4, cpreset5, cpreset6 As Boolean
     Dim centerbeingset As Boolean
+    Dim radiobuttonlist As New List(Of RadioButton)
 
     Private Sub Presetchooser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        radiobuttonlist.Add(rbtnpreset1)
+        radiobuttonlist.Add(rbtnpreset2)
+        radiobuttonlist.Add(rbtnpreset3)
+        radiobuttonlist.Add(rbtnpreset4)
+        radiobuttonlist.Add(rbtnpreset5)
+        radiobuttonlist.Add(rbtnpreset6)
         Dim arrayofpresests(6) As Integer
         Dim presetcountload As Integer
         presetcountload = 0
@@ -267,25 +274,13 @@
     End Sub
 
     Private Sub btneditname_Click(sender As Object, e As EventArgs) Handles btneditname.Click
-        If rbtnpreset1.Checked = True Then
-            rbtnpreset1.Text = InputBox("Enter name to change to ")
+        For Each button In radiobuttonlist
+            If button.Checked = True Then
+                button.Text = InputBox("Enter name to change to ")
+            End If
+        Next
 
-        ElseIf rbtnpreset2.Checked = True Then
-            rbtnpreset2.Text = InputBox("Enter name to change to ")
-        ElseIf rbtnpreset3.Checked = True Then
-            rbtnpreset3.Text = InputBox("Enter name to change to ")
-        ElseIf rbtnpreset4.Checked = True Then
-            rbtnpreset4.Text = InputBox("Enter name to change to ")
-        ElseIf rbtnpreset5.Checked = True Then
-            rbtnpreset5.Text = InputBox("Enter name to change to ")
-        ElseIf rbtnpreset6.Checked = True Then
-            rbtnpreset6.Text = InputBox("Enter name to change to ")
-
-        End If
     End Sub
-
-
-
     Private Sub btnresetgrid_Click(sender As Object, e As EventArgs) Handles btnresetgrid.Click
         cleargrid()
         For x = 1 To 50
@@ -293,9 +288,6 @@
                 presetchecked(x, y) = 0
             Next
         Next
-
-
-
     End Sub
 
     Private Sub btnsavepreset_Click(sender As Object, e As EventArgs) Handles btnsavepreset.Click
