@@ -13,6 +13,7 @@
     Dim cpreset1, cpreset2, cpreset3, cpreset4, cpreset5, cpreset6 As Boolean
     Dim centerbeingset As Boolean
     Dim radiobuttonlist As New List(Of RadioButton)
+    Dim presetlist As New List(Of Array)
 
     Private Sub Presetchooser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         radiobuttonlist.Add(rbtnpreset1)
@@ -21,6 +22,13 @@
         radiobuttonlist.Add(rbtnpreset4)
         radiobuttonlist.Add(rbtnpreset5)
         radiobuttonlist.Add(rbtnpreset6)
+        presetlist.Add(preset1)
+        presetlist.Add(preset2)
+        presetlist.Add(preset3)
+        presetlist.Add(preset4)
+        presetlist.Add(preset5)
+        presetlist.Add(preset6)
+
         Dim arrayofpresests(6) As Integer
         Dim presetcountload As Integer
         presetcountload = 0
@@ -186,13 +194,21 @@
             If ptemparray.Length > 1 Then
                 centercheck = ptemparray(1)
                 If ptemparray(0) <> "c" Then
-                    MsgBox("Center coordinates corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
+                    MsgBox("Center coordinates corrupt/do not exist! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
                 End If
+            End If
+        Next
+        For Each ptemparray As Array In ptemplist
+            Dim tempx, tempy As String
+            tempx = ""
+            tempy = ""
+            If ptemparray.Length > 1 Then
 
             End If
+            If ptemparray.Length > 2 Then
 
+            End If
         Next
-
 
 
 
@@ -346,8 +362,6 @@
         End If
     End Sub
 
-
-
     Private Sub rbtnpreset3_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset3.CheckedChanged
         cleargrid()
         If rbtnpreset3.Checked Then
@@ -438,43 +452,68 @@
 
     End Sub
     Private Sub savepresettopreset()
+        Dim temppreset(50, 50) As Integer
+        Dim buttonindex As Integer
+        buttonindex = 0
+        Array.Clear(temppreset, 0, temppreset.Length)
         For x = 1 To 50
             For y = 1 To 50
                 If presetchecked(x, y) = 1 Then
-                    If rbtnpreset1.Checked = True Then
-                        preset1(x, y) = 1
-                    ElseIf rbtnpreset2.Checked = True Then
-                        preset2(x, y) = 1
-                    ElseIf rbtnpreset3.Checked = True Then
-                        preset3(x, y) = 1
-                    ElseIf rbtnpreset4.Checked = True Then
-                        preset4(x, y) = 1
-                    ElseIf rbtnpreset5.Checked = True Then
-                        preset5(x, y) = 1
-                    ElseIf rbtnpreset6.Checked = True Then
-                        preset6(x, y) = 1
-
-                    End If
+                    For Each button In radiobuttonlist
+                        If button.Checked = True Then
+                            buttonindex = radiobuttonlist.IndexOf(button)
+                            temppreset(x, y) = 1
+                        End If
+                    Next
                 End If
                 If presetchecked(x, y) = 2 Then
-                    If rbtnpreset1.Checked = True Then
-                        preset1(x, y) = 2
-                    ElseIf rbtnpreset2.Checked = True Then
-                        preset2(x, y) = 2
-                    ElseIf rbtnpreset3.Checked = True Then
-                        preset3(x, y) = 2
-                    ElseIf rbtnpreset4.Checked = True Then
-                        preset4(x, y) = 2
-                    ElseIf rbtnpreset5.Checked = True Then
-                        preset5(x, y) = 2
-                    ElseIf rbtnpreset6.Checked = True Then
-                        preset6(x, y) = 2
-
-                    End If
+                    For Each button In radiobuttonlist
+                        If button.Checked = True Then
+                            buttonindex = radiobuttonlist.IndexOf(button)
+                            temppreset(x, y) = 2
+                        End If
+                    Next
                 End If
+                'If presetchecked(x, y) = 1 Then
+                '    If rbtnpreset1.Checked = True Then
+                '        preset1(x, y) = 1
+                '    ElseIf rbtnpreset2.Checked = True Then
+                '        preset2(x, y) = 1
+                '    ElseIf rbtnpreset3.Checked = True Then
+                '        preset3(x, y) = 1
+                '    ElseIf rbtnpreset4.Checked = True Then
+                '        preset4(x, y) = 1
+                '    ElseIf rbtnpreset5.Checked = True Then
+                '        preset5(x, y) = 1
+                '    ElseIf rbtnpreset6.Checked = True Then
+                '        preset6(x, y) = 1
 
+                '    End If
+                'End If
+                'If presetchecked(x, y) = 2 Then
+                '    If rbtnpreset1.Checked = True Then
+                '        preset1(x, y) = 2
+                '    ElseIf rbtnpreset2.Checked = True Then
+                '        preset2(x, y) = 2
+                '    ElseIf rbtnpreset3.Checked = True Then
+                '        preset3(x, y) = 2
+                '    ElseIf rbtnpreset4.Checked = True Then
+                '        preset4(x, y) = 2
+                '    ElseIf rbtnpreset5.Checked = True Then
+                '        preset5(x, y) = 2
+                '    ElseIf rbtnpreset6.Checked = True Then
+                '        preset6(x, y) = 2
+
+                '    End If
+                'End If
             Next
         Next
+        For Each array In presetlist
+            If presetlist.IndexOf(array) = buttonindex Then
+                Array.Copy(temppreset, array, array.Length)
+            End If
+        Next
+
     End Sub
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
         Dim tempx, tempy As String
