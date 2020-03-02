@@ -34,11 +34,15 @@ Partial Class Presetchooser
         Me.rbtnpreset2 = New System.Windows.Forms.RadioButton()
         Me.rbtnpreset1 = New System.Windows.Forms.RadioButton()
         Me.btnresetgrid = New System.Windows.Forms.Button()
+        Me.lstbox = New System.Windows.Forms.ListBox()
+        Me.btnshowerrors = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnshowerrors)
+        Me.GroupBox1.Controls.Add(Me.lstbox)
         Me.GroupBox1.Controls.Add(Me.btncenter)
         Me.GroupBox1.Controls.Add(Me.btnsave)
         Me.GroupBox1.Controls.Add(Me.btneditname)
@@ -169,6 +173,26 @@ Partial Class Presetchooser
         Me.btnresetgrid.Text = "Reset Grid"
         Me.btnresetgrid.UseVisualStyleBackColor = True
         '
+        'lstbox
+        '
+        Me.lstbox.FormattingEnabled = True
+        Me.lstbox.ItemHeight = 25
+        Me.lstbox.Location = New System.Drawing.Point(7, 726)
+        Me.lstbox.Name = "lstbox"
+        Me.lstbox.Size = New System.Drawing.Size(813, 304)
+        Me.lstbox.TabIndex = 11
+        Me.lstbox.Visible = False
+        '
+        'btnshowerrors
+        '
+        Me.btnshowerrors.Font = New System.Drawing.Font("Lucida Calligraphy", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnshowerrors.Location = New System.Drawing.Point(597, 626)
+        Me.btnshowerrors.Name = "btnshowerrors"
+        Me.btnshowerrors.Size = New System.Drawing.Size(203, 94)
+        Me.btnshowerrors.TabIndex = 12
+        Me.btnshowerrors.Text = "I have a big brain"
+        Me.btnshowerrors.UseVisualStyleBackColor = True
+        '
         'Presetchooser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -199,4 +223,6 @@ Partial Class Presetchooser
     Friend WithEvents btnsave As Button
     Friend WithEvents btnresetgrid As Button
     Friend WithEvents btncenter As Button
+    Friend WithEvents lstbox As ListBox
+    Friend WithEvents btnshowerrors As Button
 End Class

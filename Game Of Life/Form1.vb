@@ -22,8 +22,9 @@ Public Class Form1
 
         If File.Exists(Path) Then
         Else
-            My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
             Dim fs As FileStream = File.Create(Path)
+            My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
+
 
         End If
 
