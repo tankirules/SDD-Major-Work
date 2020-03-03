@@ -16,11 +16,12 @@ Public Class Form1
     Dim Timesupdated As Integer
     Dim isdown As Boolean
     Dim puttinginpreset As Boolean
+    Public closedproperlyinput As Boolean
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         puttinginpreset = False
         isdown = False
-
+        closedproperlyinput = False
 
 
 
@@ -51,6 +52,9 @@ Public Class Form1
                 AddHandler Grid(x, y).MouseHover, AddressOf Mouse_Hover
             Next
         Next
+
+    End Sub
+    Private Sub Mouse_Hover(sender As Object, e As EventArgs)
 
     End Sub
     Private Sub Mouse_Down(sender As Object, e As MouseEventArgs)
@@ -363,7 +367,8 @@ Public Class Form1
 
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
         Dim Preset As Presetchooser
-        If Presetchooser.ShowDialog() = DialogResult.OK And Preset.closedproperlyinput = True Then
+        If Presetchooser.ShowDialog() = DialogResult.OK And closedproperlyinput = True Then
+            puttinginpreset = True
         End If
     End Sub
 

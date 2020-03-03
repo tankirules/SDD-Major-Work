@@ -4,7 +4,6 @@ Public Class Presetchooser
     Dim Grid(50, 50) As Panel
     Dim SideLength As Integer
     Dim presetchecked(50, 50) As Integer
-    Dim closedproperlyinput As Boolean
     Dim preset6(50, 50) As Integer
     Dim preset1(50, 50) As Integer
     Dim preset2(50, 50) As Integer
@@ -22,6 +21,7 @@ Public Class Presetchooser
     Dim temppresetname As String
 
     Private Sub Presetchooser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Form1.closedproperlyinput = False
         Dim arrayofpresests(6) As Integer
         Dim presetcountload As Integer
         Dim loadedfile() As String = IO.File.ReadAllLines("C:\Gameoflife\presets.txt")
@@ -60,7 +60,7 @@ Public Class Presetchooser
         presetlist.Add(preset6)
 
         Dim Path As String = "c:\Gameoflife\presets.txt"
-        closedproperlyinput = False
+
         SideLength = Me.Bounds.Height / 60
         For x = 1 To 50
             For y = 1 To 50
@@ -625,7 +625,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub btnclosepresetchooser_Click(sender As Object, e As EventArgs) Handles btnclosepresetchooser.Click
-        closedproperlyinput = True
+        Form1.closedproperlyinput = True
     End Sub
 
     Private Sub cleargrid()
