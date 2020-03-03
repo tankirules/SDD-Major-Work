@@ -1,4 +1,6 @@
-﻿Public Class Presetchooser
+﻿Imports System.IO
+Imports System.Text
+Public Class Presetchooser
     Dim Grid(50, 50) As Panel
     Dim SideLength As Integer
     Dim presetchecked(50, 50) As Integer
@@ -51,241 +53,249 @@
         For i = 0 To loadedfile.Length - 1
             Console.WriteLine("Loaded file line: " + CStr(i) + " is " + loadedfile(i))
         Next
+        Dim Path As String = "c:\Gameoflife\presets.txt"
 
-        If loadedfile(0).Contains("P1") Then
-            presetlinelist.Add(0)
-            presetcountload += 1
-            Console.WriteLine("P1 exists!")
-            For i = 1 To (loadedfile.Length() - 1)
+        If File.Exists(Path) Then
+            If loadedfile(0).Contains("P1") Then
+                presetlinelist.Add(0)
+                presetcountload += 1
+                Console.WriteLine("P1 exists!")
+                For i = 1 To (loadedfile.Length() - 1)
 
-                Console.WriteLine(loadedfile.Length())
-                If loadedfile(i).Contains("P2") Then
-                    If presetcountload = 1 Then
-                        presetlinelist.Add(i)
-                        presetcountload += 1
-                        Console.WriteLine("P2 exists!")
-                    Else
-                        MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                        Console.WriteLine("Corrupt 2")
-                        loadederror = "Error when testing for preset line prefix"
-                        lstbox.Items.Add(loadederror)
-                        Exit For
+                    Console.WriteLine(loadedfile.Length())
+                    If loadedfile(i).Contains("P2") Then
+                        If presetcountload = 1 Then
+                            presetlinelist.Add(i)
+                            presetcountload += 1
+                            Console.WriteLine("P2 exists!")
+                        Else
+                            MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
+                            Console.WriteLine("Corrupt 2")
+                            loadederror = "Error when testing for preset line prefix"
+                            lstbox.Items.Add(loadederror)
+                            Exit For
+                        End If
                     End If
-                End If
-                If loadedfile(i).Contains("P3") Then
-                    If presetcountload = 2 Then
-                        presetlinelist.Add(i)
-                        presetcountload += 1
-                        Console.WriteLine("P3 exists!")
-                    Else
-                        MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                        loadederror = "Error when testing for preset line prefix"
-                        lstbox.Items.Add(loadederror)
-                        Console.WriteLine("Corrupt 3")
-                        Exit For
+                    If loadedfile(i).Contains("P3") Then
+                        If presetcountload = 2 Then
+                            presetlinelist.Add(i)
+                            presetcountload += 1
+                            Console.WriteLine("P3 exists!")
+                        Else
+                            MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
+                            loadederror = "Error when testing for preset line prefix"
+                            lstbox.Items.Add(loadederror)
+                            Console.WriteLine("Corrupt 3")
+                            Exit For
+                        End If
                     End If
-                End If
-                If loadedfile(i).Contains("P4") Then
-                    If presetcountload = 3 Then
-                        presetlinelist.Add(i)
-                        presetcountload += 1
-                        Console.WriteLine("P4 exists!")
-                    Else
-                        MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                        loadederror = "Error when testing for preset line prefix"
-                        lstbox.Items.Add(loadederror)
-                        Console.WriteLine("Corrupt 4")
-                        Exit For
+                    If loadedfile(i).Contains("P4") Then
+                        If presetcountload = 3 Then
+                            presetlinelist.Add(i)
+                            presetcountload += 1
+                            Console.WriteLine("P4 exists!")
+                        Else
+                            MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
+                            loadederror = "Error when testing for preset line prefix"
+                            lstbox.Items.Add(loadederror)
+                            Console.WriteLine("Corrupt 4")
+                            Exit For
+                        End If
                     End If
-                End If
-                If loadedfile(i).Contains("P5") Then
-                    If presetcountload = 4 Then
-                        presetlinelist.Add(i)
-                        presetcountload += 1
-                        Console.WriteLine("P5 exists!")
-                    Else
-                        MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                        loadederror = "Error when testing for preset line prefix"
-                        lstbox.Items.Add(loadederror)
-                        Console.WriteLine("Corrupt 5")
-                        Exit For
+                    If loadedfile(i).Contains("P5") Then
+                        If presetcountload = 4 Then
+                            presetlinelist.Add(i)
+                            presetcountload += 1
+                            Console.WriteLine("P5 exists!")
+                        Else
+                            MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
+                            loadederror = "Error when testing for preset line prefix"
+                            lstbox.Items.Add(loadederror)
+                            Console.WriteLine("Corrupt 5")
+                            Exit For
+                        End If
                     End If
-                End If
-                If loadedfile(i).Contains("P6") Then
-                    If presetcountload = 5 Then
-                        presetlinelist.Add(i)
-                        presetcountload += 1
-                        Console.WriteLine("P6 exists!")
-                    Else
-                        MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                        loadederror = "Error when testing for preset line prefix"
-                        lstbox.Items.Add(loadederror)
-                        Console.WriteLine("Corrupt 6")
-                        Exit For
+                    If loadedfile(i).Contains("P6") Then
+                        If presetcountload = 5 Then
+                            presetlinelist.Add(i)
+                            presetcountload += 1
+                            Console.WriteLine("P6 exists!")
+                        Else
+                            MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
+                            loadederror = "Error when testing for preset line prefix"
+                            lstbox.Items.Add(loadederror)
+                            Console.WriteLine("Corrupt 6")
+                            Exit For
+                        End If
                     End If
+                Next
+                If presetcountload = 6 Then
+                    Console.WriteLine("Loading successful! Loaded 6 presets")
+                Else
+                    MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
+                    loadederror = "Error when testing for preset line prefix"
+                    lstbox.Items.Add(loadederror)
+                    Console.WriteLine(CStr(presetcountload))
+                    Console.WriteLine("at the end presetcountload wasnt 6")
                 End If
-            Next
-            If presetcountload = 6 Then
-                Console.WriteLine("Loading successful! Loaded 6 presets")
             Else
                 MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
                 loadederror = "Error when testing for preset line prefix"
                 lstbox.Items.Add(loadederror)
-                Console.WriteLine(CStr(presetcountload))
-                Console.WriteLine("at the end presetcountload wasnt 6")
+                Console.WriteLine("Corrupt because first line isn't P1")
+                'if first line isn't P1
             End If
-        Else
-            MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-            loadederror = "Error when testing for preset line prefix"
-            lstbox.Items.Add(loadederror)
-            Console.WriteLine("Corrupt because first line isn't P1")
-            'if first line isn't P1
-        End If
 
-        If loadederror = "" Then
-            For i = 0 To presetlinelist(1) - 1
-                templist.Add(loadedfile(i))
+            If loadederror = "" Then
+                For i = 0 To presetlinelist(1) - 1
+                    templist.Add(loadedfile(i))
 
-            Next
-            Dim ptemp1 As Object = templist.ToArray
-            For i = 0 To ptemp1.length - 1
-                ptemp1(i) = CStr(ptemp1(i))
-            Next
-            'put everything related to preset1 into array
-            templist.Clear()
+                Next
+                Dim ptemp1 As Object = templist.ToArray
+                For i = 0 To ptemp1.length - 1
+                    ptemp1(i) = CStr(ptemp1(i))
+                Next
+                'put everything related to preset1 into array
+                templist.Clear()
 
-            For i = presetlinelist(1) To presetlinelist(2) - 1
-                templist.Add(loadedfile(i))
-            Next
-            Dim ptemp2 As Object = templist.ToArray
-            For i = 0 To ptemp2.length - 1
-                ptemp2(i) = CStr(ptemp2(i))
-            Next
-            'put everything related to preset2 into array
-            templist.Clear()
+                For i = presetlinelist(1) To presetlinelist(2) - 1
+                    templist.Add(loadedfile(i))
+                Next
+                Dim ptemp2 As Object = templist.ToArray
+                For i = 0 To ptemp2.length - 1
+                    ptemp2(i) = CStr(ptemp2(i))
+                Next
+                'put everything related to preset2 into array
+                templist.Clear()
 
-            For i = presetlinelist(2) To presetlinelist(3) - 1
-                templist.Add(loadedfile(i))
-            Next
-            Dim ptemp3 As Object = templist.ToArray
-            For i = 0 To ptemp3.length - 1
-                ptemp3(i) = CStr(ptemp3(i))
-            Next
-            'put everything related to preset3 into array
-            templist.Clear()
+                For i = presetlinelist(2) To presetlinelist(3) - 1
+                    templist.Add(loadedfile(i))
+                Next
+                Dim ptemp3 As Object = templist.ToArray
+                For i = 0 To ptemp3.length - 1
+                    ptemp3(i) = CStr(ptemp3(i))
+                Next
+                'put everything related to preset3 into array
+                templist.Clear()
 
-            For i = presetlinelist(3) To presetlinelist(4) - 1
-                templist.Add(loadedfile(i))
-            Next
-            Dim ptemp4 As Object = templist.ToArray
-            For i = 0 To ptemp4.length - 1
-                ptemp4(i) = CStr(ptemp4(i))
-            Next
-            'put everything related topreset 4 into array
-            templist.Clear()
-            For i = presetlinelist(4) To presetlinelist(5) - 1
-                templist.Add(loadedfile(i))
-            Next
-            Dim ptemp5 As Object = templist.ToArray
-            For i = 0 To ptemp5.length - 1
-                ptemp5(i) = CStr(ptemp5(i))
-            Next
-            templist.Clear()
-            'put everything related to preset 5 into array
-            For i = presetlinelist(5) To loadedfile.Length() - 1
-                templist.Add(loadedfile(i))
-            Next
-            Dim ptemp6 As Object = templist.ToArray
-            For i = 0 To ptemp6.length - 1
-                ptemp6(i) = CStr(ptemp6(i))
-            Next
-            templist.Clear()
+                For i = presetlinelist(3) To presetlinelist(4) - 1
+                    templist.Add(loadedfile(i))
+                Next
+                Dim ptemp4 As Object = templist.ToArray
+                For i = 0 To ptemp4.length - 1
+                    ptemp4(i) = CStr(ptemp4(i))
+                Next
+                'put everything related topreset 4 into array
+                templist.Clear()
+                For i = presetlinelist(4) To presetlinelist(5) - 1
+                    templist.Add(loadedfile(i))
+                Next
+                Dim ptemp5 As Object = templist.ToArray
+                For i = 0 To ptemp5.length - 1
+                    ptemp5(i) = CStr(ptemp5(i))
+                Next
+                templist.Clear()
+                'put everything related to preset 5 into array
+                For i = presetlinelist(5) To loadedfile.Length() - 1
+                    templist.Add(loadedfile(i))
+                Next
+                Dim ptemp6 As Object = templist.ToArray
+                For i = 0 To ptemp6.length - 1
+                    ptemp6(i) = CStr(ptemp6(i))
+                Next
+                templist.Clear()
 
 
-            ptemplist.Add(ptemp1)
-            ptemplist.Add(ptemp2)
-            ptemplist.Add(ptemp3)
-            ptemplist.Add(ptemp4)
-            ptemplist.Add(ptemp5)
-            ptemplist.Add(ptemp6)
-        Else
-
-        End If
-
-
-
-
-        Dim centercheck As String
-        For Each ptemparray As Array In ptemplist
-            centercheck = ""
-            If ptemparray.Length > 1 Then
-                centercheck = ptemparray(1)
-                If centercheck.Length = 6 Then
-                    If centercheck(0) <> "c" Then
-                        MsgBox("center coordinates corrupt/do not exist! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                        loadederror = "first letter of center string wasn't c"
-                        lstbox.Items.Add(loadederror)
-                    End If
-                Else
-                    MsgBox("center coordinates length is corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                    loadederror = "line containing center coordinate is not at the required length"
-                    lstbox.Items.Add(loadederror)
-                End If
+                ptemplist.Add(ptemp1)
+                ptemplist.Add(ptemp2)
+                ptemplist.Add(ptemp3)
+                ptemplist.Add(ptemp4)
+                ptemplist.Add(ptemp5)
+                ptemplist.Add(ptemp6)
+            Else
 
             End If
-        Next
-        For Each ptemparray As Array In ptemplist
-            Dim tempx, tempy As String
-            tempx = ""
-            tempy = ""
-            If ptemparray.Length > 1 Then
-                Dim tempstring As String
-                tempstring = ptemparray(1)
-                If tempstring.Length = 6 Then
-                    If tempstring(3) <> "," Or IsNumeric(tempstring(1) + tempstring(2)) = False Or IsNumeric(tempstring(4) + tempstring(5)) = False Then
-                        MsgBox("center coordinates corrupt/do not exist! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                        loadederror = "center coordinates aren't numbers or the comma is missing"
-                        lstbox.Items.Add(loadederror)
-                    ElseIf (CStr(tempstring(1) + tempstring(2)) > 50) Or (CStr(tempstring(1) + tempstring(2)) < 0) Or CStr(tempstring(4) + tempstring(5)) > 50 Or (CStr(tempstring(4) + tempstring(5)) < 0) Then
-                        MsgBox("center coordinates out of range! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                        loadederror = "center coordinates are out of range"
-                        lstbox.Items.Add(loadederror)
-                    End If
-                Else
-                    MsgBox("center coordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                    loadederror = "Line with center coordinates is not at the required length"
-                    lstbox.Items.Add(loadederror)
-                End If
 
-            End If
-            If ptemparray.Length > 2 Then
-                For i = 2 To ptemparray.Length - 1
-                    Dim tempstring As String
-                    tempstring = ptemparray(i)
-                    If tempstring.Length = 5 Then
-                        If tempstring(2) <> "," Or IsNumeric(tempstring(0) + tempstring(1)) = False Or IsNumeric(tempstring(3) + tempstring(4)) = False Then
-                            MsgBox("coordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                            loadederror = "grid coords aren't numbers or the comma is missing"
-                            lstbox.Items.Add(loadederror)
-                        ElseIf (CStr(tempstring(0) + tempstring(1)) > 50) Or (CStr(tempstring(0) + tempstring(1)) < 0) Or (CStr(tempstring(3) + tempstring(4)) > 50) Or (CStr(tempstring(3) + tempstring(4)) < 0) Then
-                            MsgBox("coordinates out of range! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                            loadederror = "grid coords are out of range"
+
+
+
+            Dim centercheck As String
+            For Each ptemparray As Array In ptemplist
+                centercheck = ""
+                If ptemparray.Length > 1 Then
+                    centercheck = ptemparray(1)
+                    If centercheck.Length = 6 Then
+                        If centercheck(0) <> "c" Then
+                            MsgBox("center coordinates corrupt/do not exist! recommend deleting c:\gameoflife\presets.txt and restarting program!")
+                            loadederror = "first letter of center string wasn't c"
                             lstbox.Items.Add(loadederror)
                         End If
                     Else
-                        MsgBox("Grid ooordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                        loadederror = "Line with grid coordinates is not at the required length"
+                        MsgBox("center coordinates length is corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
+                        loadederror = "line containing center coordinate is not at the required length"
                         lstbox.Items.Add(loadederror)
                     End If
 
-                Next
+                End If
+            Next
+            For Each ptemparray As Array In ptemplist
+                Dim tempx, tempy As String
+                tempx = ""
+                tempy = ""
+                If ptemparray.Length > 1 Then
+                    Dim tempstring As String
+                    tempstring = ptemparray(1)
+                    If tempstring.Length = 6 Then
+                        If tempstring(3) <> "," Or IsNumeric(tempstring(1) + tempstring(2)) = False Or IsNumeric(tempstring(4) + tempstring(5)) = False Then
+                            MsgBox("center coordinates corrupt/do not exist! recommend deleting c:\gameoflife\presets.txt and restarting program!")
+                            loadederror = "center coordinates aren't numbers or the comma is missing"
+                            lstbox.Items.Add(loadederror)
+                        ElseIf (CStr(tempstring(1) + tempstring(2)) > 50) Or (CStr(tempstring(1) + tempstring(2)) < 0) Or CStr(tempstring(4) + tempstring(5)) > 50 Or (CStr(tempstring(4) + tempstring(5)) < 0) Then
+                            MsgBox("center coordinates out of range! recommend deleting c:\gameoflife\presets.txt and restarting program!")
+                            loadederror = "center coordinates are out of range"
+                            lstbox.Items.Add(loadederror)
+                        End If
+                    Else
+                        MsgBox("center coordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
+                        loadederror = "Line with center coordinates is not at the required length"
+                        lstbox.Items.Add(loadederror)
+                    End If
+
+                End If
+                If ptemparray.Length > 2 Then
+                    For i = 2 To ptemparray.Length - 1
+                        Dim tempstring As String
+                        tempstring = ptemparray(i)
+                        If tempstring.Length = 5 Then
+                            If tempstring(2) <> "," Or IsNumeric(tempstring(0) + tempstring(1)) = False Or IsNumeric(tempstring(3) + tempstring(4)) = False Then
+                                MsgBox("coordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
+                                loadederror = "grid coords aren't numbers or the comma is missing"
+                                lstbox.Items.Add(loadederror)
+                            ElseIf (CStr(tempstring(0) + tempstring(1)) > 50) Or (CStr(tempstring(0) + tempstring(1)) < 0) Or (CStr(tempstring(3) + tempstring(4)) > 50) Or (CStr(tempstring(3) + tempstring(4)) < 0) Then
+                                MsgBox("coordinates out of range! recommend deleting c:\gameoflife\presets.txt and restarting program!")
+                                loadederror = "grid coords are out of range"
+                                lstbox.Items.Add(loadederror)
+                            End If
+                        Else
+                            MsgBox("Grid ooordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
+                            loadederror = "Line with grid coordinates is not at the required length"
+                            lstbox.Items.Add(loadederror)
+                        End If
+
+                    Next
+                End If
+            Next
+            If loadederror = "" Then
+                MsgBox("preset file successfully loaded!")
+            Else
+                MsgBox("Are you big brain enough to fix the error yourself? If not, delete c:\gameoflife\presets.txt and restart the program ")
             End If
-        Next
-        If loadederror = "" Then
-            MsgBox("preset file successfully loaded!")
         Else
-            MsgBox("Are you big brain enough to fix the error yourself? If not, delete c:\gameoflife\presets.txt and restart the program ")
+            Dim fs As FileStream = File.Create(Path)
+            My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
         End If
+
+
 
 
         closedproperlyinput = False
@@ -375,11 +385,7 @@
     End Sub
     Private Sub btnresetgrid_Click(sender As Object, e As EventArgs) Handles btnresetgrid.Click
         cleargrid()
-        For x = 1 To 50
-            For y = 1 To 50
-                presetchecked(x, y) = 0
-            Next
-        Next
+
     End Sub
 
     Private Sub btnsavepreset_Click(sender As Object, e As EventArgs) Handles btnsavepreset.Click
@@ -403,7 +409,12 @@
     End Sub
 
     Private Sub rbtnpreset1_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset1.CheckedChanged
-        cleargrid()
+        If Grid(50, 50) Is Nothing Then
+
+        Else
+            cleargrid()
+        End If
+
         If rbtnpreset1.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -523,12 +534,15 @@
     End Sub
 
     Private Sub cleargrid()
+
         For x = 1 To 50
-            For y = 1 To 50
-                Grid(x, y).BackColor = Color.White
-                presetchecked(x, y) = 0
+                For y = 1 To 50
+                    Grid(x, y).BackColor = Color.White
+                    presetchecked(x, y) = 0
+                Next
             Next
-        Next
+
+
     End Sub
     Private Sub btncenter_Click(sender As Object, e As EventArgs) Handles btncenter.Click
         If centerbeingset = False Then
@@ -563,38 +577,6 @@
                         End If
                     Next
                 End If
-                'If presetchecked(x, y) = 1 Then
-                '    If rbtnpreset1.Checked = True Then
-                '        preset1(x, y) = 1
-                '    ElseIf rbtnpreset2.Checked = True Then
-                '        preset2(x, y) = 1
-                '    ElseIf rbtnpreset3.Checked = True Then
-                '        preset3(x, y) = 1
-                '    ElseIf rbtnpreset4.Checked = True Then
-                '        preset4(x, y) = 1
-                '    ElseIf rbtnpreset5.Checked = True Then
-                '        preset5(x, y) = 1
-                '    ElseIf rbtnpreset6.Checked = True Then
-                '        preset6(x, y) = 1
-
-                '    End If
-                'End If
-                'If presetchecked(x, y) = 2 Then
-                '    If rbtnpreset1.Checked = True Then
-                '        preset1(x, y) = 2
-                '    ElseIf rbtnpreset2.Checked = True Then
-                '        preset2(x, y) = 2
-                '    ElseIf rbtnpreset3.Checked = True Then
-                '        preset3(x, y) = 2
-                '    ElseIf rbtnpreset4.Checked = True Then
-                '        preset4(x, y) = 2
-                '    ElseIf rbtnpreset5.Checked = True Then
-                '        preset5(x, y) = 2
-                '    ElseIf rbtnpreset6.Checked = True Then
-                '        preset6(x, y) = 2
-
-                '    End If
-                'End If
             Next
         Next
         For Each array In presetlist
