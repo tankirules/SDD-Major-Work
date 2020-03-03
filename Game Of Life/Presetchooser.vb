@@ -19,10 +19,27 @@ Public Class Presetchooser
     Dim loadederror As String
     Dim bigbrain As Boolean
     Dim ptemplist As New List(Of Array)
+    Dim temppresetname As String
 
     Private Sub Presetchooser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim arrayofpresests(6) As Integer
+        Dim presetcountload As Integer
+        Dim loadedfile() As String = IO.File.ReadAllLines("C:\Gameoflife\presets.txt")
+        Dim presetlinelist As New List(Of Integer)
+        Dim templist As New List(Of String)
+        templist.Clear()
         bigbrain = False
         loadederror = ""
+        temppresetname = ""
+
+        presetcountload = 0
+        centerbeingset = False
+        cpreset1 = False
+        cpreset2 = False
+        cpreset3 = False
+        cpreset4 = False
+        cpreset5 = False
+        cpreset6 = False
         radiobuttonlist.Add(rbtnpreset1)
         radiobuttonlist.Add(rbtnpreset2)
         radiobuttonlist.Add(rbtnpreset3)
@@ -35,21 +52,6 @@ Public Class Presetchooser
         presetlist.Add(preset4)
         presetlist.Add(preset5)
         presetlist.Add(preset6)
-
-        Dim arrayofpresests(6) As Integer
-        Dim presetcountload As Integer
-        presetcountload = 0
-        centerbeingset = False
-        cpreset1 = False
-        cpreset2 = False
-        cpreset3 = False
-        cpreset4 = False
-        cpreset5 = False
-        cpreset6 = False
-        Dim loadedfile() As String = IO.File.ReadAllLines("C:\Gameoflife\presets.txt")
-        Dim presetlinelist As New List(Of Integer)
-        Dim templist As New List(Of String)
-        templist.Clear()
         For i = 0 To loadedfile.Length - 1
             Console.WriteLine("Loaded file line: " + CStr(i) + " is " + loadedfile(i))
         Next
@@ -60,6 +62,8 @@ Public Class Presetchooser
                 presetlinelist.Add(0)
                 presetcountload += 1
                 Console.WriteLine("P1 exists!")
+                temppresetname = loadedfile(0)
+                rbtnpreset1.Text = temppresetname.Remove(0, 2)
                 For i = 1 To (loadedfile.Length() - 1)
 
                     Console.WriteLine(loadedfile.Length())
@@ -68,6 +72,8 @@ Public Class Presetchooser
                             presetlinelist.Add(i)
                             presetcountload += 1
                             Console.WriteLine("P2 exists!")
+                            temppresetname = loadedfile(i)
+                            rbtnpreset2.Text = temppresetname.Remove(0, 2)
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
                             Console.WriteLine("Corrupt 2")
@@ -81,6 +87,8 @@ Public Class Presetchooser
                             presetlinelist.Add(i)
                             presetcountload += 1
                             Console.WriteLine("P3 exists!")
+                            temppresetname = loadedfile(i)
+                            rbtnpreset3.Text = temppresetname.Remove(0, 2)
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
                             loadederror = "Error when testing for preset line prefix"
@@ -94,6 +102,8 @@ Public Class Presetchooser
                             presetlinelist.Add(i)
                             presetcountload += 1
                             Console.WriteLine("P4 exists!")
+                            temppresetname = loadedfile(i)
+                            rbtnpreset4.Text = temppresetname.Remove(0, 2)
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
                             loadederror = "Error when testing for preset line prefix"
@@ -107,6 +117,8 @@ Public Class Presetchooser
                             presetlinelist.Add(i)
                             presetcountload += 1
                             Console.WriteLine("P5 exists!")
+                            temppresetname = loadedfile(i)
+                            rbtnpreset5.Text = temppresetname.Remove(0, 2)
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
                             loadederror = "Error when testing for preset line prefix"
@@ -120,6 +132,8 @@ Public Class Presetchooser
                             presetlinelist.Add(i)
                             presetcountload += 1
                             Console.WriteLine("P6 exists!")
+                            temppresetname = loadedfile(i)
+                            rbtnpreset6.Text = temppresetname.Remove(0, 2)
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
                             loadederror = "Error when testing for preset line prefix"
@@ -239,9 +253,7 @@ Public Class Presetchooser
                 End If
             Next
             For Each ptemparray As Array In ptemplist
-                Dim tempx, tempy As String
-                tempx = ""
-                tempy = ""
+
                 If ptemparray.Length > 1 Then
                     Dim tempstring As String
                     tempstring = ptemparray(1)
@@ -294,7 +306,11 @@ Public Class Presetchooser
             Dim fs As FileStream = File.Create(Path)
             My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
         End If
+        For x = 1 To 50
+            For y = 1 To 50
 
+            Next
+        Next
 
 
 
