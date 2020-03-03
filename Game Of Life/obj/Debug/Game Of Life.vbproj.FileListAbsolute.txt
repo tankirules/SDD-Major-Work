@@ -122,3 +122,18 @@ E:\SCHOOL STUFF\SDD\MajorWorkClone\SDD-Major-Work\Game Of Life\obj\Debug\Game Of
 E:\SCHOOL STUFF\SDD\MajorWorkClone\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.exe
 E:\SCHOOL STUFF\SDD\MajorWorkClone\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.xml
 E:\SCHOOL STUFF\SDD\MajorWorkClone\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.pdb
+C:\GITHUB\SDD-Major-Work\Game Of Life\bin\Debug\Game Of Life.exe.config
+C:\GITHUB\SDD-Major-Work\Game Of Life\bin\Debug\Game Of Life.exe
+C:\GITHUB\SDD-Major-Work\Game Of Life\bin\Debug\Game Of Life.pdb
+C:\GITHUB\SDD-Major-Work\Game Of Life\bin\Debug\Game Of Life.xml
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.vbprojAssemblyReference.cache
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.Form1.resources
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.InputUPDForm.resources
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.Resources.resources
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.Presetchooser.resources
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game_Of_Life.ValidateUPDForm.resources
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.vbproj.GenerateResource.cache
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.vbproj.CoreCompileInputs.cache
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.exe
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.xml
+C:\GITHUB\SDD-Major-Work\Game Of Life\obj\Debug\Game Of Life.pdb

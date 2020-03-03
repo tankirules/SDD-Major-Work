@@ -27,6 +27,12 @@ Public Class Presetchooser
         Dim loadedfile() As String = IO.File.ReadAllLines("C:\Gameoflife\presets.txt")
         Dim presetlinelist As New List(Of Integer)
         Dim templist As New List(Of String)
+        Dim ptemp1 As Object
+        Dim ptemp2 As Object
+        Dim ptemp3 As Object
+        Dim ptemp4 As Object
+        Dim ptemp5 As Object
+        Dim ptemp6 As Object
         templist.Clear()
         bigbrain = False
         loadederror = ""
@@ -52,12 +58,24 @@ Public Class Presetchooser
         presetlist.Add(preset4)
         presetlist.Add(preset5)
         presetlist.Add(preset6)
-        For i = 0 To loadedfile.Length - 1
-            Console.WriteLine("Loaded file line: " + CStr(i) + " is " + loadedfile(i))
-        Next
-        Dim Path As String = "c:\Gameoflife\presets.txt"
 
-        If File.Exists(Path) Then
+        Dim Path As String = "c:\Gameoflife\presets.txt"
+        closedproperlyinput = False
+        SideLength = Me.Bounds.Height / 60
+        For x = 1 To 50
+            For y = 1 To 50
+                Grid(x, y) = New Panel
+                Grid(x, y).Location = New Point(x * SideLength, y * SideLength)
+                Grid(x, y).Size = New Size(SideLength, SideLength)
+                Grid(x, y).BackgroundImageLayout = ImageLayout.Zoom
+                Grid(x, y).BackColor = Color.White
+                Grid(x, y).BorderStyle = BorderStyle.FixedSingle
+                Controls.Add(Grid(x, y))
+                presetchecked(x, y) = 0
+                AddHandler Grid(x, y).Click, AddressOf Grid_Select
+            Next
+        Next
+        If File.Exists(Path) And loadedfile.Length >= 6 Then
             If loadedfile(0).Contains("P1") Then
                 presetlinelist.Add(0)
                 presetcountload += 1
@@ -165,7 +183,7 @@ Public Class Presetchooser
                     templist.Add(loadedfile(i))
 
                 Next
-                Dim ptemp1 As Object = templist.ToArray
+                ptemp1 = templist.ToArray
                 For i = 0 To ptemp1.length - 1
                     ptemp1(i) = CStr(ptemp1(i))
                 Next
@@ -175,7 +193,7 @@ Public Class Presetchooser
                 For i = presetlinelist(1) To presetlinelist(2) - 1
                     templist.Add(loadedfile(i))
                 Next
-                Dim ptemp2 As Object = templist.ToArray
+                ptemp2 = templist.ToArray
                 For i = 0 To ptemp2.length - 1
                     ptemp2(i) = CStr(ptemp2(i))
                 Next
@@ -185,7 +203,7 @@ Public Class Presetchooser
                 For i = presetlinelist(2) To presetlinelist(3) - 1
                     templist.Add(loadedfile(i))
                 Next
-                Dim ptemp3 As Object = templist.ToArray
+                ptemp3 = templist.ToArray
                 For i = 0 To ptemp3.length - 1
                     ptemp3(i) = CStr(ptemp3(i))
                 Next
@@ -195,7 +213,7 @@ Public Class Presetchooser
                 For i = presetlinelist(3) To presetlinelist(4) - 1
                     templist.Add(loadedfile(i))
                 Next
-                Dim ptemp4 As Object = templist.ToArray
+                ptemp4 = templist.ToArray
                 For i = 0 To ptemp4.length - 1
                     ptemp4(i) = CStr(ptemp4(i))
                 Next
@@ -204,7 +222,7 @@ Public Class Presetchooser
                 For i = presetlinelist(4) To presetlinelist(5) - 1
                     templist.Add(loadedfile(i))
                 Next
-                Dim ptemp5 As Object = templist.ToArray
+                ptemp5 = templist.ToArray
                 For i = 0 To ptemp5.length - 1
                     ptemp5(i) = CStr(ptemp5(i))
                 Next
@@ -213,7 +231,7 @@ Public Class Presetchooser
                 For i = presetlinelist(5) To loadedfile.Length() - 1
                     templist.Add(loadedfile(i))
                 Next
-                Dim ptemp6 As Object = templist.ToArray
+                ptemp6 = templist.ToArray
                 For i = 0 To ptemp6.length - 1
                     ptemp6(i) = CStr(ptemp6(i))
                 Next
@@ -297,38 +315,43 @@ Public Class Presetchooser
                     Next
                 End If
             Next
+
+
+            Dim tempgrid As String
+
+
+
             If loadederror = "" Then
+
                 MsgBox("preset file successfully loaded!")
+                For i = 1 To ptemp1.length - 1
+                    tempgrid = ptemp1(i)
+                    If tempgrid.Contains("c") Then
+                        preset1(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
+                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
+                    Else
+                        preset1(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
+                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
+                    End If
+                Next
             Else
                 MsgBox("Are you big brain enough to fix the error yourself? If not, delete c:\gameoflife\presets.txt and restart the program ")
             End If
+
+
+
+        ElseIf File.Exists(Path) And loadedfile.Length < 6 Then
+            loadederror = "File is not at the required length - please ignore if this is your first time starting the application or if you have not saved the presets yet"
+            lstbox.Items.Add(loadederror)
         Else
             Dim fs As FileStream = File.Create(Path)
             My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
         End If
-        For x = 1 To 50
-            For y = 1 To 50
-
-            Next
-        Next
 
 
 
-        closedproperlyinput = False
-        SideLength = Me.Bounds.Height / 60
-        For x = 1 To 50
-            For y = 1 To 50
-                Grid(x, y) = New Panel
-                Grid(x, y).Location = New Point(x * SideLength, y * SideLength)
-                Grid(x, y).Size = New Size(SideLength, SideLength)
-                Grid(x, y).BackgroundImageLayout = ImageLayout.Zoom
-                Grid(x, y).BackColor = Color.White
-                Grid(x, y).BorderStyle = BorderStyle.FixedSingle
-                Controls.Add(Grid(x, y))
-                presetchecked(x, y) = 0
-                AddHandler Grid(x, y).Click, AddressOf Grid_Select
-            Next
-        Next
+
+
 
 
 
