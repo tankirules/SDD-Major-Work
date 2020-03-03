@@ -15,8 +15,10 @@ Public Class Form1
     Dim supercancer As Boolean
     Dim Timesupdated As Integer
     Dim isdown As Boolean
+    Dim puttinginpreset As Boolean
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        puttinginpreset = False
         isdown = False
 
 
@@ -46,7 +48,7 @@ Public Class Form1
                 AddHandler Grid(x, y).Click, AddressOf Grid_Select
                 AddHandler Grid(x, y).MouseEnter, AddressOf Mouse_Enter
                 AddHandler Grid(x, y).MouseDown, AddressOf Mouse_Down
-
+                AddHandler Grid(x, y).MouseHover, AddressOf Mouse_Hover
             Next
         Next
 
@@ -361,7 +363,8 @@ Public Class Form1
 
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
         Dim Preset As Presetchooser
-        Presetchooser.Show()
+        If Presetchooser.ShowDialog() = DialogResult.OK And Preset.closedproperlyinput = True Then
+        End If
     End Sub
 
 End Class

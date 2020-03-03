@@ -334,6 +334,58 @@ Public Class Presetchooser
                         Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
                     End If
                 Next
+                For i = 1 To ptemp2.length - 1
+                    tempgrid = ptemp2(i)
+                    If tempgrid.Contains("c") Then
+                        preset2(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
+                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
+                    Else
+                        preset2(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
+                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
+                    End If
+                Next
+                For i = 1 To ptemp3.length - 1
+                    tempgrid = ptemp3(i)
+                    If tempgrid.Contains("c") Then
+                        preset3(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
+                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
+                    Else
+                        preset3(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
+                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
+                    End If
+                Next
+                For i = 1 To ptemp4.length - 1
+                    tempgrid = ptemp4(i)
+                    If tempgrid.Contains("c") Then
+                        preset4(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
+                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
+                    Else
+                        preset4(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
+                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
+                    End If
+                Next
+                For i = 1 To ptemp5.length - 1
+                    tempgrid = ptemp5(i)
+                    If tempgrid.Contains("c") Then
+                        preset5(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
+                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
+                    Else
+                        preset5(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
+                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
+                    End If
+                Next
+                For i = 1 To ptemp6.length - 1
+                    tempgrid = ptemp6(i)
+                    If tempgrid.Contains("c") Then
+                        preset6(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
+                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
+                    Else
+                        preset6(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
+                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
+                    End If
+                Next
+
+
             Else
                 MsgBox("Are you big brain enough to fix the error yourself? If not, delete c:\gameoflife\presets.txt and restart the program ")
             End If
@@ -572,14 +624,18 @@ Public Class Presetchooser
         End If
     End Sub
 
+    Private Sub btnclosepresetchooser_Click(sender As Object, e As EventArgs) Handles btnclosepresetchooser.Click
+        closedproperlyinput = True
+    End Sub
+
     Private Sub cleargrid()
 
         For x = 1 To 50
-                For y = 1 To 50
-                    Grid(x, y).BackColor = Color.White
-                    presetchecked(x, y) = 0
-                Next
+            For y = 1 To 50
+                Grid(x, y).BackColor = Color.White
+                presetchecked(x, y) = 0
             Next
+        Next
 
 
     End Sub
