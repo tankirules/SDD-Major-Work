@@ -17,6 +17,7 @@ Public Class Form1
     Dim isdown As Boolean
     Dim puttinginpreset As Boolean
     Public closedproperlyinput As Boolean
+    Public presettoput(50, 50) As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         puttinginpreset = False
