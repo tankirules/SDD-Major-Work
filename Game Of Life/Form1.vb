@@ -15,9 +15,11 @@ Public Class Form1
     Dim supercancer As Boolean
     Dim Timesupdated As Integer
     Dim isdown As Boolean
-    Dim puttinginpreset As Boolean
+    Public puttinginpreset As Boolean
     Public closedproperlyinput As Boolean
-    Public presettoput(50, 50) As Integer
+    'Public presettoput(50, 50) As Integer
+    Dim outofboundssettingpreset As Boolean
+    Dim settingpresettemp(50, 50) As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         puttinginpreset = False
@@ -50,12 +52,8 @@ Public Class Form1
                 AddHandler Grid(x, y).Click, AddressOf Grid_Select
                 AddHandler Grid(x, y).MouseEnter, AddressOf Mouse_Enter
                 AddHandler Grid(x, y).MouseDown, AddressOf Mouse_Down
-                AddHandler Grid(x, y).MouseHover, AddressOf Mouse_Hover
             Next
         Next
-
-    End Sub
-    Private Sub Mouse_Hover(sender As Object, e As EventArgs)
 
     End Sub
     Private Sub Mouse_Down(sender As Object, e As MouseEventArgs)
@@ -85,14 +83,33 @@ Public Class Form1
 
     End Sub
     Private Sub Mouse_Enter(sender As Object, e As EventArgs)
+        Dim tempcoord As Presetchooser.coords
+        outofboundssettingpreset = False
+        Array.Clear(settingpresettemp, 0, settingpresettemp.Length)
         Dim xpos, ypos As Integer
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
-
-        If isdown Then
+        If puttinginpreset = True Then
+            Grid(xpos, ypos).BackColor = Color.Yellow
+            settingpresettemp(xpos, ypos) = 1
+            Console.WriteLine("count is" + CStr(Presetchooser.presetcoordslist.Count()))
+            For i = 0 To Presetchooser.presetcoordslist.Count() - 1
+                tempcoord = Presetchooser.presetcoordslist(i)
+                Try
+                    Grid(xpos + tempcoord.xcoord, ypos + tempcoord.ycoord).BackColor = Color.Red
+                    settingpresettemp(xpos + tempcoord.xcoord, ypos + tempcoord.ycoord) = 1
+                Catch ex As Exception
+                    outofboundssettingpreset = True
+                    Console.WriteLine("EXCEPTION PART OF GRID OUT OF THING")
+                End Try
+            Next
+        ElseIf isdown Then
             Grid(xpos, ypos).BackColor = checkedcolor
             Checked(xpos, ypos) = 1
         End If
+
+
+
 
 
 
@@ -367,10 +384,8 @@ Public Class Form1
     End Sub
 
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
-        Dim Preset As Presetchooser
-        If Presetchooser.ShowDialog() = DialogResult.OK And closedproperlyinput = True Then
-            puttinginpreset = True
-        End If
+        Presetchooser.Show()
+
     End Sub
 
 End Class

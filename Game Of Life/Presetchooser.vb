@@ -11,7 +11,9 @@ Public Class Presetchooser
     Dim preset4(50, 50) As Integer
     Dim preset5(50, 50) As Integer
 
-    Dim cpreset1, cpreset2, cpreset3, cpreset4, cpreset5, cpreset6 As Boolean
+    Dim temp As Boolean
+
+    Dim cpreset1, cpreset2, cpreset3, cpreset4, cpreset5, cpreset6 As RefBool
     Dim centerbeingset As Boolean
     Dim radiobuttonlist As New List(Of RadioButton)
     Dim presetlist As New List(Of Array)
@@ -19,7 +21,7 @@ Public Class Presetchooser
     Dim bigbrain As Boolean
     Dim ptemplist As New List(Of Array)
     Dim temppresetname As String
-    Dim listofcenterpreset As New List(Of Boolean)
+    Dim listofcenterpreset As New List(Of RefBool)
     Dim presetlinelist As New List(Of Integer)
     Dim templist As New List(Of String)
     Dim ptemp1 As Object
@@ -28,15 +30,20 @@ Public Class Presetchooser
     Dim ptemp4 As Object
     Dim ptemp5 As Object
     Dim ptemp6 As Object
+
     Dim arrayofpresests(6) As Integer
     Dim presetcountload As Integer
     Dim loadedfile() As String = IO.File.ReadAllLines("C:\Gameoflife\presets.txt")
     Dim Path As String = "c:\Gameoflife\presets.txt"
+    Dim center As coords
+    Public presetcoordslist As New List(Of coords)
     Public Structure coords
         Public xcoord As Integer
         Public ycoord As Integer
     End Structure
-
+    Public Class RefBool
+        Public val As Boolean
+    End Class
     Private Sub Initializevaluesandlists()
         SideLength = Me.Bounds.Height / 60
         templist.Clear()
@@ -46,12 +53,18 @@ Public Class Presetchooser
         Form1.closedproperlyinput = False
         presetcountload = 0
         centerbeingset = False
-        cpreset1 = False
-        cpreset2 = False
-        cpreset3 = False
-        cpreset4 = False
-        cpreset5 = False
-        cpreset6 = False
+        cpreset1 = New RefBool()
+        cpreset2 = New RefBool()
+        cpreset3 = New RefBool()
+        cpreset4 = New RefBool()
+        cpreset5 = New RefBool()
+        cpreset6 = New RefBool()
+        cpreset1.val = False
+        cpreset2.val = False
+        cpreset3.val = False
+        cpreset4.val = False
+        cpreset5.val = False
+        cpreset6.val = False
         radiobuttonlist.Add(rbtnpreset1)
         radiobuttonlist.Add(rbtnpreset2)
         radiobuttonlist.Add(rbtnpreset3)
@@ -66,6 +79,7 @@ Public Class Presetchooser
         presetlist.Add(preset5)
         presetlist.Add(preset6)
 
+        listofcenterpreset.Clear()
         listofcenterpreset.Add(cpreset1)
         listofcenterpreset.Add(cpreset2)
         listofcenterpreset.Add(cpreset3)
@@ -333,9 +347,6 @@ Public Class Presetchooser
 
 
             Dim tempgrid As String
-
-
-
             If loadederror = "" Then
 
                 MsgBox("preset file successfully loaded!")
@@ -344,7 +355,8 @@ Public Class Presetchooser
                     If tempgrid.Contains("c") Then
                         preset1(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
                         Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
-                        cpreset1 = True
+                        cpreset1.val = True
+
                     Else
                         preset1(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
                         Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
@@ -355,7 +367,7 @@ Public Class Presetchooser
                     If tempgrid.Contains("c") Then
                         preset2(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
                         Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
-                        cpreset2 = True
+                        cpreset2.val = True
                     Else
                         preset2(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
                         Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
@@ -366,7 +378,7 @@ Public Class Presetchooser
                     If tempgrid.Contains("c") Then
                         preset3(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
                         Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
-                        cpreset3 = True
+                        cpreset3.val = True
                     Else
                         preset3(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
                         Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
@@ -377,7 +389,7 @@ Public Class Presetchooser
                     If tempgrid.Contains("c") Then
                         preset4(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
                         Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
-                        cpreset4 = True
+                        cpreset4.val = True
                     Else
                         preset4(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
                         Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
@@ -388,7 +400,7 @@ Public Class Presetchooser
                     If tempgrid.Contains("c") Then
                         preset5(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
                         Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
-                        cpreset5 = True
+                        cpreset5.val = True
                     Else
                         preset5(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
                         Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
@@ -399,7 +411,7 @@ Public Class Presetchooser
                     If tempgrid.Contains("c") Then
                         preset6(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
                         Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
-                        cpreset6 = True
+                        cpreset6.val = True
                     Else
                         preset6(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
                         Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
@@ -436,17 +448,17 @@ Public Class Presetchooser
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
         If centerbeingset = True Then
-            If rbtnpreset1.Checked And cpreset1 = True Then
+            If rbtnpreset1.Checked And cpreset1.val = True Then
                 centeralreadyset()
-            ElseIf rbtnpreset2.Checked And cpreset2 = True Then
+            ElseIf rbtnpreset2.Checked And cpreset2.val = True Then
                 centeralreadyset()
-            ElseIf rbtnpreset3.Checked And cpreset3 = True Then
+            ElseIf rbtnpreset3.Checked And cpreset3.val = True Then
                 centeralreadyset()
-            ElseIf rbtnpreset4.Checked And cpreset4 = True Then
+            ElseIf rbtnpreset4.Checked And cpreset4.val = True Then
                 centeralreadyset()
-            ElseIf rbtnpreset5.Checked And cpreset5 = True Then
+            ElseIf rbtnpreset5.Checked And cpreset5.val = True Then
                 centeralreadyset()
-            ElseIf rbtnpreset6.Checked And cpreset6 = True Then
+            ElseIf rbtnpreset6.Checked And cpreset6.val = True Then
                 centeralreadyset()
 
             Else
@@ -456,17 +468,17 @@ Public Class Presetchooser
                 MsgBox("Center set!")
                 btncenter.Text = "Set Center"
                 If rbtnpreset1.Checked = True Then
-                    cpreset1 = True
+                    cpreset1.val = True
                 ElseIf rbtnpreset2.Checked = True Then
-                    cpreset2 = True
+                    cpreset2.val = True
                 ElseIf rbtnpreset3.Checked = True Then
-                    cpreset3 = True
+                    cpreset3.val = True
                 ElseIf rbtnpreset4.Checked = True Then
-                    cpreset4 = True
+                    cpreset4.val = True
                 ElseIf rbtnpreset5.Checked = True Then
-                    cpreset5 = True
+                    cpreset5.val = True
                 ElseIf rbtnpreset6.Checked = True Then
-                    cpreset6 = True
+                    cpreset6.val = True
 
 
 
@@ -501,17 +513,17 @@ Public Class Presetchooser
     End Sub
 
     Private Sub btnsavepreset_Click(sender As Object, e As EventArgs) Handles btnsavepreset.Click
-        If rbtnpreset1.Checked = True And cpreset1 = True Then
+        If rbtnpreset1.Checked = True And cpreset1.val = True Then
             savepresettopreset()
-        ElseIf rbtnpreset2.Checked = True And cpreset2 = True Then
+        ElseIf rbtnpreset2.Checked = True And cpreset2.val = True Then
             savepresettopreset()
-        ElseIf rbtnpreset3.Checked = True And cpreset3 = True Then
+        ElseIf rbtnpreset3.Checked = True And cpreset3.val = True Then
             savepresettopreset()
-        ElseIf rbtnpreset4.Checked = True And cpreset4 = True Then
+        ElseIf rbtnpreset4.Checked = True And cpreset4.val = True Then
             savepresettopreset()
-        ElseIf rbtnpreset5.Checked = True And cpreset5 = True Then
+        ElseIf rbtnpreset5.Checked = True And cpreset5.val = True Then
             savepresettopreset()
-        ElseIf rbtnpreset6.Checked = True And cpreset6 = True Then
+        ElseIf rbtnpreset6.Checked = True And cpreset6.val = True Then
             savepresettopreset()
         Else
             MsgBox("You have not set a center!")
@@ -646,15 +658,11 @@ Public Class Presetchooser
     End Sub
 
     Private Sub btnclosepresetchooser_Click(sender As Object, e As EventArgs) Handles btnclosepresetchooser.Click
-        Dim center As coords
-        Dim presetcoords(2500) As coords
-        Dim i As Integer
-        i = 0
-
+        Dim tempcoords As coords
         Form1.closedproperlyinput = True
         For Each button In radiobuttonlist
             If button.Checked = True Then
-                If listofcenterpreset(radiobuttonlist.IndexOf(button)) = True Then
+                If listofcenterpreset(radiobuttonlist.IndexOf(button)).val = True Then
                     For Each array In presetlist
                         If presetlist.IndexOf(array) = radiobuttonlist.IndexOf(button) Then
                             For x = 1 To 50
@@ -668,20 +676,25 @@ Public Class Presetchooser
                             For x = 1 To 50
                                 For y = 1 To 50
                                     If array(x, y) = 1 Then
-                                        presetcoords(i).xcoord = x - center.xcoord
-                                        presetcoords(i).ycoord = y - center.ycoord
-                                        i += 1
+                                        tempcoords.xcoord = x - center.xcoord
+                                        tempcoords.ycoord = y - center.ycoord
+                                        presetcoordslist.Add(tempcoords)
                                     End If
                                 Next
                             Next
                         End If
                     Next
+                    Form1.puttinginpreset = True
+                Else
+                    MsgBox("Preset invalid! Please select or create a valid preset! at " + button.Text)
+                    Console.WriteLine("Preset invalid! Please select or create a valid preset! at " + button.Text)
+
                 End If
-            Else
-                MsgBox("Preset invalid! Please select or create a valid preset!")
+
             End If
         Next
-        Me.Dispose()
+        Me.Close()
+
     End Sub
 
     Private Sub cleargrid()
