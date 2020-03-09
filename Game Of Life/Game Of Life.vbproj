@@ -123,9 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Presetchooser.resx">
       <DependentUpon>Presetchooser.vb</DependentUpon>
@@ -147,7 +147,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="weregilded.wav" />
+    <None Include="chaser.wav" />
     <Content Include="eyes.png" />
+    <Content Include="music.png" />
+    <None Include="no.wav" />
+    <Content Include="nomusic.png" />
     <Content Include="smallereyes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

@@ -22,7 +22,27 @@ Game Of Life
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Game_Of_Life.My.Resources.Resources.chaser">
+<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member>
 <member name="P:Game_Of_Life.My.Resources.Resources.eyes">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Game_Of_Life.My.Resources.Resources.music">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Game_Of_Life.My.Resources.Resources.no">
+<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member>
+<member name="P:Game_Of_Life.My.Resources.Resources.nomusic">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -30,6 +50,11 @@ Game Of Life
 <member name="P:Game_Of_Life.My.Resources.Resources.smallereyes">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Game_Of_Life.My.Resources.Resources.weregilded">
+<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
 </summary>
 </member>
 </members>

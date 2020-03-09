@@ -37,11 +37,13 @@ Partial Class Presetchooser
         Me.rbtnpreset1 = New System.Windows.Forms.RadioButton()
         Me.btnresetgrid = New System.Windows.Forms.Button()
         Me.btnclosepresetchooser = New System.Windows.Forms.Button()
+        Me.btnresetcenter = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnresetcenter)
         Me.GroupBox1.Controls.Add(Me.btnshowerrors)
         Me.GroupBox1.Controls.Add(Me.lstbox)
         Me.GroupBox1.Controls.Add(Me.btncenter)
@@ -84,7 +86,8 @@ Partial Class Presetchooser
         '
         'btncenter
         '
-        Me.btncenter.Location = New System.Drawing.Point(24, 645)
+        Me.btncenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.btncenter.Location = New System.Drawing.Point(7, 634)
         Me.btncenter.Name = "btncenter"
         Me.btncenter.Size = New System.Drawing.Size(131, 46)
         Me.btncenter.TabIndex = 10
@@ -93,7 +96,7 @@ Partial Class Presetchooser
         '
         'btnsave
         '
-        Me.btnsave.Location = New System.Drawing.Point(225, 634)
+        Me.btnsave.Location = New System.Drawing.Point(349, 634)
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(125, 69)
         Me.btnsave.TabIndex = 8
@@ -204,6 +207,16 @@ Partial Class Presetchooser
         Me.btnclosepresetchooser.Text = "Use This Preset Pattern"
         Me.btnclosepresetchooser.UseVisualStyleBackColor = True
         '
+        'btnresetcenter
+        '
+        Me.btnresetcenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnresetcenter.Location = New System.Drawing.Point(155, 634)
+        Me.btnresetcenter.Name = "btnresetcenter"
+        Me.btnresetcenter.Size = New System.Drawing.Size(131, 46)
+        Me.btnresetcenter.TabIndex = 13
+        Me.btnresetcenter.Text = "Reset Center"
+        Me.btnresetcenter.UseVisualStyleBackColor = True
+        '
         'Presetchooser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -238,4 +251,5 @@ Partial Class Presetchooser
     Friend WithEvents lstbox As ListBox
     Friend WithEvents btnshowerrors As Button
     Friend WithEvents btnclosepresetchooser As Button
+    Friend WithEvents btnresetcenter As Button
 End Class

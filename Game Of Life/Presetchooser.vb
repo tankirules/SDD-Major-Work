@@ -355,11 +355,13 @@ Public Class Presetchooser
                     If tempgrid.Contains("c") Then
                         preset1(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
                         Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
+                        presetchecked(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
                         cpreset1.val = True
 
                     Else
                         preset1(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
                         Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
+                        presetchecked(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
                     End If
                 Next
                 For i = 1 To ptemp2.length - 1
@@ -538,7 +540,7 @@ Public Class Presetchooser
         Else
             cleargrid()
         End If
-
+        Console.WriteLine("Center being sets: " + CStr(centerbeingset))
         If rbtnpreset1.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -679,8 +681,12 @@ Public Class Presetchooser
                                         tempcoords.xcoord = x - center.xcoord
                                         tempcoords.ycoord = y - center.ycoord
                                         presetcoordslist.Add(tempcoords)
+
                                     End If
                                 Next
+                            Next
+                            For Each coord As coords In presetcoordslist
+                                Form1.presetcoordslist.Add(coord)
                             Next
                         End If
                     Next
@@ -694,6 +700,25 @@ Public Class Presetchooser
             End If
         Next
         Me.Close()
+
+    End Sub
+
+    Private Sub btnresetcenter_Click(sender As Object, e As EventArgs) Handles btnresetcenter.Click
+        For Each button In radiobuttonlist
+            If button.Checked = True Then
+                listofcenterpreset(radiobuttonlist.IndexOf(button)).val = False
+                For x = 1 To 50
+                    For y = 1 To 50
+                        If presetchecked(x, y) = 2 Then
+                            presetchecked(x, y) = 0
+                            Grid(x, y).BackColor = Color.White
+                        End If
+                    Next
+                Next
+            End If
+
+        Next
+
 
     End Sub
 

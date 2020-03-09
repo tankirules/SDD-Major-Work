@@ -39,6 +39,8 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Tickspeedcalculator = New System.Windows.Forms.Timer(Me.components)
         Me.lbltickspeed = New System.Windows.Forms.Label()
+        Me.btnchangemusic = New System.Windows.Forms.Button()
+        Me.btnmusic = New System.Windows.Forms.Button()
         CType(Me.Speedcontrol, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -101,9 +103,9 @@ Partial Class Form1
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(1612, 187)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(205, 25)
+        Me.Label1.Size = New System.Drawing.Size(229, 25)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Updates per second"
+        Me.Label1.Text = "Time between updates"
         '
         'Label2
         '
@@ -167,7 +169,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.Label4.Location = New System.Drawing.Point(1501, 324)
+        Me.Label4.Location = New System.Drawing.Point(1590, 324)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(192, 25)
         Me.Label4.TabIndex = 14
@@ -181,16 +183,41 @@ Partial Class Form1
         '
         Me.lbltickspeed.AutoSize = True
         Me.lbltickspeed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.lbltickspeed.Location = New System.Drawing.Point(1699, 324)
+        Me.lbltickspeed.Location = New System.Drawing.Point(1834, 324)
         Me.lbltickspeed.Name = "lbltickspeed"
         Me.lbltickspeed.Size = New System.Drawing.Size(0, 25)
         Me.lbltickspeed.TabIndex = 15
+        '
+        'btnchangemusic
+        '
+        Me.btnchangemusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnchangemusic.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnchangemusic.Location = New System.Drawing.Point(1622, 31)
+        Me.btnchangemusic.Name = "btnchangemusic"
+        Me.btnchangemusic.Size = New System.Drawing.Size(113, 64)
+        Me.btnchangemusic.TabIndex = 17
+        Me.btnchangemusic.Text = "Change Music"
+        Me.btnchangemusic.UseVisualStyleBackColor = True
+        '
+        'btnmusic
+        '
+        Me.btnmusic.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.music
+        Me.btnmusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnmusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmusic.Location = New System.Drawing.Point(1741, 31)
+        Me.btnmusic.Name = "btnmusic"
+        Me.btnmusic.Size = New System.Drawing.Size(64, 64)
+        Me.btnmusic.TabIndex = 16
+        Me.btnmusic.UseMnemonic = False
+        Me.btnmusic.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1042)
+        Me.Controls.Add(Me.btnchangemusic)
+        Me.Controls.Add(Me.btnmusic)
         Me.Controls.Add(Me.lbltickspeed)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnopen)
@@ -230,4 +257,6 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents Tickspeedcalculator As Timer
     Friend WithEvents lbltickspeed As Label
+    Friend WithEvents btnmusic As Button
+    Friend WithEvents btnchangemusic As Button
 End Class

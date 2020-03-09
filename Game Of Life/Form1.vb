@@ -20,12 +20,23 @@ Public Class Form1
     'Public presettoput(50, 50) As Integer
     Dim outofboundssettingpreset As Boolean
     Dim settingpresettemp(50, 50) As Integer
+    Public presetcoordslist As New List(Of Presetchooser.coords)
+    Dim oldcoords As New List(Of Presetchooser.coords)
+    Dim tempcoord As Presetchooser.coords
+    Dim music As Boolean
+    Dim musicchoice As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        musicchoice = 0
+        music = True
+        Dim initialoldcoord As Presetchooser.coords
+        initialoldcoord.xcoord = 1
+        initialoldcoord.ycoord = 1
+        oldcoords.Add(initialoldcoord)
         puttinginpreset = False
         isdown = False
         closedproperlyinput = False
-
+        My.Computer.Audio.Play(My.Resources.no, AudioPlayMode.BackgroundLoop)
 
 
         Timesupdated = 0
@@ -66,38 +77,73 @@ Public Class Form1
         End If
     End Sub
     Private Sub Grid_Select(sender As Object, e As EventArgs)
+        Dim msgoutofbounds As Boolean
         Dim xpos, ypos As Integer
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
         lblx.Text = "X Pos: " + CStr(xpos)
         lbly.Text = "Y Pos: " + CStr(ypos)
+        msgoutofbounds = False
+        If puttinginpreset = True Then
 
-        If Checked(xpos, ypos) = 0 Then
-            Grid(xpos, ypos).BackColor = checkedcolor
+            Grid(xpos, ypos).BackColor = Color.Black
             Checked(xpos, ypos) = 1
-        ElseIf Checked(xpos, ypos) = 1 Then
-            Grid(xpos, ypos).BackColor = uncheckedcolor
-            Checked(xpos, ypos) = 0
+            For i = 0 To presetcoordslist.Count() - 1
+                tempcoord = presetcoordslist(i)
+                Try
+                    Grid(xpos + tempcoord.xcoord, ypos + tempcoord.ycoord).BackColor = Color.Black
+                    Checked(xpos + tempcoord.xcoord, ypos + tempcoord.ycoord) = 1
+                Catch ex As Exception
+                    outofboundssettingpreset = True
+
+                    If msgoutofbounds = False Then
+                        msgoutofbounds = True
+                        MsgBox("Warning! Some cells may be out of bounds!")
+                    End If
+
+                End Try
+            Next
+            puttinginpreset = False
+
+        Else
+            If Checked(xpos, ypos) = 0 Then
+                Grid(xpos, ypos).BackColor = checkedcolor
+                Checked(xpos, ypos) = 1
+            ElseIf Checked(xpos, ypos) = 1 Then
+                Grid(xpos, ypos).BackColor = uncheckedcolor
+                Checked(xpos, ypos) = 0
+            End If
         End If
+
 
 
     End Sub
     Private Sub Mouse_Enter(sender As Object, e As EventArgs)
-        Dim tempcoord As Presetchooser.coords
-        outofboundssettingpreset = False
-        Array.Clear(settingpresettemp, 0, settingpresettemp.Length)
         Dim xpos, ypos As Integer
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
         If puttinginpreset = True Then
+            Dim tempoldcoord As Presetchooser.coords
+            For Each coord As Presetchooser.coords In oldcoords
+                Grid(coord.xcoord, coord.ycoord).BackColor = Color.White
+                settingpresettemp(coord.xcoord, coord.ycoord) = 0
+            Next
+            oldcoords.Clear()
+            outofboundssettingpreset = False
+            Array.Clear(settingpresettemp, 0, settingpresettemp.Length)
             Grid(xpos, ypos).BackColor = Color.Yellow
             settingpresettemp(xpos, ypos) = 1
-            Console.WriteLine("count is" + CStr(Presetchooser.presetcoordslist.Count()))
-            For i = 0 To Presetchooser.presetcoordslist.Count() - 1
-                tempcoord = Presetchooser.presetcoordslist(i)
+            tempcoord.xcoord = xpos
+            tempcoord.ycoord = ypos
+            oldcoords.Add(tempcoord)
+            For i = 0 To presetcoordslist.Count() - 1
+                tempcoord = presetcoordslist(i)
                 Try
                     Grid(xpos + tempcoord.xcoord, ypos + tempcoord.ycoord).BackColor = Color.Red
                     settingpresettemp(xpos + tempcoord.xcoord, ypos + tempcoord.ycoord) = 1
+                    tempoldcoord.xcoord = xpos + tempcoord.xcoord
+                    tempoldcoord.ycoord = ypos + tempcoord.ycoord
+                    oldcoords.Add(tempoldcoord)
                 Catch ex As Exception
                     outofboundssettingpreset = True
                     Console.WriteLine("EXCEPTION PART OF GRID OUT OF THING")
@@ -381,6 +427,48 @@ Public Class Form1
     Private Sub Tickspeedcalculator_Tick(sender As Object, e As EventArgs) Handles Tickspeedcalculator.Tick
         lbltickspeed.Text = CStr(Timesupdated)
         Timesupdated = 0
+    End Sub
+
+    Private Sub btnmusic_Click(sender As Object, e As EventArgs) Handles btnmusic.Click
+        If music = True Then
+            music = False
+            btnmusic.BackgroundImage = My.Resources.nomusic
+            My.Computer.Audio.Stop()
+        ElseIf music = False Then
+            music = True
+            btnmusic.BackgroundImage = My.Resources.music
+            If musicchoice = 0 Then
+                My.Computer.Audio.Play(My.Resources.no, AudioPlayMode.BackgroundLoop)
+            ElseIf musicchoice = 1 Then
+
+                My.Computer.Audio.Play(My.Resources.chaser, AudioPlayMode.BackgroundLoop)
+            ElseIf musicchoice = 2 Then
+                My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
+            End If
+
+        End If
+    End Sub
+
+    Private Sub btnchangemusic_Click(sender As Object, e As EventArgs) Handles btnchangemusic.Click
+        If musicchoice = 0 Then
+            musicchoice = 1
+            If music = True Then
+                My.Computer.Audio.Stop()
+                My.Computer.Audio.Play(My.Resources.chaser, AudioPlayMode.BackgroundLoop)
+            End If
+        ElseIf musicchoice = 1 Then
+            musicchoice = 2
+            If music = True Then
+                My.Computer.Audio.Stop()
+                My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
+            End If
+        ElseIf musicchoice = 2 Then
+            musicchoice = 0
+            If music = True Then
+                My.Computer.Audio.Stop()
+                My.Computer.Audio.Play(My.Resources.no, AudioPlayMode.BackgroundLoop)
+            End If
+        End If
     End Sub
 
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
