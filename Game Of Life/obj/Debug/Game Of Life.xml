@@ -37,11 +37,6 @@ Game Of Life
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:Game_Of_Life.My.Resources.Resources.no">
-<summary>
-  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-</summary>
-</member>
 <member name="P:Game_Of_Life.My.Resources.Resources.nomusic">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

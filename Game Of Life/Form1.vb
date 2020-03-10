@@ -25,18 +25,16 @@ Public Class Form1
     Dim tempcoord As Presetchooser.coords
     Dim music As Boolean
     Dim musicchoice As Integer
+    Dim firststart As Boolean
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         musicchoice = 0
         music = True
-        Dim initialoldcoord As Presetchooser.coords
-        initialoldcoord.xcoord = 1
-        initialoldcoord.ycoord = 1
-        oldcoords.Add(initialoldcoord)
+        firststart = True
         puttinginpreset = False
         isdown = False
         closedproperlyinput = False
-        My.Computer.Audio.Play(My.Resources.no, AudioPlayMode.BackgroundLoop)
+        My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
 
 
         Timesupdated = 0
@@ -104,6 +102,7 @@ Public Class Form1
                 End Try
             Next
             puttinginpreset = False
+            oldcoords.Clear()
 
         Else
             If Checked(xpos, ypos) = 0 Then
@@ -124,10 +123,15 @@ Public Class Form1
         ypos = CInt(sender.location.y) / SideLength
         If puttinginpreset = True Then
             Dim tempoldcoord As Presetchooser.coords
-            For Each coord As Presetchooser.coords In oldcoords
-                Grid(coord.xcoord, coord.ycoord).BackColor = Color.White
-                settingpresettemp(coord.xcoord, coord.ycoord) = 0
-            Next
+            If firststart = True Then
+                firststart = False
+            ElseIf firststart = False Then
+                For Each coord As Presetchooser.coords In oldcoords
+                    Grid(coord.xcoord, coord.ycoord).BackColor = Color.White
+                    settingpresettemp(coord.xcoord, coord.ycoord) = 0
+                Next
+            End If
+
             oldcoords.Clear()
             outofboundssettingpreset = False
             Array.Clear(settingpresettemp, 0, settingpresettemp.Length)
@@ -438,12 +442,10 @@ Public Class Form1
             music = True
             btnmusic.BackgroundImage = My.Resources.music
             If musicchoice = 0 Then
-                My.Computer.Audio.Play(My.Resources.no, AudioPlayMode.BackgroundLoop)
+                My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
             ElseIf musicchoice = 1 Then
 
                 My.Computer.Audio.Play(My.Resources.chaser, AudioPlayMode.BackgroundLoop)
-            ElseIf musicchoice = 2 Then
-                My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
             End If
 
         End If
@@ -457,23 +459,16 @@ Public Class Form1
                 My.Computer.Audio.Play(My.Resources.chaser, AudioPlayMode.BackgroundLoop)
             End If
         ElseIf musicchoice = 1 Then
-            musicchoice = 2
-            If music = True Then
-                My.Computer.Audio.Stop()
-                My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
-            End If
-        ElseIf musicchoice = 2 Then
             musicchoice = 0
             If music = True Then
                 My.Computer.Audio.Stop()
-                My.Computer.Audio.Play(My.Resources.no, AudioPlayMode.BackgroundLoop)
+                My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
             End If
         End If
     End Sub
 
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
         Presetchooser.Show()
-
     End Sub
 
 End Class

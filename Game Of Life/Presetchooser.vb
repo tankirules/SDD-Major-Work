@@ -90,7 +90,6 @@ Public Class Presetchooser
     Private Sub Presetchooser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Initializevaluesandlists()
-
         For x = 1 To 50
             For y = 1 To 50
                 Grid(x, y) = New Panel
@@ -104,6 +103,7 @@ Public Class Presetchooser
                 AddHandler Grid(x, y).Click, AddressOf Grid_Select
             Next
         Next
+
         If File.Exists(Path) And loadedfile.Length >= 6 Then
             If loadedfile(0).Contains("P1") Then
                 presetlinelist.Add(0)
@@ -368,55 +368,45 @@ Public Class Presetchooser
                     tempgrid = ptemp2(i)
                     If tempgrid.Contains("c") Then
                         preset2(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
-                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
                         cpreset2.val = True
                     Else
                         preset2(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
-                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
                     End If
                 Next
                 For i = 1 To ptemp3.length - 1
                     tempgrid = ptemp3(i)
                     If tempgrid.Contains("c") Then
                         preset3(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
-                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
                         cpreset3.val = True
                     Else
                         preset3(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
-                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
                     End If
                 Next
                 For i = 1 To ptemp4.length - 1
                     tempgrid = ptemp4(i)
                     If tempgrid.Contains("c") Then
                         preset4(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
-                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
                         cpreset4.val = True
                     Else
                         preset4(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
-                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
                     End If
                 Next
                 For i = 1 To ptemp5.length - 1
                     tempgrid = ptemp5(i)
                     If tempgrid.Contains("c") Then
                         preset5(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
-                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
                         cpreset5.val = True
                     Else
                         preset5(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
-                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
                     End If
                 Next
                 For i = 1 To ptemp6.length - 1
                     tempgrid = ptemp6(i)
                     If tempgrid.Contains("c") Then
                         preset6(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))) = 2
-                        Grid(CInt(tempgrid(1) + tempgrid(2)), CInt(tempgrid(4) + tempgrid(5))).BackColor = Color.Yellow
                         cpreset6.val = True
                     Else
                         preset6(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
-                        Grid(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))).BackColor = Color.Black
                     End If
                 Next
 
@@ -558,7 +548,11 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset2_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset2.CheckedChanged
-        cleargrid()
+        If Grid(50, 50) Is Nothing Then
+
+        Else
+            cleargrid()
+        End If
         If rbtnpreset2.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -576,7 +570,11 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset3_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset3.CheckedChanged
-        cleargrid()
+        If Grid(50, 50) Is Nothing Then
+
+        Else
+            cleargrid()
+        End If
         If rbtnpreset3.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -594,7 +592,11 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset4_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset4.CheckedChanged
-        cleargrid()
+        If Grid(50, 50) Is Nothing Then
+
+        Else
+            cleargrid()
+        End If
         If rbtnpreset4.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -612,7 +614,11 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset5_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset5.CheckedChanged
-        cleargrid()
+        If Grid(50, 50) Is Nothing Then
+
+        Else
+            cleargrid()
+        End If
         If rbtnpreset5.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -630,7 +636,11 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset6_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset6.CheckedChanged
-        cleargrid()
+        If Grid(50, 50) Is Nothing Then
+
+        Else
+            cleargrid()
+        End If
         If rbtnpreset6.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -660,6 +670,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub btnclosepresetchooser_Click(sender As Object, e As EventArgs) Handles btnclosepresetchooser.Click
+        Form1.presetcoordslist.Clear()
         Dim tempcoords As coords
         Form1.closedproperlyinput = True
         For Each button In radiobuttonlist
@@ -704,17 +715,21 @@ Public Class Presetchooser
     End Sub
 
     Private Sub btnresetcenter_Click(sender As Object, e As EventArgs) Handles btnresetcenter.Click
+        Dim tempcheckedarray(50, 50) As Integer
         For Each button In radiobuttonlist
             If button.Checked = True Then
                 listofcenterpreset(radiobuttonlist.IndexOf(button)).val = False
+                tempcheckedarray = presetlist(radiobuttonlist.IndexOf(button))
                 For x = 1 To 50
                     For y = 1 To 50
-                        If presetchecked(x, y) = 2 Then
+                        If presetchecked(x, y) = 2 Or tempcheckedarray(x, y) = 2 Then
                             presetchecked(x, y) = 0
                             Grid(x, y).BackColor = Color.White
+                            tempcheckedarray(x, y) = 0
                         End If
                     Next
                 Next
+                presetlist(radiobuttonlist.IndexOf(button)) = tempcheckedarray
             End If
 
         Next
@@ -893,7 +908,7 @@ Public Class Presetchooser
             FS.WriteLine("P4" + rbtnpreset4.Text)
             For x = 1 To 50
                 For y = 1 To 50
-                    If preset3(x, y) = 2 Then
+                    If preset4(x, y) = 2 Then
                         If CStr(x).Length = 1 Then
                             tempx = "0" + CStr(x)
                         Else

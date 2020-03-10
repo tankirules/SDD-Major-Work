@@ -151,7 +151,6 @@
     <None Include="chaser.wav" />
     <Content Include="eyes.png" />
     <Content Include="music.png" />
-    <None Include="no.wav" />
     <Content Include="nomusic.png" />
     <Content Include="smallereyes.png" />
   </ItemGroup>
