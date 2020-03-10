@@ -8,11 +8,9 @@ Public Class Form1
     Dim TempGrid(50, 50) As Integer
     Dim Started As Boolean
     Dim Outofbounds As Boolean
-    Dim PresetVisible As Boolean
     Dim Username As String
     Dim password As String
     Dim uncheckedcolor, checkedcolor As Color
-    Dim supercancer As Boolean
     Dim Timesupdated As Integer
     Dim isdown As Boolean
     Public puttinginpreset As Boolean
@@ -38,12 +36,10 @@ Public Class Form1
 
         Timesupdated = 0
         Tickspeedcalculator.Start()
-        supercancer = False
         uncheckedcolor = Color.White
         checkedcolor = Color.Black
         Started = False
         SideLength = Me.Bounds.Height / 60
-        PresetVisible = False
         For x = 1 To 50
             For y = 1 To 50
                 Grid(x, y) = New Panel
