@@ -3,7 +3,7 @@ Imports System.Text
 Public Class Form1
 
     Dim Grid(50, 50) As Panel
-    Dim Checked(50, 50) As Integer
+    Public Checked(50, 50) As Integer
     Dim SideLength As Integer
     Dim TempGrid(50, 50) As Integer
     Dim Started As Boolean
@@ -17,15 +17,14 @@ Public Class Form1
     Dim isdown As Boolean
     Public puttinginpreset As Boolean
     Public closedproperlyinput As Boolean
-    'Public presettoput(50, 50) As Integer
     Dim outofboundssettingpreset As Boolean
-    Dim settingpresettemp(50, 50) As Integer
     Public presetcoordslist As New List(Of Presetchooser.coords)
     Dim oldcoords As New List(Of Presetchooser.coords)
     Dim tempcoord As Presetchooser.coords
     Dim music As Boolean
     Dim musicchoice As Integer
     Dim firststart As Boolean
+    Public checkedgridbeforesettingpreset As New List(Of Presetchooser.coords)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         musicchoice = 0
@@ -128,23 +127,25 @@ Public Class Form1
             ElseIf firststart = False Then
                 For Each coord As Presetchooser.coords In oldcoords
                     Grid(coord.xcoord, coord.ycoord).BackColor = Color.White
-                    settingpresettemp(coord.xcoord, coord.ycoord) = 0
                 Next
             End If
 
             oldcoords.Clear()
             outofboundssettingpreset = False
-            Array.Clear(settingpresettemp, 0, settingpresettemp.Length)
-            Grid(xpos, ypos).BackColor = Color.Yellow
-            settingpresettemp(xpos, ypos) = 1
+
             tempcoord.xcoord = xpos
             tempcoord.ycoord = ypos
             oldcoords.Add(tempcoord)
+            For i = 0 To checkedgridbeforesettingpreset.Count() - 1
+                tempcoord = checkedgridbeforesettingpreset(i)
+                Grid(tempcoord.xcoord, tempcoord.ycoord).BackColor = Color.Black
+                Checked(tempcoord.xcoord, tempcoord.ycoord) = 1
+            Next
+            Grid(xpos, ypos).BackColor = Color.Yellow
             For i = 0 To presetcoordslist.Count() - 1
                 tempcoord = presetcoordslist(i)
                 Try
-                    Grid(xpos + tempcoord.xcoord, ypos + tempcoord.ycoord).BackColor = Color.Red
-                    settingpresettemp(xpos + tempcoord.xcoord, ypos + tempcoord.ycoord) = 1
+                    Grid(xpos + tempcoord.xcoord, ypos + tempcoord.ycoord).BackColor = Color.FromArgb(255, 34, 139, 34)
                     tempoldcoord.xcoord = xpos + tempcoord.xcoord
                     tempoldcoord.ycoord = ypos + tempcoord.ycoord
                     oldcoords.Add(tempoldcoord)
@@ -153,6 +154,16 @@ Public Class Form1
                     Console.WriteLine("EXCEPTION PART OF GRID OUT OF THING")
                 End Try
             Next
+
+            If outofboundssettingpreset = True Then
+                For i = 0 To oldcoords.Count() - 1
+                    Grid(oldcoords(i).xcoord, oldcoords(i).ycoord).BackColor = Color.Red
+                Next
+            End If
+
+
+
+
         ElseIf isdown Then
             Grid(xpos, ypos).BackColor = checkedcolor
             Checked(xpos, ypos) = 1
@@ -269,7 +280,6 @@ Public Class Form1
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
         Dim UPD As New InputUPDForm
-        Dim result As DialogResult
         Dim tempx, tempy As String
 
         If UPD.ShowDialog(Me) <> DialogResult.Cancel And UPD.ClosedproperlyInput = True Then
