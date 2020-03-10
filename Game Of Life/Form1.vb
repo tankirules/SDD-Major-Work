@@ -25,6 +25,12 @@ Public Class Form1
     Public checkedgridbeforesettingpreset As New List(Of Presetchooser.coords)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If File.Exists(Presetchooser.Path) Then
+        Else
+            My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
+            Dim fs As FileStream = File.Create(Presetchooser.Path)
+
+        End If
         musicchoice = 0
         music = True
         firststart = True
@@ -74,8 +80,6 @@ Public Class Form1
         Dim xpos, ypos As Integer
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
-        lblx.Text = "X Pos: " + CStr(xpos)
-        lbly.Text = "Y Pos: " + CStr(ypos)
         msgoutofbounds = False
         If puttinginpreset = True Then
 
@@ -271,6 +275,7 @@ Public Class Form1
 
     Private Sub Speedcontrol_Scroll(sender As Object, e As EventArgs) Handles Speedcontrol.Scroll
         updatetimer.Interval = Speedcontrol.Value
+        lbltimebetween.Text = Speedcontrol.Value
     End Sub
 
 

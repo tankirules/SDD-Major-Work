@@ -30,11 +30,10 @@ Public Class Presetchooser
     Dim ptemp4 As Object
     Dim ptemp5 As Object
     Dim ptemp6 As Object
-
     Dim arrayofpresests(6) As Integer
     Dim presetcountload As Integer
-    Dim loadedfile() As String = IO.File.ReadAllLines("C:\Gameoflife\presets.txt")
-    Dim Path As String = "c:\Gameoflife\presets.txt"
+    Public Path As String = "c:\Gameoflife\presets.txt"
+    Dim loadedfile() As String = IO.File.ReadAllLines(Path)
     Dim center As coords
     Public presetcoordslist As New List(Of coords)
     Public Structure coords
@@ -420,9 +419,7 @@ Public Class Presetchooser
         ElseIf File.Exists(Path) And loadedfile.Length < 6 Then
             loadederror = "File is not at the required length - please ignore if this is your first time starting the application or if you have not saved the presets yet"
             lstbox.Items.Add(loadederror)
-        Else
-            Dim fs As FileStream = File.Create(Path)
-            My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
+
         End If
 
 

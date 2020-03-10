@@ -24,14 +24,11 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.btnstartstop = New System.Windows.Forms.Button()
-        Me.lblx = New System.Windows.Forms.Label()
-        Me.lbly = New System.Windows.Forms.Label()
         Me.btnreset = New System.Windows.Forms.Button()
         Me.updatetimer = New System.Windows.Forms.Timer(Me.components)
         Me.Speedcontrol = New System.Windows.Forms.TrackBar()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbltimebetween = New System.Windows.Forms.Label()
         Me.btnpreset = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btnopen = New System.Windows.Forms.Button()
@@ -55,28 +52,10 @@ Partial Class Form1
         Me.btnstartstop.Text = "Start"
         Me.btnstartstop.UseVisualStyleBackColor = True
         '
-        'lblx
-        '
-        Me.lblx.AutoSize = True
-        Me.lblx.Location = New System.Drawing.Point(1686, 57)
-        Me.lblx.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblx.Name = "lblx"
-        Me.lblx.Size = New System.Drawing.Size(0, 13)
-        Me.lblx.TabIndex = 1
-        '
-        'lbly
-        '
-        Me.lbly.AutoSize = True
-        Me.lbly.Location = New System.Drawing.Point(1686, 85)
-        Me.lbly.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbly.Name = "lbly"
-        Me.lbly.Size = New System.Drawing.Size(0, 13)
-        Me.lbly.TabIndex = 2
-        '
         'btnreset
         '
         Me.btnreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnreset.Location = New System.Drawing.Point(1720, 128)
+        Me.btnreset.Location = New System.Drawing.Point(1735, 128)
         Me.btnreset.Name = "btnreset"
         Me.btnreset.Size = New System.Drawing.Size(85, 46)
         Me.btnreset.TabIndex = 3
@@ -101,36 +80,26 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(1612, 187)
+        Me.Label1.Location = New System.Drawing.Point(1592, 187)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(229, 25)
+        Me.Label1.Size = New System.Drawing.Size(271, 25)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Time between updates"
+        Me.Label1.Text = "Time between updates(ms)"
         '
-        'Label2
+        'lbltimebetween
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(1612, 266)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(36, 25)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "64"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(1791, 266)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 25)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "1000"
+        Me.lbltimebetween.AutoSize = True
+        Me.lbltimebetween.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltimebetween.Location = New System.Drawing.Point(1707, 248)
+        Me.lbltimebetween.Name = "lbltimebetween"
+        Me.lbltimebetween.Size = New System.Drawing.Size(36, 25)
+        Me.lbltimebetween.TabIndex = 6
+        Me.lbltimebetween.Text = "64"
         '
         'btnpreset
         '
         Me.btnpreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnpreset.Location = New System.Drawing.Point(1579, 375)
+        Me.btnpreset.Location = New System.Drawing.Point(1633, 343)
         Me.btnpreset.Name = "btnpreset"
         Me.btnpreset.Size = New System.Drawing.Size(203, 67)
         Me.btnpreset.TabIndex = 8
@@ -146,7 +115,7 @@ Partial Class Form1
         'btnopen
         '
         Me.btnopen.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.btnopen.Location = New System.Drawing.Point(1733, 719)
+        Me.btnopen.Location = New System.Drawing.Point(1756, 454)
         Me.btnopen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnopen.Name = "btnopen"
         Me.btnopen.Size = New System.Drawing.Size(87, 66)
@@ -157,7 +126,7 @@ Partial Class Form1
         'btnsave
         '
         Me.btnsave.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.btnsave.Location = New System.Drawing.Point(1597, 719)
+        Me.btnsave.Location = New System.Drawing.Point(1597, 454)
         Me.btnsave.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(105, 66)
@@ -169,7 +138,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.Label4.Location = New System.Drawing.Point(1590, 324)
+        Me.Label4.Location = New System.Drawing.Point(1628, 304)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(192, 25)
         Me.Label4.TabIndex = 14
@@ -183,7 +152,7 @@ Partial Class Form1
         '
         Me.lbltickspeed.AutoSize = True
         Me.lbltickspeed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.lbltickspeed.Location = New System.Drawing.Point(1834, 324)
+        Me.lbltickspeed.Location = New System.Drawing.Point(1834, 304)
         Me.lbltickspeed.Name = "lbltickspeed"
         Me.lbltickspeed.Size = New System.Drawing.Size(0, 25)
         Me.lbltickspeed.TabIndex = 15
@@ -192,7 +161,7 @@ Partial Class Form1
         '
         Me.btnchangemusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnchangemusic.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnchangemusic.Location = New System.Drawing.Point(1622, 31)
+        Me.btnchangemusic.Location = New System.Drawing.Point(1617, 29)
         Me.btnchangemusic.Name = "btnchangemusic"
         Me.btnchangemusic.Size = New System.Drawing.Size(113, 64)
         Me.btnchangemusic.TabIndex = 17
@@ -204,7 +173,7 @@ Partial Class Form1
         Me.btnmusic.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.music
         Me.btnmusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnmusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmusic.Location = New System.Drawing.Point(1741, 31)
+        Me.btnmusic.Location = New System.Drawing.Point(1756, 29)
         Me.btnmusic.Name = "btnmusic"
         Me.btnmusic.Size = New System.Drawing.Size(64, 64)
         Me.btnmusic.TabIndex = 16
@@ -223,13 +192,10 @@ Partial Class Form1
         Me.Controls.Add(Me.btnopen)
         Me.Controls.Add(Me.btnsave)
         Me.Controls.Add(Me.btnpreset)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lbltimebetween)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Speedcontrol)
         Me.Controls.Add(Me.btnreset)
-        Me.Controls.Add(Me.lbly)
-        Me.Controls.Add(Me.lblx)
         Me.Controls.Add(Me.btnstartstop)
         Me.Name = "Form1"
         Me.RightToLeftLayout = True
@@ -242,14 +208,11 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents btnstartstop As Button
-    Friend WithEvents lblx As Label
-    Friend WithEvents lbly As Label
     Friend WithEvents btnreset As Button
     Friend WithEvents updatetimer As Timer
     Friend WithEvents Speedcontrol As TrackBar
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lbltimebetween As Label
     Friend WithEvents btnpreset As Button
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents btnopen As Button
