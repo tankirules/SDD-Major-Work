@@ -23,6 +23,7 @@ Public Class Form1
     Dim musicchoice As Integer
     Dim firststart As Boolean
     Public checkedgridbeforesettingpreset As New List(Of Presetchooser.coords)
+    Dim listofusernames As New List(Of String)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If File.Exists(Presetchooser.Path) Then
@@ -433,6 +434,14 @@ Public Class Form1
 
         End If
 
+        If valid = True Then
+            listofusernames.Add(loadedu)
+            lstboxsorted.Items.Clear()
+            listofusernames.Sort()
+            For i = 0 To listofusernames.Count() - 1
+                lstboxsorted.Items.Add(listofusernames(i))
+            Next
+        End If
 
 
 
