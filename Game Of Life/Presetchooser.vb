@@ -124,7 +124,7 @@ Public Class Presetchooser
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
                             Console.WriteLine("Corrupt 2")
-                            loadederror = "Error when testing for preset line prefix"
+                            loadederror = "Error when testing for preset line prefix at P2"
                             lstbox.Items.Add(loadederror)
                             Exit For
                         End If
@@ -138,7 +138,7 @@ Public Class Presetchooser
                             rbtnpreset3.Text = temppresetname.Remove(0, 2)
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                            loadederror = "Error when testing for preset line prefix"
+                            loadederror = "Error when testing for preset line prefix at P3"
                             lstbox.Items.Add(loadederror)
                             Console.WriteLine("Corrupt 3")
                             Exit For
@@ -153,7 +153,7 @@ Public Class Presetchooser
                             rbtnpreset4.Text = temppresetname.Remove(0, 2)
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                            loadederror = "Error when testing for preset line prefix"
+                            loadederror = "Error when testing for preset line prefix at P4"
                             lstbox.Items.Add(loadederror)
                             Console.WriteLine("Corrupt 4")
                             Exit For
@@ -168,7 +168,7 @@ Public Class Presetchooser
                             rbtnpreset5.Text = temppresetname.Remove(0, 2)
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                            loadederror = "Error when testing for preset line prefix"
+                            loadederror = "Error when testing for preset line prefix at P5"
                             lstbox.Items.Add(loadederror)
                             Console.WriteLine("Corrupt 5")
                             Exit For
@@ -183,7 +183,7 @@ Public Class Presetchooser
                             rbtnpreset6.Text = temppresetname.Remove(0, 2)
                         Else
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                            loadederror = "Error when testing for preset line prefix"
+                            loadederror = "Error when testing for preset line prefix at P6"
                             lstbox.Items.Add(loadederror)
                             Console.WriteLine("Corrupt 6")
                             Exit For
@@ -194,14 +194,12 @@ Public Class Presetchooser
                     Console.WriteLine("Loading successful! Loaded 6 presets")
                 Else
                     MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                    loadederror = "Error when testing for preset line prefix"
+                    loadederror = "Missing preset prefix lines - total not equal to 6"
                     lstbox.Items.Add(loadederror)
-                    Console.WriteLine(CStr(presetcountload))
-                    Console.WriteLine("at the end presetcountload wasnt 6")
                 End If
             Else
                 MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
-                loadederror = "Error when testing for preset line prefix"
+                loadederror = "Error when testing for preset line prefix at P1 - the first line"
                 lstbox.Items.Add(loadederror)
                 Console.WriteLine("Corrupt because first line isn't P1")
                 'if first line isn't P1
@@ -288,12 +286,12 @@ Public Class Presetchooser
                     If centercheck.Length = 6 Then
                         If centercheck(0) <> "c" Then
                             MsgBox("center coordinates corrupt/do not exist! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                            loadederror = "first letter of center string wasn't c"
+                            loadederror = "first letter of center string wasn't c" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                             lstbox.Items.Add(loadederror)
                         End If
                     Else
                         MsgBox("center coordinates length is corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                        loadederror = "line containing center coordinate is not at the required length"
+                        loadederror = "line containing center coordinate is not at the required length" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                         lstbox.Items.Add(loadederror)
                     End If
 
@@ -307,16 +305,16 @@ Public Class Presetchooser
                     If tempstring.Length = 6 Then
                         If tempstring(3) <> "," Or IsNumeric(tempstring(1) + tempstring(2)) = False Or IsNumeric(tempstring(4) + tempstring(5)) = False Then
                             MsgBox("center coordinates corrupt/do not exist! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                            loadederror = "center coordinates aren't numbers or the comma is missing"
+                            loadederror = "center coordinates aren't numbers or the comma is missing" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                             lstbox.Items.Add(loadederror)
                         ElseIf (CStr(tempstring(1) + tempstring(2)) > 50) Or (CStr(tempstring(1) + tempstring(2)) < 0) Or CStr(tempstring(4) + tempstring(5)) > 50 Or (CStr(tempstring(4) + tempstring(5)) < 0) Then
                             MsgBox("center coordinates out of range! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                            loadederror = "center coordinates are out of range"
+                            loadederror = "center coordinates are out of range" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                             lstbox.Items.Add(loadederror)
                         End If
                     Else
                         MsgBox("center coordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                        loadederror = "Line with center coordinates is not at the required length"
+                        loadederror = "Line with center coordinates is not at the required length" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                         lstbox.Items.Add(loadederror)
                     End If
 
@@ -328,16 +326,16 @@ Public Class Presetchooser
                         If tempstring.Length = 5 Then
                             If tempstring(2) <> "," Or IsNumeric(tempstring(0) + tempstring(1)) = False Or IsNumeric(tempstring(3) + tempstring(4)) = False Then
                                 MsgBox("coordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                                loadederror = "grid coords aren't numbers or the comma is missing"
+                                loadederror = "grid coords aren't numbers or the comma is missing" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                                 lstbox.Items.Add(loadederror)
                             ElseIf (CStr(tempstring(0) + tempstring(1)) > 50) Or (CStr(tempstring(0) + tempstring(1)) < 0) Or (CStr(tempstring(3) + tempstring(4)) > 50) Or (CStr(tempstring(3) + tempstring(4)) < 0) Then
                                 MsgBox("coordinates out of range! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                                loadederror = "grid coords are out of range"
+                                loadederror = "grid coords are out of range" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                                 lstbox.Items.Add(loadederror)
                             End If
                         Else
                             MsgBox("Grid ooordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
-                            loadederror = "Line with grid coordinates is not at the required length"
+                            loadederror = "Line with grid coordinates is not at the required length" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                             lstbox.Items.Add(loadederror)
                         End If
 

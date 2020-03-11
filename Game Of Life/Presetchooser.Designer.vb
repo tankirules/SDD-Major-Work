@@ -88,11 +88,12 @@ Partial Class Presetchooser
         '
         'lstbox
         '
+        Me.lstbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstbox.FormattingEnabled = True
-        Me.lstbox.ItemHeight = 25
+        Me.lstbox.ItemHeight = 20
         Me.lstbox.Location = New System.Drawing.Point(7, 726)
         Me.lstbox.Name = "lstbox"
-        Me.lstbox.Size = New System.Drawing.Size(813, 279)
+        Me.lstbox.Size = New System.Drawing.Size(813, 264)
         Me.lstbox.TabIndex = 11
         Me.lstbox.Visible = False
         '
