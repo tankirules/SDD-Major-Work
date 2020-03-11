@@ -10,9 +10,6 @@ Public Class Presetchooser
     Dim preset3(50, 50) As Integer
     Dim preset4(50, 50) As Integer
     Dim preset5(50, 50) As Integer
-
-    Dim temp As Boolean
-
     Dim cpreset1, cpreset2, cpreset3, cpreset4, cpreset5, cpreset6 As RefBool
     Dim centerbeingset As Boolean
     Dim radiobuttonlist As New List(Of RadioButton)
