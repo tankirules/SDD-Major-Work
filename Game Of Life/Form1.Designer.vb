@@ -37,9 +37,10 @@ Partial Class Form1
         Me.Tickspeedcalculator = New System.Windows.Forms.Timer(Me.components)
         Me.lbltickspeed = New System.Windows.Forms.Label()
         Me.btnchangemusic = New System.Windows.Forms.Button()
-        Me.btnmusic = New System.Windows.Forms.Button()
         Me.lstboxsorted = New System.Windows.Forms.ListBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnmusic = New System.Windows.Forms.Button()
         CType(Me.Speedcontrol, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -102,12 +103,11 @@ Partial Class Form1
         '
         Me.btnpreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnpreset.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnpreset.Location = New System.Drawing.Point(1346, 587)
+        Me.btnpreset.Location = New System.Drawing.Point(1340, 610)
         Me.btnpreset.Name = "btnpreset"
-        Me.btnpreset.Size = New System.Drawing.Size(329, 128)
+        Me.btnpreset.Size = New System.Drawing.Size(321, 128)
         Me.btnpreset.TabIndex = 8
         Me.btnpreset.Text = "Preset patterns"
-        Me.btnpreset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnpreset.UseVisualStyleBackColor = True
         '
         'ImageList1
@@ -172,18 +172,6 @@ Partial Class Form1
         Me.btnchangemusic.Text = "Change Music"
         Me.btnchangemusic.UseVisualStyleBackColor = True
         '
-        'btnmusic
-        '
-        Me.btnmusic.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.music
-        Me.btnmusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnmusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmusic.Location = New System.Drawing.Point(1756, 29)
-        Me.btnmusic.Name = "btnmusic"
-        Me.btnmusic.Size = New System.Drawing.Size(64, 64)
-        Me.btnmusic.TabIndex = 16
-        Me.btnmusic.UseMnemonic = False
-        Me.btnmusic.UseVisualStyleBackColor = True
-        '
         'lstboxsorted
         '
         Me.lstboxsorted.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -204,11 +192,39 @@ Partial Class Form1
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "Past Loaded Usernames"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.hammer
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button1.Location = New System.Drawing.Point(1467, 540)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(64, 64)
+        Me.Button1.TabIndex = 20
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'btnmusic
+        '
+        Me.btnmusic.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.music
+        Me.btnmusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnmusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmusic.Location = New System.Drawing.Point(1756, 29)
+        Me.btnmusic.Name = "btnmusic"
+        Me.btnmusic.Size = New System.Drawing.Size(64, 64)
+        Me.btnmusic.TabIndex = 16
+        Me.btnmusic.UseMnemonic = False
+        Me.btnmusic.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1042)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lstboxsorted)
         Me.Controls.Add(Me.btnchangemusic)
@@ -225,7 +241,7 @@ Partial Class Form1
         Me.Controls.Add(Me.btnstartstop)
         Me.Name = "Form1"
         Me.RightToLeftLayout = True
-        Me.Text = "Form1"
+        Me.Text = "x"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Speedcontrol, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -250,4 +266,5 @@ Partial Class Form1
     Friend WithEvents btnchangemusic As Button
     Friend WithEvents lstboxsorted As ListBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class

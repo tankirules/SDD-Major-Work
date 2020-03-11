@@ -152,6 +152,7 @@
     <Content Include="eyes.png" />
     <Content Include="music.png" />
     <Content Include="nomusic.png" />
+    <None Include="Resources\hammer.png" />
     <Content Include="smallereyes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

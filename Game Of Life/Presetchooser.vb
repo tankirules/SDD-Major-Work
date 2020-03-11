@@ -36,6 +36,8 @@ Public Class Presetchooser
     Dim loadedfile() As String = IO.File.ReadAllLines(Path)
     Dim center As coords
     Public presetcoordslist As New List(Of coords)
+    Dim savetofilereminder As Boolean
+    Dim remindercount As Integer
     Public Structure coords
         Public xcoord As Integer
         Public ycoord As Integer
@@ -44,6 +46,8 @@ Public Class Presetchooser
         Public val As Boolean
     End Class
     Private Sub Initializevaluesandlists()
+        remindercount = 0
+        savetofilereminder = False
         SideLength = Me.Bounds.Height / 60
         templist.Clear()
         bigbrain = False
@@ -518,7 +522,12 @@ Public Class Presetchooser
             MsgBox("You have not set a center!")
 
         End If
+        If savetofilereminder = False Then
+            savetofilereminder = True
+            MsgBox("Don't forget to save your work to the file by clicking Save Data to file otherwise you will lose your data once you close this form!")
+            reminderssavedata.Start()
 
+        End If
     End Sub
 
     Private Sub rbtnpreset1_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset1.CheckedChanged
@@ -745,6 +754,21 @@ Public Class Presetchooser
 
         Next
 
+
+    End Sub
+
+    Private Sub reminderssavedata_Tick(sender As Object, e As EventArgs) Handles reminderssavedata.Tick
+        If remindercount > 8 Then
+            reminderssavedata.Stop()
+            btnsave.BackColor = SystemColors.ControlLight
+        Else
+            If remindercount Mod 2 = 0 Then
+                btnsave.BackColor = Color.Yellow
+            Else
+                btnsave.BackColor = SystemColors.ControlLight
+            End If
+            remindercount = remindercount + 1
+        End If
 
     End Sub
 

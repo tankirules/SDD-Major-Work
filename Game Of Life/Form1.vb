@@ -487,6 +487,10 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        btnpreset.PerformClick()
+    End Sub
+
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
         Presetchooser.Show()
     End Sub

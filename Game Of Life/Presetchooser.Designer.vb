@@ -22,7 +22,9 @@ Partial Class Presetchooser
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnresetcenter = New System.Windows.Forms.Button()
         Me.btnshowerrors = New System.Windows.Forms.Button()
         Me.lstbox = New System.Windows.Forms.ListBox()
         Me.btncenter = New System.Windows.Forms.Button()
@@ -37,7 +39,7 @@ Partial Class Presetchooser
         Me.rbtnpreset1 = New System.Windows.Forms.RadioButton()
         Me.btnresetgrid = New System.Windows.Forms.Button()
         Me.btnclosepresetchooser = New System.Windows.Forms.Button()
-        Me.btnresetcenter = New System.Windows.Forms.Button()
+        Me.reminderssavedata = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -64,14 +66,24 @@ Partial Class Presetchooser
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Choose Preset"
         '
+        'btnresetcenter
+        '
+        Me.btnresetcenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnresetcenter.Location = New System.Drawing.Point(143, 552)
+        Me.btnresetcenter.Name = "btnresetcenter"
+        Me.btnresetcenter.Size = New System.Drawing.Size(131, 46)
+        Me.btnresetcenter.TabIndex = 13
+        Me.btnresetcenter.Text = "Reset Center"
+        Me.btnresetcenter.UseVisualStyleBackColor = True
+        '
         'btnshowerrors
         '
         Me.btnshowerrors.Font = New System.Drawing.Font("Lucida Calligraphy", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnshowerrors.Location = New System.Drawing.Point(597, 626)
+        Me.btnshowerrors.Location = New System.Drawing.Point(459, 626)
         Me.btnshowerrors.Name = "btnshowerrors"
-        Me.btnshowerrors.Size = New System.Drawing.Size(203, 94)
+        Me.btnshowerrors.Size = New System.Drawing.Size(319, 94)
         Me.btnshowerrors.TabIndex = 12
-        Me.btnshowerrors.Text = "I have a big brain"
+        Me.btnshowerrors.Text = "I have a big brain(Self-debugging)"
         Me.btnshowerrors.UseVisualStyleBackColor = True
         '
         'lstbox
@@ -87,7 +99,7 @@ Partial Class Presetchooser
         'btncenter
         '
         Me.btncenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.btncenter.Location = New System.Drawing.Point(7, 634)
+        Me.btncenter.Location = New System.Drawing.Point(6, 552)
         Me.btncenter.Name = "btncenter"
         Me.btncenter.Size = New System.Drawing.Size(131, 46)
         Me.btncenter.TabIndex = 10
@@ -96,16 +108,17 @@ Partial Class Presetchooser
         '
         'btnsave
         '
-        Me.btnsave.Location = New System.Drawing.Point(349, 634)
+        Me.btnsave.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnsave.Location = New System.Drawing.Point(7, 625)
         Me.btnsave.Name = "btnsave"
-        Me.btnsave.Size = New System.Drawing.Size(125, 69)
+        Me.btnsave.Size = New System.Drawing.Size(290, 94)
         Me.btnsave.TabIndex = 8
         Me.btnsave.Text = "Save Data to File"
-        Me.btnsave.UseVisualStyleBackColor = True
+        Me.btnsave.UseVisualStyleBackColor = False
         '
         'btneditname
         '
-        Me.btneditname.Location = New System.Drawing.Point(292, 553)
+        Me.btneditname.Location = New System.Drawing.Point(488, 471)
         Me.btneditname.Name = "btneditname"
         Me.btneditname.Size = New System.Drawing.Size(223, 75)
         Me.btneditname.TabIndex = 7
@@ -114,7 +127,7 @@ Partial Class Presetchooser
         '
         'btnsavepreset
         '
-        Me.btnsavepreset.Location = New System.Drawing.Point(7, 553)
+        Me.btnsavepreset.Location = New System.Drawing.Point(7, 471)
         Me.btnsavepreset.Name = "btnsavepreset"
         Me.btnsavepreset.Size = New System.Drawing.Size(279, 75)
         Me.btnsavepreset.TabIndex = 6
@@ -207,15 +220,9 @@ Partial Class Presetchooser
         Me.btnclosepresetchooser.Text = "Use This Preset Pattern"
         Me.btnclosepresetchooser.UseVisualStyleBackColor = True
         '
-        'btnresetcenter
+        'reminderssavedata
         '
-        Me.btnresetcenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnresetcenter.Location = New System.Drawing.Point(155, 634)
-        Me.btnresetcenter.Name = "btnresetcenter"
-        Me.btnresetcenter.Size = New System.Drawing.Size(131, 46)
-        Me.btnresetcenter.TabIndex = 13
-        Me.btnresetcenter.Text = "Reset Center"
-        Me.btnresetcenter.UseVisualStyleBackColor = True
+        Me.reminderssavedata.Interval = 500
         '
         'Presetchooser
         '
@@ -252,4 +259,5 @@ Partial Class Presetchooser
     Friend WithEvents btnshowerrors As Button
     Friend WithEvents btnclosepresetchooser As Button
     Friend WithEvents btnresetcenter As Button
+    Friend WithEvents reminderssavedata As Timer
 End Class
