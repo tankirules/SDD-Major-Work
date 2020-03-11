@@ -142,11 +142,11 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.Label4.Location = New System.Drawing.Point(1648, 436)
+        Me.Label4.Location = New System.Drawing.Point(1623, 436)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(192, 25)
+        Me.Label4.Size = New System.Drawing.Size(211, 25)
         Me.Label4.TabIndex = 14
-        Me.Label4.Text = "Actual Tick Speed:"
+        Me.Label4.Text = "Updates per second:"
         '
         'Tickspeedcalculator
         '
