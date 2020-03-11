@@ -32,6 +32,8 @@ Public Class Form1
             Dim fs As FileStream = File.Create(Presetchooser.Path)
 
         End If
+        Button3.Hide()
+        btncancelpresetplacement.Hide()
         musicchoice = 0
         music = True
         firststart = True
@@ -501,6 +503,13 @@ Public Class Form1
         puttinginpreset = False
         Button3.Hide()
         btncancelpresetplacement.Hide()
+        For x = 1 To 50
+            For y = 1 To 50
+                If Checked(x, y) = 0 Then
+                    Grid(x, y).BackColor = Color.White
+                End If
+            Next
+        Next
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
