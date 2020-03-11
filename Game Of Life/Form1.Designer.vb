@@ -179,16 +179,16 @@ Partial Class Form1
         Me.lstboxsorted.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstboxsorted.FormattingEnabled = True
         Me.lstboxsorted.ItemHeight = 20
-        Me.lstboxsorted.Location = New System.Drawing.Point(1187, 54)
+        Me.lstboxsorted.Location = New System.Drawing.Point(1029, 54)
         Me.lstboxsorted.Name = "lstboxsorted"
-        Me.lstboxsorted.Size = New System.Drawing.Size(374, 464)
+        Me.lstboxsorted.Size = New System.Drawing.Size(532, 464)
         Me.lstboxsorted.TabIndex = 18
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(1244, 9)
+        Me.Label2.Location = New System.Drawing.Point(1153, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(248, 25)
         Me.Label2.TabIndex = 19

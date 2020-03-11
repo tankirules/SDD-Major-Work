@@ -32,6 +32,7 @@ Public Class Form1
             Dim fs As FileStream = File.Create(Presetchooser.Path)
 
         End If
+        lstboxsorted.HorizontalScrollbar = True
         Button3.Hide()
         btncancelpresetplacement.Hide()
         musicchoice = 0
@@ -443,11 +444,11 @@ Public Class Form1
         End If
 
         If valid = True Then
-            listofusernames.Add(loadedu)
+            listofusernames.Add(loadedu + "         at: " + strFileName)
             lstboxsorted.Items.Clear()
             listofusernames.Sort()
             For i = 0 To listofusernames.Count() - 1
-                lstboxsorted.Items.Add(listofusernames(i))
+                lstboxsorted.Items.Add("Username: " + listofusernames(i))
             Next
         End If
 
