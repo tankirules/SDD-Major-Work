@@ -39,8 +39,10 @@ Partial Class Form1
         Me.btnchangemusic = New System.Windows.Forms.Button()
         Me.lstboxsorted = New System.Windows.Forms.ListBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btncancelpresetplacement = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnmusic = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.Speedcontrol, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -95,15 +97,15 @@ Partial Class Form1
         Me.lbltimebetween.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltimebetween.Location = New System.Drawing.Point(1727, 380)
         Me.lbltimebetween.Name = "lbltimebetween"
-        Me.lbltimebetween.Size = New System.Drawing.Size(36, 25)
+        Me.lbltimebetween.Size = New System.Drawing.Size(24, 25)
         Me.lbltimebetween.TabIndex = 6
-        Me.lbltimebetween.Text = "64"
+        Me.lbltimebetween.Text = "1"
         '
         'btnpreset
         '
         Me.btnpreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnpreset.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnpreset.Location = New System.Drawing.Point(1340, 610)
+        Me.btnpreset.Location = New System.Drawing.Point(1455, 682)
         Me.btnpreset.Name = "btnpreset"
         Me.btnpreset.Size = New System.Drawing.Size(321, 128)
         Me.btnpreset.TabIndex = 8
@@ -192,6 +194,16 @@ Partial Class Form1
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "Past Loaded Usernames"
         '
+        'btncancelpresetplacement
+        '
+        Me.btncancelpresetplacement.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelpresetplacement.Location = New System.Drawing.Point(1273, 524)
+        Me.btncancelpresetplacement.Name = "btncancelpresetplacement"
+        Me.btncancelpresetplacement.Size = New System.Drawing.Size(184, 80)
+        Me.btncancelpresetplacement.TabIndex = 21
+        Me.btncancelpresetplacement.Text = "Cancel Preset Placement"
+        Me.btncancelpresetplacement.UseVisualStyleBackColor = True
+        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
@@ -201,7 +213,7 @@ Partial Class Form1
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button1.Location = New System.Drawing.Point(1467, 540)
+        Me.Button1.Location = New System.Drawing.Point(1577, 612)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(64, 64)
         Me.Button1.TabIndex = 20
@@ -219,12 +231,25 @@ Partial Class Form1
         Me.btnmusic.UseMnemonic = False
         Me.btnmusic.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.cancel
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(1187, 524)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(80, 80)
+        Me.Button3.TabIndex = 22
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1042)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btncancelpresetplacement)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lstboxsorted)
         Me.Controls.Add(Me.btnchangemusic)
@@ -239,6 +264,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Speedcontrol)
         Me.Controls.Add(Me.btnreset)
         Me.Controls.Add(Me.btnstartstop)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button1)
         Me.Name = "Form1"
         Me.RightToLeftLayout = True
         Me.Text = "x"
@@ -267,4 +294,6 @@ Partial Class Form1
     Friend WithEvents lstboxsorted As ListBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents btncancelpresetplacement As Button
+    Friend WithEvents Button3 As Button
 End Class

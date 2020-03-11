@@ -102,6 +102,8 @@ Public Class Form1
                 End Try
             Next
             puttinginpreset = False
+            Button3.Hide()
+            btncancelpresetplacement.Hide()
             oldcoords.Clear()
 
         Else
@@ -137,6 +139,10 @@ Public Class Form1
             tempcoord.xcoord = xpos
             tempcoord.ycoord = ypos
             oldcoords.Add(tempcoord)
+
+            Button3.Show()
+            btncancelpresetplacement.Show()
+
             For i = 0 To checkedgridbeforesettingpreset.Count() - 1
                 tempcoord = checkedgridbeforesettingpreset(i)
                 Grid(tempcoord.xcoord, tempcoord.ycoord).BackColor = Color.Black
@@ -489,6 +495,19 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         btnpreset.PerformClick()
+    End Sub
+
+    Private Sub btncancelpresetplacement_Click(sender As Object, e As EventArgs) Handles btncancelpresetplacement.Click
+        puttinginpreset = False
+        Button3.Hide()
+        btncancelpresetplacement.Hide()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        btncancelpresetplacement.PerformClick()
+        Button3.Hide()
+        btncancelpresetplacement.Hide()
+
     End Sub
 
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click

@@ -149,6 +149,7 @@
   <ItemGroup>
     <None Include="weregilded.wav" />
     <None Include="chaser.wav" />
+    <None Include="cancel.png" />
     <Content Include="eyes.png" />
     <Content Include="music.png" />
     <Content Include="nomusic.png" />
