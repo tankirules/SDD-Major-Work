@@ -27,7 +27,6 @@ Public Class Presetchooser
     Dim ptemp4 As Object
     Dim ptemp5 As Object
     Dim ptemp6 As Object
-    Dim arrayofpresests(6) As Integer
     Dim presetcountload As Integer
     Public Path As String = "c:\Gameoflife\presets.txt"
     Dim loadedfile() As String = IO.File.ReadAllLines(Path)

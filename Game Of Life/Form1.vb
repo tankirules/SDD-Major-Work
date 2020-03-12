@@ -108,6 +108,8 @@ Public Class Form1
             Button3.Hide()
             btncancelpresetplacement.Hide()
             oldcoords.Clear()
+        ElseIf isdown = True Then
+
 
         Else
             If Checked(xpos, ypos) = 0 Then
