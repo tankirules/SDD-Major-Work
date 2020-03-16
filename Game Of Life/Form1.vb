@@ -129,6 +129,9 @@ Public Class Form1
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
         If puttinginpreset = True Then
+            btnstartstop.Text = "Start"
+            updatetimer.Stop()
+
             Dim tempoldcoord As Presetchooser.coords
             If firststart = True Then
                 firststart = False
@@ -163,7 +166,6 @@ Public Class Form1
                     oldcoords.Add(tempoldcoord)
                 Catch ex As Exception
                     outofboundssettingpreset = True
-                    Console.WriteLine("EXCEPTION PART OF GRID OUT OF THING")
                 End Try
             Next
 
@@ -173,31 +175,28 @@ Public Class Form1
                 Next
             End If
 
-
-
-
         ElseIf isdown Then
             Grid(xpos, ypos).BackColor = checkedcolor
             Checked(xpos, ypos) = 1
         End If
 
-
-
-
-
-
     End Sub
 
     Private Sub btnstartstop_Click(sender As Object, e As EventArgs) Handles btnstartstop.Click
-        If Started = False Then
-            btnstartstop.Text = "Stop"
-            Started = True
-            updatetimer.Start()
-        ElseIf Started = True Then
-            btnstartstop.Text = "Start"
-            Started = False
-            updatetimer.Stop()
+        If puttinginpreset = True Then
+            MsgBox("Place or cancel your preset before starting the timer!")
+        Else
+            If Started = False Then
+                btnstartstop.Text = "Stop"
+                Started = True
+                updatetimer.Start()
+            ElseIf Started = True Then
+                btnstartstop.Text = "Start"
+                Started = False
+                updatetimer.Stop()
+            End If
         End If
+
     End Sub
     Private Sub resetgrid()
         For x = 1 To 50

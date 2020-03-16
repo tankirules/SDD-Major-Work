@@ -42,6 +42,7 @@ Public Class Presetchooser
         Public val As Boolean
     End Class
     Private Sub Initializevaluesandlists()
+        rbtnpreset1.Checked = True
         remindercount = 0
         savetofilereminder = False
         SideLength = Me.Bounds.Height / 60

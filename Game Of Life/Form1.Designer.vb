@@ -30,7 +30,6 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbltimebetween = New System.Windows.Forms.Label()
         Me.btnpreset = New System.Windows.Forms.Button()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btnopen = New System.Windows.Forms.Button()
         Me.btnsave = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -111,12 +110,6 @@ Partial Class Form1
         Me.btnpreset.TabIndex = 8
         Me.btnpreset.Text = "Preset patterns"
         Me.btnpreset.UseVisualStyleBackColor = True
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
-        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'btnopen
         '
@@ -283,7 +276,6 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents lbltimebetween As Label
     Friend WithEvents btnpreset As Button
-    Friend WithEvents ImageList1 As ImageList
     Friend WithEvents btnopen As Button
     Friend WithEvents btnsave As Button
     Friend WithEvents Label4 As Label
