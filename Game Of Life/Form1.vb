@@ -270,17 +270,11 @@ Public Class Form1
             Outofbounds = True
             neighbours = -100
         Else
-            neighbours = Checked(x - 1, y + 1) + Checked(x, y + 1) + Checked(x + 1, y + 1) + Checked(x - 1, y) + Checked(x + 1, y) + Checked(x - 1, y - 1) + Checked(x, y - 1) + Checked(x + 1, y - 1)
+            neighbours = Checked(x - 1, y + 1) + Checked(x, y + 1) +
+            Checked(x + 1, y + 1) + Checked(x - 1, y) + Checked(x + 1, y) +
+            Checked(x - 1, y - 1) + Checked(x, y - 1) + Checked(x + 1, y - 1)
 
         End If
-
-
-
-        If neighbours > 0 Then
-            'Console.WriteLine("Total Neighbours for: " + CStr(x) + " " + CStr(y) + " is " + CStr(neighbours))
-        End If
-
-
 
     End Sub
 
