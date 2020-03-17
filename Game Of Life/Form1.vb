@@ -326,6 +326,8 @@ Public Class Form1
     End Sub
 
     Private Sub btnopen_Click(sender As Object, e As EventArgs) Handles btnopen.Click
+        updatetimer.Stop()
+        btnstartstop.Text = "Start"
         Dim fd As OpenFileDialog = New OpenFileDialog()
         Dim strFileName As String
         Dim valid As Boolean
@@ -346,7 +348,6 @@ Public Class Form1
             strFileName = fd.FileName
             Dim loadedfile() As String = IO.File.ReadAllLines(strFileName)
             If loadedfile(0).Contains("Username:") And loadedfile(1).Contains("Password:") Then
-
                 result = UPD.ShowDialog(Me)
                 If result = Windows.Forms.DialogResult.OK And UPD.Closedproperlyvalidate = True Then
                     enteredu = UPD.txtusername.Text
