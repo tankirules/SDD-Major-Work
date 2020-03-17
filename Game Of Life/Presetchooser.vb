@@ -108,7 +108,7 @@ Public Class Presetchooser
             For i = 0 To loadedfile.Length - 1
                 If loadedfile(i).Length < 2 Then
                     MsgBox("Line length too short!")
-                    loadederror = "Line: " + CStr(i + 1) + "is below the required length of minimum 2!"
+                    loadederror = "Line: " + CStr(i + 1) + " is below the required length of minimum 2!"
                     lstbox.Items.Add(loadederror)
                 End If
             Next
