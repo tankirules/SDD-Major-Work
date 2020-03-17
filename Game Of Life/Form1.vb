@@ -285,13 +285,14 @@ Public Class Form1
 
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+        updatetimer.Stop()
+        btnstartstop.Text = "Start"
+        MsgBox("Highly recommend stopping the timer when exporting the grid, to export your desired grid")
         Dim UPD As New InputUPDForm
         Dim tempx, tempy As String
-
         If UPD.ShowDialog(Me) <> DialogResult.Cancel And UPD.ClosedproperlyInput = True Then
             Username = UPD.txtusername.Text
             password = UPD.txtpassword.Text
-
             Dim SaveFile As New SaveFileDialog With {
             .Title = "Save Current board State",
             .Filter = "Grid State File|*.gsf|All files|*.*",
@@ -320,18 +321,10 @@ Public Class Form1
                     Next
                 End Using
 
-
-
             End If
         Else
             MsgBox("Exporting Grid State Canceled")
         End If
-
-
-
-
-
-
     End Sub
 
     Private Sub btnopen_Click(sender As Object, e As EventArgs) Handles btnopen.Click
@@ -348,13 +341,9 @@ Public Class Form1
         valid = False
         tempx = ""
         tempy = ""
-
-
         fd.Title = "Load Saved Grid State"
         fd.InitialDirectory = "C:\"
         fd.Filter = "Grid State File|*.gsf|All files|*.*"
-
-
         If fd.ShowDialog() = DialogResult.OK Then
             strFileName = fd.FileName
             Dim loadedfile() As String = IO.File.ReadAllLines(strFileName)
@@ -370,11 +359,11 @@ Public Class Form1
                     loadedp = loadedp.Remove(0, 9)
                     For x = 1 To 50
                         For y = 1 To 50
+                            TempGrid(x, y) = Checked(x, y)
                             Checked(x, y) = 0
                             Grid(x, y).BackColor = uncheckedcolor
                         Next
                     Next
-
                     If enteredu = loadedu And enteredp = loadedp Then
                         valid = True
                         For i = 2 To loadedfile.Length - 1
@@ -382,15 +371,11 @@ Public Class Form1
                             tempx = ""
                             tempy = ""
                             tempstring = loadedfile(i)
-                            Console.WriteLine("tempstring at loadedfile" + CStr(i) + "is : " + tempstring)
                             If tempstring(2) <> "," Or tempstring.Length <> 5 Then
                                 MsgBox("Loaded file has invalid coordinate format!")
-                                Console.WriteLine("Loaded file has invalid coordinate format!")
                                 valid = False
                                 Exit For
                             Else
-
-                                Console.WriteLine("passed comma coordinate test")
                                 For h = 0 To 1
                                     If IsNumeric(tempstring(h)) = False Then
                                         coordsvalid = False
@@ -414,16 +399,20 @@ Public Class Form1
                                     Exit For
                                 End If
 
-
-                                Console.WriteLine("tempx is " + tempx + "and tempy is " + tempy)
                                 Checked(CInt(tempx), CInt(tempy)) = 1
                                 Grid(CInt(tempx), CInt(tempy)).BackColor = checkedcolor
-                                Console.WriteLine("Checked black at :" + tempx + " , " + tempy)
-
                             End If
                         Next
                     Else
                         MsgBox("Username/Password Incorrect!")
+                        For x = 1 To 50
+                            For y = 1 To 50
+                                Checked(x, y) = TempGrid(x, y)
+                                If Checked(x, y) = 1 Then
+                                    Grid(x, y).BackColor = checkedcolor
+                                End If
+                            Next
+                        Next
                     End If
                 Else
                     MsgBox("Save file not loaded!")
@@ -435,7 +424,16 @@ Public Class Form1
 
                 valid = False
             End If
-
+        End If
+        If coordsvalid = False Then
+            For x = 1 To 50
+                For y = 1 To 50
+                    Checked(x, y) = TempGrid(x, y)
+                    If Checked(x, y) = 1 Then
+                        Grid(x, y).BackColor = checkedcolor
+                    End If
+                Next
+            Next
         End If
 
         If valid = True Then
