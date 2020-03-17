@@ -287,7 +287,6 @@ Public Class Form1
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
         updatetimer.Stop()
         btnstartstop.Text = "Start"
-        MsgBox("Highly recommend stopping the timer when exporting the grid, to export your desired grid")
         Dim UPD As New InputUPDForm
         Dim tempx, tempy As String
         If UPD.ShowDialog(Me) <> DialogResult.Cancel And UPD.ClosedproperlyInput = True Then
@@ -320,7 +319,6 @@ Public Class Form1
                         Next
                     Next
                 End Using
-
             End If
         Else
             MsgBox("Exporting Grid State Canceled")
@@ -425,12 +423,15 @@ Public Class Form1
                 valid = False
             End If
         End If
-        If coordsvalid = False Then
+        If coordsvalid = False Or valid = False Then
             For x = 1 To 50
                 For y = 1 To 50
+                    Checked(x, y) = 0
                     Checked(x, y) = TempGrid(x, y)
                     If Checked(x, y) = 1 Then
                         Grid(x, y).BackColor = checkedcolor
+                    Else
+                        Grid(x, y).BackColor = uncheckedcolor
                     End If
                 Next
             Next
