@@ -105,7 +105,7 @@ Public Class Presetchooser
         Next
 
         If File.Exists(Path) And loadedfile.Length >= 6 Then
-            If loadedfile(0).Contains("P1") Then
+            If loadedfile(0)(0) + loadedfile(0)(1) = "P1" Then
                 presetlinelist.Add(0)
                 presetcountload += 1
                 Console.WriteLine("P1 exists!")
@@ -114,7 +114,7 @@ Public Class Presetchooser
                 For i = 1 To (loadedfile.Length() - 1)
 
                     Console.WriteLine(loadedfile.Length())
-                    If loadedfile(i).Contains("P2") Then
+                    If loadedfile(i)(0) + loadedfile(i)(1) = "P2" Then
                         If presetcountload = 1 Then
                             presetlinelist.Add(i)
                             presetcountload += 1
@@ -129,7 +129,7 @@ Public Class Presetchooser
                             Exit For
                         End If
                     End If
-                    If loadedfile(i).Contains("P3") Then
+                    If loadedfile(i)(0) + loadedfile(i)(1) = "P3" Then
                         If presetcountload = 2 Then
                             presetlinelist.Add(i)
                             presetcountload += 1
@@ -144,7 +144,7 @@ Public Class Presetchooser
                             Exit For
                         End If
                     End If
-                    If loadedfile(i).Contains("P4") Then
+                    If loadedfile(i)(0) + loadedfile(i)(1) = "P4" Then
                         If presetcountload = 3 Then
                             presetlinelist.Add(i)
                             presetcountload += 1
@@ -159,7 +159,7 @@ Public Class Presetchooser
                             Exit For
                         End If
                     End If
-                    If loadedfile(i).Contains("P5") Then
+                    If loadedfile(i)(0) + loadedfile(i)(1) = "P5" Then
                         If presetcountload = 4 Then
                             presetlinelist.Add(i)
                             presetcountload += 1
@@ -174,7 +174,7 @@ Public Class Presetchooser
                             Exit For
                         End If
                     End If
-                    If loadedfile(i).Contains("P6") Then
+                    If loadedfile(i)(0) + loadedfile(i)(1) = "P6" Then
                         If presetcountload = 5 Then
                             presetlinelist.Add(i)
                             presetcountload += 1
