@@ -502,7 +502,9 @@ Public Class Form1
         For x = 1 To 50
             For y = 1 To 50
                 If Checked(x, y) = 0 Then
-                    Grid(x, y).BackColor = Color.White
+                    Grid(x, y).BackColor = uncheckedcolor
+                Else
+                    Grid(x, y).BackColor = checkedcolor
                 End If
             Next
         Next
