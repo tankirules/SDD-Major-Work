@@ -49,7 +49,7 @@ Partial Class Form1
         '
         Me.btnstartstop.BackColor = System.Drawing.Color.Transparent
         Me.btnstartstop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnstartstop.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnstartstop.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnstartstop.ForeColor = System.Drawing.Color.Lime
         Me.btnstartstop.Location = New System.Drawing.Point(1604, 185)
         Me.btnstartstop.Margin = New System.Windows.Forms.Padding(2)
@@ -63,7 +63,7 @@ Partial Class Form1
         '
         Me.btnreset.BackColor = System.Drawing.Color.Transparent
         Me.btnreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnreset.ForeColor = System.Drawing.Color.Red
         Me.btnreset.Location = New System.Drawing.Point(1756, 185)
         Me.btnreset.Name = "btnreset"
@@ -78,7 +78,7 @@ Partial Class Form1
         '
         'Speedcontrol
         '
-        Me.Speedcontrol.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Speedcontrol.BackColor = System.Drawing.Color.Gold
         Me.Speedcontrol.Location = New System.Drawing.Point(1637, 347)
         Me.Speedcontrol.Maximum = 1000
         Me.Speedcontrol.Minimum = 1
@@ -105,6 +105,7 @@ Partial Class Form1
         Me.lbltimebetween.BackColor = System.Drawing.Color.Transparent
         Me.lbltimebetween.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbltimebetween.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltimebetween.ForeColor = System.Drawing.Color.White
         Me.lbltimebetween.Location = New System.Drawing.Point(1729, 395)
         Me.lbltimebetween.Name = "lbltimebetween"
         Me.lbltimebetween.Size = New System.Drawing.Size(24, 25)
@@ -115,8 +116,8 @@ Partial Class Form1
         '
         Me.btnpreset.BackColor = System.Drawing.Color.Transparent
         Me.btnpreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnpreset.Font = New System.Drawing.Font("Algerian", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnpreset.ForeColor = System.Drawing.Color.Black
+        Me.btnpreset.Font = New System.Drawing.Font("Algerian", 33.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpreset.ForeColor = System.Drawing.Color.White
         Me.btnpreset.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnpreset.Location = New System.Drawing.Point(1455, 682)
         Me.btnpreset.Name = "btnpreset"
@@ -129,8 +130,8 @@ Partial Class Form1
         '
         Me.btnopen.BackColor = System.Drawing.Color.Transparent
         Me.btnopen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnopen.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.btnopen.ForeColor = System.Drawing.Color.Yellow
+        Me.btnopen.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnopen.ForeColor = System.Drawing.Color.Blue
         Me.btnopen.Location = New System.Drawing.Point(1617, 826)
         Me.btnopen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnopen.Name = "btnopen"
@@ -143,8 +144,8 @@ Partial Class Form1
         '
         Me.btnsave.BackColor = System.Drawing.Color.Transparent
         Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnsave.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnsave.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnsave.ForeColor = System.Drawing.Color.Red
         Me.btnsave.Location = New System.Drawing.Point(1198, 826)
         Me.btnsave.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsave.Name = "btnsave"
@@ -159,6 +160,7 @@ Partial Class Form1
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(1623, 436)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(211, 25)
@@ -175,6 +177,7 @@ Partial Class Form1
         Me.lbltickspeed.BackColor = System.Drawing.Color.Transparent
         Me.lbltickspeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbltickspeed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.lbltickspeed.ForeColor = System.Drawing.Color.White
         Me.lbltickspeed.Location = New System.Drawing.Point(1854, 436)
         Me.lbltickspeed.Name = "lbltickspeed"
         Me.lbltickspeed.Size = New System.Drawing.Size(0, 25)
@@ -184,7 +187,7 @@ Partial Class Form1
         '
         Me.btnchangemusic.BackColor = System.Drawing.Color.Transparent
         Me.btnchangemusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnchangemusic.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnchangemusic.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnchangemusic.ForeColor = System.Drawing.Color.Maroon
         Me.btnchangemusic.Location = New System.Drawing.Point(1617, 29)
         Me.btnchangemusic.Name = "btnchangemusic"
@@ -219,7 +222,7 @@ Partial Class Form1
         '
         Me.btncancelpresetplacement.BackColor = System.Drawing.Color.Transparent
         Me.btncancelpresetplacement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncancelpresetplacement.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelpresetplacement.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelpresetplacement.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btncancelpresetplacement.Location = New System.Drawing.Point(1273, 524)
         Me.btncancelpresetplacement.Name = "btncancelpresetplacement"
@@ -231,7 +234,7 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.hammer
+        Me.Button1.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.hammerinverted
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.Button1.FlatAppearance.BorderSize = 0
@@ -274,7 +277,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources._76291
+        Me.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.KvatchBackground
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1904, 1042)
         Me.Controls.Add(Me.btncancelpresetplacement)

@@ -66,7 +66,7 @@ Partial Class InputUPDForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label1.Location = New System.Drawing.Point(109, 39)
+        Me.Label1.Location = New System.Drawing.Point(130, 39)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(76, 20)
         Me.Label1.TabIndex = 3

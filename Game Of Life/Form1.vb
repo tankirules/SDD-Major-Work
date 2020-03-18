@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Text
+
 Public Class Form1
 
     Dim Grid(50, 50) As Panel
@@ -545,5 +546,53 @@ Public Class Form1
     End Sub
     Private Sub btnstartstop_MouseLeave(sender As Object, e As EventArgs) Handles btnstartstop.MouseLeave
         btnstartstop.Font = New Font(btnstartstop.Font.FontFamily, btnstartstop.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnsave_MouseEnter(sender As Object, e As EventArgs) Handles btnsave.MouseEnter
+        btnsave.Font = New Font(btnsave.Font.FontFamily, btnsave.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnsave_MouseLeave(sender As Object, e As EventArgs) Handles btnsave.MouseLeave
+        btnsave.Font = New Font(btnsave.Font.FontFamily, btnsave.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnopen_MouseEnter(sender As Object, e As EventArgs) Handles btnopen.MouseEnter
+        btnopen.Font = New Font(btnopen.Font.FontFamily, btnopen.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnopen_MouseLeave(sender As Object, e As EventArgs) Handles btnopen.MouseLeave
+        btnopen.Font = New Font(btnopen.Font.FontFamily, btnopen.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnreset_MouseEnter(sender As Object, e As EventArgs) Handles btnreset.MouseEnter
+        btnreset.Font = New Font(btnreset.Font.FontFamily, btnreset.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnreset_MouseLeave(sender As Object, e As EventArgs) Handles btnreset.MouseLeave
+        btnreset.Font = New Font(btnreset.Font.FontFamily, btnreset.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btncancelpresetplacement_MouseEnter(sender As Object, e As EventArgs) Handles btncancelpresetplacement.MouseEnter
+        btncancelpresetplacement.Font = New Font(btncancelpresetplacement.Font.FontFamily, btncancelpresetplacement.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btncancelpresetplacement_MouseLeave(sender As Object, e As EventArgs) Handles btncancelpresetplacement.MouseLeave
+        btncancelpresetplacement.Font = New Font(btncancelpresetplacement.Font.FontFamily, btncancelpresetplacement.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub button1_MouseEnter(sender As Object, e As EventArgs) Handles Button1.MouseEnter
+        Button1.Font = New Font(Button1.Font.FontFamily, Button1.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub button1_MouseLeave(sender As Object, e As EventArgs) Handles Button1.MouseLeave
+        Button1.Font = New Font(Button1.Font.FontFamily, Button1.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub button3_MouseEnter(sender As Object, e As EventArgs) Handles Button3.MouseEnter
+        Button3.Font = New Font(Button3.Font.FontFamily, Button3.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub button3_MouseLeave(sender As Object, e As EventArgs) Handles Button3.MouseLeave
+        Button3.Font = New Font(Button3.Font.FontFamily, Button3.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnpreset_MouseEnter(sender As Object, e As EventArgs) Handles btnpreset.MouseEnter
+        btnpreset.Font = New Font(btnpreset.Font.FontFamily, btnpreset.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnpreset_MouseLeave(sender As Object, e As EventArgs) Handles btnpreset.MouseLeave
+        btnpreset.Font = New Font(btnpreset.Font.FontFamily, btnpreset.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnmusic_MouseEnter(sender As Object, e As EventArgs) Handles btnmusic.MouseEnter
+        btnmusic.Size = New Size(80, 80)
+    End Sub
+    Private Sub btnmusic_MouseLeave(sender As Object, e As EventArgs) Handles btnmusic.MouseLeave
+        btnmusic.Size = New Size(64, 64)
     End Sub
 End Class

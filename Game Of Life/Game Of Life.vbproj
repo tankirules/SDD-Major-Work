@@ -155,6 +155,10 @@
     <Content Include="nomusic.png" />
     <None Include="Resources\hammer.png" />
     <None Include="Resources\76291.jpg" />
+    <None Include="Resources\ben-hale-cave01.jpg" />
+    <None Include="Resources\KvatchBackground.png" />
+    <None Include="Resources\hammerinverted.png" />
+    <None Include="Resources\ben-hale-cave01.png" />
     <Content Include="smallereyes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

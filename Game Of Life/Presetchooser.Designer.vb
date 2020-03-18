@@ -23,6 +23,7 @@ Partial Class Presetchooser
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presetchooser))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnresetcenter = New System.Windows.Forms.Button()
         Me.btnshowerrors = New System.Windows.Forms.Button()
@@ -45,6 +46,7 @@ Partial Class Presetchooser
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.btnresetcenter)
         Me.GroupBox1.Controls.Add(Me.btnshowerrors)
         Me.GroupBox1.Controls.Add(Me.lstbox)
@@ -59,6 +61,7 @@ Partial Class Presetchooser
         Me.GroupBox1.Controls.Add(Me.rbtnpreset2)
         Me.GroupBox1.Controls.Add(Me.rbtnpreset1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(1082, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(857, 1037)
@@ -68,7 +71,9 @@ Partial Class Presetchooser
         '
         'btnresetcenter
         '
+        Me.btnresetcenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnresetcenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnresetcenter.ForeColor = System.Drawing.Color.Transparent
         Me.btnresetcenter.Location = New System.Drawing.Point(143, 552)
         Me.btnresetcenter.Name = "btnresetcenter"
         Me.btnresetcenter.Size = New System.Drawing.Size(131, 46)
@@ -78,7 +83,9 @@ Partial Class Presetchooser
         '
         'btnshowerrors
         '
+        Me.btnshowerrors.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnshowerrors.Font = New System.Drawing.Font("Lucida Calligraphy", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnshowerrors.ForeColor = System.Drawing.Color.Transparent
         Me.btnshowerrors.Location = New System.Drawing.Point(459, 626)
         Me.btnshowerrors.Name = "btnshowerrors"
         Me.btnshowerrors.Size = New System.Drawing.Size(319, 94)
@@ -99,7 +106,9 @@ Partial Class Presetchooser
         '
         'btncenter
         '
+        Me.btncenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.btncenter.ForeColor = System.Drawing.Color.Transparent
         Me.btncenter.Location = New System.Drawing.Point(6, 552)
         Me.btncenter.Name = "btncenter"
         Me.btncenter.Size = New System.Drawing.Size(131, 46)
@@ -109,7 +118,9 @@ Partial Class Presetchooser
         '
         'btnsave
         '
-        Me.btnsave.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnsave.BackColor = System.Drawing.Color.Transparent
+        Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnsave.ForeColor = System.Drawing.Color.Transparent
         Me.btnsave.Location = New System.Drawing.Point(7, 625)
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(290, 94)
@@ -119,6 +130,8 @@ Partial Class Presetchooser
         '
         'btneditname
         '
+        Me.btneditname.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btneditname.ForeColor = System.Drawing.Color.Transparent
         Me.btneditname.Location = New System.Drawing.Point(488, 471)
         Me.btneditname.Name = "btneditname"
         Me.btneditname.Size = New System.Drawing.Size(223, 75)
@@ -128,6 +141,8 @@ Partial Class Presetchooser
         '
         'btnsavepreset
         '
+        Me.btnsavepreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnsavepreset.ForeColor = System.Drawing.Color.Transparent
         Me.btnsavepreset.Location = New System.Drawing.Point(7, 471)
         Me.btnsavepreset.Name = "btnsavepreset"
         Me.btnsavepreset.Size = New System.Drawing.Size(279, 75)
@@ -138,6 +153,7 @@ Partial Class Presetchooser
         'rbtnpreset6
         '
         Me.rbtnpreset6.AutoSize = True
+        Me.rbtnpreset6.ForeColor = System.Drawing.Color.White
         Me.rbtnpreset6.Location = New System.Drawing.Point(292, 408)
         Me.rbtnpreset6.Name = "rbtnpreset6"
         Me.rbtnpreset6.Size = New System.Drawing.Size(111, 30)
@@ -149,6 +165,7 @@ Partial Class Presetchooser
         'rbtnpreset5
         '
         Me.rbtnpreset5.AutoSize = True
+        Me.rbtnpreset5.ForeColor = System.Drawing.Color.White
         Me.rbtnpreset5.Location = New System.Drawing.Point(292, 260)
         Me.rbtnpreset5.Name = "rbtnpreset5"
         Me.rbtnpreset5.Size = New System.Drawing.Size(111, 30)
@@ -160,6 +177,7 @@ Partial Class Presetchooser
         'rbtnpreset4
         '
         Me.rbtnpreset4.AutoSize = True
+        Me.rbtnpreset4.ForeColor = System.Drawing.Color.White
         Me.rbtnpreset4.Location = New System.Drawing.Point(292, 104)
         Me.rbtnpreset4.Name = "rbtnpreset4"
         Me.rbtnpreset4.Size = New System.Drawing.Size(111, 30)
@@ -171,6 +189,7 @@ Partial Class Presetchooser
         'rbtnpreset3
         '
         Me.rbtnpreset3.AutoSize = True
+        Me.rbtnpreset3.ForeColor = System.Drawing.Color.White
         Me.rbtnpreset3.Location = New System.Drawing.Point(6, 408)
         Me.rbtnpreset3.Name = "rbtnpreset3"
         Me.rbtnpreset3.Size = New System.Drawing.Size(111, 30)
@@ -182,6 +201,7 @@ Partial Class Presetchooser
         'rbtnpreset2
         '
         Me.rbtnpreset2.AutoSize = True
+        Me.rbtnpreset2.ForeColor = System.Drawing.Color.White
         Me.rbtnpreset2.Location = New System.Drawing.Point(6, 260)
         Me.rbtnpreset2.Name = "rbtnpreset2"
         Me.rbtnpreset2.Size = New System.Drawing.Size(111, 30)
@@ -193,6 +213,7 @@ Partial Class Presetchooser
         'rbtnpreset1
         '
         Me.rbtnpreset1.AutoSize = True
+        Me.rbtnpreset1.ForeColor = System.Drawing.Color.White
         Me.rbtnpreset1.Location = New System.Drawing.Point(6, 104)
         Me.rbtnpreset1.Name = "rbtnpreset1"
         Me.rbtnpreset1.Size = New System.Drawing.Size(111, 30)
@@ -203,23 +224,29 @@ Partial Class Presetchooser
         '
         'btnresetgrid
         '
+        Me.btnresetgrid.BackColor = System.Drawing.Color.Transparent
+        Me.btnresetgrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnresetgrid.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.btnresetgrid.ForeColor = System.Drawing.Color.White
         Me.btnresetgrid.Location = New System.Drawing.Point(143, 933)
         Me.btnresetgrid.Name = "btnresetgrid"
         Me.btnresetgrid.Size = New System.Drawing.Size(125, 69)
         Me.btnresetgrid.TabIndex = 9
         Me.btnresetgrid.Text = "Reset Grid"
-        Me.btnresetgrid.UseVisualStyleBackColor = True
+        Me.btnresetgrid.UseVisualStyleBackColor = False
         '
         'btnclosepresetchooser
         '
+        Me.btnclosepresetchooser.BackColor = System.Drawing.Color.Transparent
+        Me.btnclosepresetchooser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnclosepresetchooser.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.btnclosepresetchooser.ForeColor = System.Drawing.Color.White
         Me.btnclosepresetchooser.Location = New System.Drawing.Point(407, 933)
         Me.btnclosepresetchooser.Name = "btnclosepresetchooser"
         Me.btnclosepresetchooser.Size = New System.Drawing.Size(155, 69)
         Me.btnclosepresetchooser.TabIndex = 10
         Me.btnclosepresetchooser.Text = "Use This Preset Pattern"
-        Me.btnclosepresetchooser.UseVisualStyleBackColor = True
+        Me.btnclosepresetchooser.UseVisualStyleBackColor = False
         '
         'reminderssavedata
         '
@@ -229,10 +256,13 @@ Partial Class Presetchooser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1904, 1042)
         Me.Controls.Add(Me.btnclosepresetchooser)
         Me.Controls.Add(Me.btnresetgrid)
         Me.Controls.Add(Me.GroupBox1)
+        Me.DoubleBuffered = True
         Me.Name = "Presetchooser"
         Me.Text = "Presetchooser"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

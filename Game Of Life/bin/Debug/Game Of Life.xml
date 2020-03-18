@@ -27,6 +27,11 @@ Game Of Life
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Game_Of_Life.My.Resources.Resources.ben_hale_cave01">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Game_Of_Life.My.Resources.Resources.cancel">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -42,7 +47,12 @@ Game Of Life
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:Game_Of_Life.My.Resources.Resources.hammer">
+<member name="P:Game_Of_Life.My.Resources.Resources.hammerinverted">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Game_Of_Life.My.Resources.Resources.KvatchBackground">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
