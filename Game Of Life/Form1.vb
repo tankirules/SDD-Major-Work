@@ -475,6 +475,7 @@ Public Class Form1
     Private Sub btnmusic_Click(sender As Object, e As EventArgs) Handles btnmusic.Click
         If music = True Then
             music = False
+            lblmusicname.Text = "Music Stopped"
             btnmusic.BackgroundImage = My.Resources.nomusic
             My.Computer.Audio.Stop()
         ElseIf music = False Then
@@ -482,9 +483,10 @@ Public Class Form1
             btnmusic.BackgroundImage = My.Resources.music
             If musicchoice = 0 Then
                 My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
+                lblmusicname.Text = "Now Playing: Weregilded"
             ElseIf musicchoice = 1 Then
-
                 My.Computer.Audio.Play(My.Resources.chaser, AudioPlayMode.BackgroundLoop)
+                lblmusicname.Text = "Now Playing: Chaser"
             End If
 
         End If
@@ -496,12 +498,14 @@ Public Class Form1
             If music = True Then
                 My.Computer.Audio.Stop()
                 My.Computer.Audio.Play(My.Resources.chaser, AudioPlayMode.BackgroundLoop)
+                lblmusicname.Text = "Now Playing: Chaser"
             End If
         ElseIf musicchoice = 1 Then
             musicchoice = 0
             If music = True Then
                 My.Computer.Audio.Stop()
                 My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
+                lblmusicname.Text = "Now Playing: Weregilded"
             End If
         End If
     End Sub

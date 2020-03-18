@@ -42,6 +42,7 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnmusic = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.lblmusicname = New System.Windows.Forms.Label()
         CType(Me.Speedcontrol, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -189,7 +190,7 @@ Partial Class Form1
         Me.btnchangemusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnchangemusic.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnchangemusic.ForeColor = System.Drawing.Color.Maroon
-        Me.btnchangemusic.Location = New System.Drawing.Point(1617, 29)
+        Me.btnchangemusic.Location = New System.Drawing.Point(1617, 54)
         Me.btnchangemusic.Name = "btnchangemusic"
         Me.btnchangemusic.Size = New System.Drawing.Size(113, 64)
         Me.btnchangemusic.TabIndex = 17
@@ -212,6 +213,7 @@ Partial Class Form1
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(1095, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(316, 25)
@@ -253,7 +255,7 @@ Partial Class Form1
         Me.btnmusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnmusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmusic.ForeColor = System.Drawing.Color.White
-        Me.btnmusic.Location = New System.Drawing.Point(1756, 29)
+        Me.btnmusic.Location = New System.Drawing.Point(1756, 54)
         Me.btnmusic.Name = "btnmusic"
         Me.btnmusic.Size = New System.Drawing.Size(64, 64)
         Me.btnmusic.TabIndex = 16
@@ -274,6 +276,18 @@ Partial Class Form1
         Me.Button3.TabIndex = 22
         Me.Button3.UseVisualStyleBackColor = False
         '
+        'lblmusicname
+        '
+        Me.lblmusicname.AutoSize = True
+        Me.lblmusicname.BackColor = System.Drawing.Color.Transparent
+        Me.lblmusicname.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblmusicname.ForeColor = System.Drawing.Color.Yellow
+        Me.lblmusicname.Location = New System.Drawing.Point(1624, 14)
+        Me.lblmusicname.Name = "lblmusicname"
+        Me.lblmusicname.Size = New System.Drawing.Size(182, 20)
+        Me.lblmusicname.TabIndex = 23
+        Me.lblmusicname.Text = "Now Playing: Weregilded"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -281,6 +295,7 @@ Partial Class Form1
         Me.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.KvatchBackground
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1904, 1042)
+        Me.Controls.Add(Me.lblmusicname)
         Me.Controls.Add(Me.btncancelpresetplacement)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lstboxsorted)
@@ -327,4 +342,5 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents btncancelpresetplacement As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents lblmusicname As Label
 End Class
