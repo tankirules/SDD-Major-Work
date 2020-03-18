@@ -34,6 +34,7 @@ Public Class Presetchooser
     Public presetcoordslist As New List(Of coords)
     Dim savetofilereminder As Boolean
     Dim remindercount As Integer
+    Dim listofbuttons As New List(Of Button)
     Public Structure coords
         Public xcoord As Integer
         Public ycoord As Integer
@@ -86,6 +87,19 @@ Public Class Presetchooser
         listofcenterpreset.Add(cpreset4)
         listofcenterpreset.Add(cpreset5)
         listofcenterpreset.Add(cpreset6)
+
+        listofbuttons.Add(btnsave)
+        listofbuttons.Add(btneditname)
+        listofbuttons.Add(btnsavepreset)
+        listofbuttons.Add(btnresetgrid)
+        listofbuttons.Add(btncenter)
+        listofbuttons.Add(btnresetcenter)
+        listofbuttons.Add(btnshowerrors)
+        listofbuttons.Add(btnclosepresetchooser)
+        For Each button In listofbuttons
+            button.FlatAppearance.MouseOverBackColor = Color.Transparent
+        Next
+
     End Sub
     Private Sub Presetchooser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -427,12 +441,6 @@ Public Class Presetchooser
             lstbox.Items.Add(loadederror)
 
         End If
-
-
-
-
-
-
 
 
 
@@ -1062,5 +1070,54 @@ Public Class Presetchooser
         btncenter.Text = "Set Center"
         centerbeingset = False
         MsgBox("You have already set a center for this preset!")
+    End Sub
+
+    Private Sub btnsave_MouseEnter(sender As Object, e As EventArgs) Handles btnsave.MouseEnter
+        btnsave.Font = New Font(btnsave.Font.FontFamily, btnsave.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnsave_MouseLeave(sender As Object, e As EventArgs) Handles btnsave.MouseLeave
+        btnsave.Font = New Font(btnsave.Font.FontFamily, btnsave.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btneditname_MouseEnter(sender As Object, e As EventArgs) Handles btneditname.MouseEnter
+        btneditname.Font = New Font(btneditname.Font.FontFamily, btneditname.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btneditname_MouseLeave(sender As Object, e As EventArgs) Handles btneditname.MouseLeave
+        btneditname.Font = New Font(btneditname.Font.FontFamily, btneditname.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnsavepreset_MouseEnter(sender As Object, e As EventArgs) Handles btnsavepreset.MouseEnter
+        btnsavepreset.Font = New Font(btnsavepreset.Font.FontFamily, btnsavepreset.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnsavepreset_MouseLeave(sender As Object, e As EventArgs) Handles btnsavepreset.MouseLeave
+        btnsavepreset.Font = New Font(btnsavepreset.Font.FontFamily, btnsavepreset.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnresetgrid_MouseEnter(sender As Object, e As EventArgs) Handles btnresetgrid.MouseEnter
+        btnresetgrid.Font = New Font(btnresetgrid.Font.FontFamily, btnresetgrid.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnresetgrid_MouseLeave(sender As Object, e As EventArgs) Handles btnresetgrid.MouseLeave
+        btnresetgrid.Font = New Font(btnresetgrid.Font.FontFamily, btnresetgrid.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btncenter_MouseEnter(sender As Object, e As EventArgs) Handles btncenter.MouseEnter
+        btncenter.Font = New Font(btncenter.Font.FontFamily, btncenter.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btncenter_MouseLeave(sender As Object, e As EventArgs) Handles btncenter.MouseLeave
+        btncenter.Font = New Font(btncenter.Font.FontFamily, btncenter.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnresetcenter_MouseEnter(sender As Object, e As EventArgs) Handles btnresetcenter.MouseEnter
+        btnresetcenter.Font = New Font(btnresetcenter.Font.FontFamily, btnresetcenter.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnresetcenter_MouseLeave(sender As Object, e As EventArgs) Handles btnresetcenter.MouseLeave
+        btnresetcenter.Font = New Font(btnresetcenter.Font.FontFamily, btnresetcenter.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnshowerrors_MouseEnter(sender As Object, e As EventArgs) Handles btnshowerrors.MouseEnter
+        btnshowerrors.Font = New Font(btnshowerrors.Font.FontFamily, btnshowerrors.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnshowerrors_MouseLeave(sender As Object, e As EventArgs) Handles btnshowerrors.MouseLeave
+        btnshowerrors.Font = New Font(btnshowerrors.Font.FontFamily, btnshowerrors.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnclosepresetchooser_MouseEnter(sender As Object, e As EventArgs) Handles btnclosepresetchooser.MouseEnter
+        btnclosepresetchooser.Font = New Font(btnclosepresetchooser.Font.FontFamily, btnclosepresetchooser.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnclosepresetchooser_MouseLeave(sender As Object, e As EventArgs) Handles btnclosepresetchooser.MouseLeave
+        btnclosepresetchooser.Font = New Font(btnclosepresetchooser.Font.FontFamily, btnclosepresetchooser.Font.Size - 3, FontStyle.Regular)
     End Sub
 End Class

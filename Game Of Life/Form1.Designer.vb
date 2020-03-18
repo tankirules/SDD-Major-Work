@@ -78,7 +78,7 @@ Partial Class Form1
         '
         'Speedcontrol
         '
-        Me.Speedcontrol.BackColor = System.Drawing.Color.Gold
+        Me.Speedcontrol.BackColor = System.Drawing.Color.Moccasin
         Me.Speedcontrol.Location = New System.Drawing.Point(1637, 347)
         Me.Speedcontrol.Maximum = 1000
         Me.Speedcontrol.Minimum = 1
@@ -252,6 +252,7 @@ Partial Class Form1
         Me.btnmusic.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.music
         Me.btnmusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnmusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmusic.ForeColor = System.Drawing.Color.White
         Me.btnmusic.Location = New System.Drawing.Point(1756, 29)
         Me.btnmusic.Name = "btnmusic"
         Me.btnmusic.Size = New System.Drawing.Size(64, 64)
