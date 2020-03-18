@@ -32,6 +32,7 @@ Public Class Form1
             My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
             Dim fs As FileStream = File.Create(Presetchooser.Path)
         End If
+        listofbuttons.Add(btnstartstop)
         listofbuttons.Add(btnmusic)
         listofbuttons.Add(btnreset)
         listofbuttons.Add(btnpreset)
@@ -535,5 +536,8 @@ Public Class Form1
     End Sub
     Private Sub btnchangemusic_MouseEnter(sender As Object, e As EventArgs) Handles btnchangemusic.MouseEnter
         btnchangemusic.Font = New Font(btnchangemusic.Font.FontFamily, btnchangemusic.Font.Size + 2, FontStyle.Bold)
+    End Sub
+    Private Sub btnchangemusic_MouseLeave(sender As Object, e As EventArgs) Handles btnchangemusic.MouseLeave
+        btnchangemusic.Font = New Font(btnchangemusic.Font.FontFamily, btnchangemusic.Font.Size - 2, FontStyle.Regular)
     End Sub
 End Class

@@ -51,10 +51,10 @@ Partial Class Form1
         Me.btnstartstop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnstartstop.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnstartstop.ForeColor = System.Drawing.Color.Lime
-        Me.btnstartstop.Location = New System.Drawing.Point(1617, 185)
+        Me.btnstartstop.Location = New System.Drawing.Point(1604, 185)
         Me.btnstartstop.Margin = New System.Windows.Forms.Padding(2)
         Me.btnstartstop.Name = "btnstartstop"
-        Me.btnstartstop.Size = New System.Drawing.Size(85, 46)
+        Me.btnstartstop.Size = New System.Drawing.Size(101, 67)
         Me.btnstartstop.TabIndex = 0
         Me.btnstartstop.Text = "Start"
         Me.btnstartstop.UseVisualStyleBackColor = False
@@ -65,9 +65,9 @@ Partial Class Form1
         Me.btnreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnreset.ForeColor = System.Drawing.Color.Red
-        Me.btnreset.Location = New System.Drawing.Point(1772, 185)
+        Me.btnreset.Location = New System.Drawing.Point(1756, 185)
         Me.btnreset.Name = "btnreset"
-        Me.btnreset.Size = New System.Drawing.Size(85, 46)
+        Me.btnreset.Size = New System.Drawing.Size(101, 67)
         Me.btnreset.TabIndex = 3
         Me.btnreset.Text = "Reset"
         Me.btnreset.UseVisualStyleBackColor = False
