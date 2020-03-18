@@ -172,6 +172,8 @@ Partial Class Form1
         'lbltickspeed
         '
         Me.lbltickspeed.AutoSize = True
+        Me.lbltickspeed.BackColor = System.Drawing.Color.Transparent
+        Me.lbltickspeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbltickspeed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
         Me.lbltickspeed.Location = New System.Drawing.Point(1854, 436)
         Me.lbltickspeed.Name = "lbltickspeed"

@@ -535,9 +535,15 @@ Public Class Form1
         Presetchooser.Show()
     End Sub
     Private Sub btnchangemusic_MouseEnter(sender As Object, e As EventArgs) Handles btnchangemusic.MouseEnter
-        btnchangemusic.Font = New Font(btnchangemusic.Font.FontFamily, btnchangemusic.Font.Size + 2, FontStyle.Bold)
+        btnchangemusic.Font = New Font(btnchangemusic.Font.FontFamily, btnchangemusic.Font.Size + 3, FontStyle.Bold)
     End Sub
     Private Sub btnchangemusic_MouseLeave(sender As Object, e As EventArgs) Handles btnchangemusic.MouseLeave
-        btnchangemusic.Font = New Font(btnchangemusic.Font.FontFamily, btnchangemusic.Font.Size - 2, FontStyle.Regular)
+        btnchangemusic.Font = New Font(btnchangemusic.Font.FontFamily, btnchangemusic.Font.Size - 3, FontStyle.Regular)
+    End Sub
+    Private Sub btnstartstop_MouseEnter(sender As Object, e As EventArgs) Handles btnstartstop.MouseEnter
+        btnstartstop.Font = New Font(btnstartstop.Font.FontFamily, btnstartstop.Font.Size + 3, FontStyle.Bold)
+    End Sub
+    Private Sub btnstartstop_MouseLeave(sender As Object, e As EventArgs) Handles btnstartstop.MouseLeave
+        btnstartstop.Font = New Font(btnstartstop.Font.FontFamily, btnstartstop.Font.Size - 3, FontStyle.Regular)
     End Sub
 End Class
