@@ -154,6 +154,7 @@
     <Content Include="music.png" />
     <Content Include="nomusic.png" />
     <None Include="Resources\hammer.png" />
+    <None Include="Resources\76291.jpg" />
     <Content Include="smallereyes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

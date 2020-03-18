@@ -47,24 +47,30 @@ Partial Class Form1
         '
         'btnstartstop
         '
+        Me.btnstartstop.BackColor = System.Drawing.Color.Transparent
+        Me.btnstartstop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnstartstop.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnstartstop.ForeColor = System.Drawing.Color.Lime
         Me.btnstartstop.Location = New System.Drawing.Point(1617, 185)
         Me.btnstartstop.Margin = New System.Windows.Forms.Padding(2)
         Me.btnstartstop.Name = "btnstartstop"
         Me.btnstartstop.Size = New System.Drawing.Size(85, 46)
         Me.btnstartstop.TabIndex = 0
         Me.btnstartstop.Text = "Start"
-        Me.btnstartstop.UseVisualStyleBackColor = True
+        Me.btnstartstop.UseVisualStyleBackColor = False
         '
         'btnreset
         '
+        Me.btnreset.BackColor = System.Drawing.Color.Transparent
+        Me.btnreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnreset.ForeColor = System.Drawing.Color.Red
         Me.btnreset.Location = New System.Drawing.Point(1772, 185)
         Me.btnreset.Name = "btnreset"
         Me.btnreset.Size = New System.Drawing.Size(85, 46)
         Me.btnreset.TabIndex = 3
         Me.btnreset.Text = "Reset"
-        Me.btnreset.UseVisualStyleBackColor = True
+        Me.btnreset.UseVisualStyleBackColor = False
         '
         'updatetimer
         '
@@ -72,6 +78,7 @@ Partial Class Form1
         '
         'Speedcontrol
         '
+        Me.Speedcontrol.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Speedcontrol.Location = New System.Drawing.Point(1637, 347)
         Me.Speedcontrol.Maximum = 1000
         Me.Speedcontrol.Minimum = 1
@@ -83,6 +90,8 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(1612, 319)
         Me.Label1.Name = "Label1"
@@ -93,8 +102,10 @@ Partial Class Form1
         'lbltimebetween
         '
         Me.lbltimebetween.AutoSize = True
+        Me.lbltimebetween.BackColor = System.Drawing.Color.Transparent
+        Me.lbltimebetween.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbltimebetween.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltimebetween.Location = New System.Drawing.Point(1727, 380)
+        Me.lbltimebetween.Location = New System.Drawing.Point(1729, 395)
         Me.lbltimebetween.Name = "lbltimebetween"
         Me.lbltimebetween.Size = New System.Drawing.Size(24, 25)
         Me.lbltimebetween.TabIndex = 6
@@ -102,40 +113,51 @@ Partial Class Form1
         '
         'btnpreset
         '
-        Me.btnpreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpreset.BackColor = System.Drawing.Color.Transparent
+        Me.btnpreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnpreset.Font = New System.Drawing.Font("Algerian", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpreset.ForeColor = System.Drawing.Color.Black
         Me.btnpreset.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnpreset.Location = New System.Drawing.Point(1455, 682)
         Me.btnpreset.Name = "btnpreset"
         Me.btnpreset.Size = New System.Drawing.Size(321, 128)
         Me.btnpreset.TabIndex = 8
         Me.btnpreset.Text = "Preset patterns"
-        Me.btnpreset.UseVisualStyleBackColor = True
+        Me.btnpreset.UseVisualStyleBackColor = False
         '
         'btnopen
         '
+        Me.btnopen.BackColor = System.Drawing.Color.Transparent
+        Me.btnopen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnopen.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.btnopen.ForeColor = System.Drawing.Color.Yellow
         Me.btnopen.Location = New System.Drawing.Point(1617, 826)
         Me.btnopen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnopen.Name = "btnopen"
         Me.btnopen.Size = New System.Drawing.Size(240, 66)
         Me.btnopen.TabIndex = 11
         Me.btnopen.Text = "Import Grid"
-        Me.btnopen.UseVisualStyleBackColor = True
+        Me.btnopen.UseVisualStyleBackColor = False
         '
         'btnsave
         '
-        Me.btnsave.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.btnsave.BackColor = System.Drawing.Color.Transparent
+        Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnsave.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnsave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnsave.Location = New System.Drawing.Point(1198, 826)
         Me.btnsave.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(240, 66)
         Me.btnsave.TabIndex = 10
         Me.btnsave.Text = "Export Grid"
-        Me.btnsave.UseVisualStyleBackColor = True
+        Me.btnsave.UseVisualStyleBackColor = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
         Me.Label4.Location = New System.Drawing.Point(1623, 436)
         Me.Label4.Name = "Label4"
@@ -158,14 +180,16 @@ Partial Class Form1
         '
         'btnchangemusic
         '
+        Me.btnchangemusic.BackColor = System.Drawing.Color.Transparent
         Me.btnchangemusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnchangemusic.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnchangemusic.ForeColor = System.Drawing.Color.Maroon
         Me.btnchangemusic.Location = New System.Drawing.Point(1617, 29)
         Me.btnchangemusic.Name = "btnchangemusic"
         Me.btnchangemusic.Size = New System.Drawing.Size(113, 64)
         Me.btnchangemusic.TabIndex = 17
         Me.btnchangemusic.Text = "Change Music"
-        Me.btnchangemusic.UseVisualStyleBackColor = True
+        Me.btnchangemusic.UseVisualStyleBackColor = False
         '
         'lstboxsorted
         '
@@ -180,6 +204,8 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(1095, 9)
         Me.Label2.Name = "Label2"
@@ -189,13 +215,16 @@ Partial Class Form1
         '
         'btncancelpresetplacement
         '
+        Me.btncancelpresetplacement.BackColor = System.Drawing.Color.Transparent
+        Me.btncancelpresetplacement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelpresetplacement.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelpresetplacement.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btncancelpresetplacement.Location = New System.Drawing.Point(1273, 524)
         Me.btncancelpresetplacement.Name = "btncancelpresetplacement"
         Me.btncancelpresetplacement.Size = New System.Drawing.Size(184, 80)
         Me.btncancelpresetplacement.TabIndex = 21
         Me.btncancelpresetplacement.Text = "Cancel Preset Placement"
-        Me.btncancelpresetplacement.UseVisualStyleBackColor = True
+        Me.btncancelpresetplacement.UseVisualStyleBackColor = False
         '
         'Button1
         '
@@ -214,6 +243,7 @@ Partial Class Form1
         '
         'btnmusic
         '
+        Me.btnmusic.BackColor = System.Drawing.Color.Transparent
         Me.btnmusic.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.music
         Me.btnmusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnmusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -222,10 +252,11 @@ Partial Class Form1
         Me.btnmusic.Size = New System.Drawing.Size(64, 64)
         Me.btnmusic.TabIndex = 16
         Me.btnmusic.UseMnemonic = False
-        Me.btnmusic.UseVisualStyleBackColor = True
+        Me.btnmusic.UseVisualStyleBackColor = False
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
         Me.Button3.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.cancel
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button3.FlatAppearance.BorderSize = 0
@@ -235,12 +266,14 @@ Partial Class Form1
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(80, 80)
         Me.Button3.TabIndex = 22
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources._76291
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1904, 1042)
         Me.Controls.Add(Me.btncancelpresetplacement)
         Me.Controls.Add(Me.Label2)

@@ -120,8 +120,6 @@ Public Class Presetchooser
                     temppresetname = loadedfile(0)
                     rbtnpreset1.Text = temppresetname.Remove(0, 2)
                     For i = 1 To (loadedfile.Length() - 1)
-
-                        Console.WriteLine(loadedfile.Length())
                         If loadedfile(i).Length < 2 Or loadedfile(i)(0) + loadedfile(i)(1) = "P2" Then
                             If presetcountload = 1 Then
                                 presetlinelist.Add(i)

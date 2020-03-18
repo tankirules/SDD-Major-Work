@@ -22,6 +22,11 @@ Game Of Life
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Game_Of_Life.My.Resources.Resources._76291">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Game_Of_Life.My.Resources.Resources.cancel">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

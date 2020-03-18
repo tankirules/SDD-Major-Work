@@ -24,14 +24,29 @@ Public Class Form1
     Dim firststart As Boolean
     Public checkedgridbeforesettingpreset As New List(Of Presetchooser.coords)
     Dim listofusernames As New List(Of String)
+    Dim listofbuttons As New List(Of Button)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If File.Exists(Presetchooser.Path) Then
         Else
             My.Computer.FileSystem.CreateDirectory("C:\Gameoflife")
             Dim fs As FileStream = File.Create(Presetchooser.Path)
-
         End If
+        listofbuttons.Add(btnmusic)
+        listofbuttons.Add(btnreset)
+        listofbuttons.Add(btnpreset)
+        listofbuttons.Add(btnopen)
+        listofbuttons.Add(btnsave)
+        listofbuttons.Add(btnchangemusic)
+        listofbuttons.Add(btncancelpresetplacement)
+        listofbuttons.Add(Button3)
+        listofbuttons.Add(Button1)
+        For Each button In listofbuttons
+            button.FlatAppearance.MouseOverBackColor = Color.Transparent
+        Next
+
+
+
         lstboxsorted.HorizontalScrollbar = True
         Button3.Hide()
         btncancelpresetplacement.Hide()
@@ -42,8 +57,6 @@ Public Class Form1
         isdown = False
         closedproperlyinput = False
         My.Computer.Audio.Play(My.Resources.weregilded, AudioPlayMode.BackgroundLoop)
-
-
         Timesupdated = 0
         Tickspeedcalculator.Start()
         uncheckedcolor = Color.White
@@ -520,5 +533,7 @@ Public Class Form1
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
         Presetchooser.Show()
     End Sub
-
+    Private Sub btnchangemusic_MouseEnter(sender As Object, e As EventArgs) Handles btnchangemusic.MouseEnter
+        btnchangemusic.Font = New Font(btnchangemusic.Font.FontFamily, btnchangemusic.Font.Size + 2, FontStyle.Bold)
+    End Sub
 End Class
