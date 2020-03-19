@@ -74,9 +74,9 @@ Partial Class Presetchooser
         Me.btnresetcenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnresetcenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnresetcenter.ForeColor = System.Drawing.Color.Transparent
-        Me.btnresetcenter.Location = New System.Drawing.Point(143, 552)
+        Me.btnresetcenter.Location = New System.Drawing.Point(513, 562)
         Me.btnresetcenter.Name = "btnresetcenter"
-        Me.btnresetcenter.Size = New System.Drawing.Size(131, 46)
+        Me.btnresetcenter.Size = New System.Drawing.Size(206, 46)
         Me.btnresetcenter.TabIndex = 13
         Me.btnresetcenter.Text = "Reset Center"
         Me.btnresetcenter.UseVisualStyleBackColor = True
@@ -109,9 +109,9 @@ Partial Class Presetchooser
         Me.btncenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.btncenter.ForeColor = System.Drawing.Color.Transparent
-        Me.btncenter.Location = New System.Drawing.Point(6, 552)
+        Me.btncenter.Location = New System.Drawing.Point(36, 562)
         Me.btncenter.Name = "btncenter"
-        Me.btncenter.Size = New System.Drawing.Size(131, 46)
+        Me.btncenter.Size = New System.Drawing.Size(210, 46)
         Me.btncenter.TabIndex = 10
         Me.btncenter.Text = "Set Center"
         Me.btncenter.UseVisualStyleBackColor = True
@@ -132,9 +132,9 @@ Partial Class Presetchooser
         '
         Me.btneditname.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btneditname.ForeColor = System.Drawing.Color.Transparent
-        Me.btneditname.Location = New System.Drawing.Point(488, 471)
+        Me.btneditname.Location = New System.Drawing.Point(459, 471)
         Me.btneditname.Name = "btneditname"
-        Me.btneditname.Size = New System.Drawing.Size(223, 75)
+        Me.btneditname.Size = New System.Drawing.Size(319, 75)
         Me.btneditname.TabIndex = 7
         Me.btneditname.Text = "Edit Pattern Name"
         Me.btneditname.UseVisualStyleBackColor = True
@@ -145,7 +145,7 @@ Partial Class Presetchooser
         Me.btnsavepreset.ForeColor = System.Drawing.Color.Transparent
         Me.btnsavepreset.Location = New System.Drawing.Point(7, 471)
         Me.btnsavepreset.Name = "btnsavepreset"
-        Me.btnsavepreset.Size = New System.Drawing.Size(279, 75)
+        Me.btnsavepreset.Size = New System.Drawing.Size(290, 75)
         Me.btnsavepreset.TabIndex = 6
         Me.btnsavepreset.Text = "Save Current grid to Preset"
         Me.btnsavepreset.UseVisualStyleBackColor = True
@@ -228,9 +228,9 @@ Partial Class Presetchooser
         Me.btnresetgrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnresetgrid.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.btnresetgrid.ForeColor = System.Drawing.Color.White
-        Me.btnresetgrid.Location = New System.Drawing.Point(143, 933)
+        Me.btnresetgrid.Location = New System.Drawing.Point(76, 933)
         Me.btnresetgrid.Name = "btnresetgrid"
-        Me.btnresetgrid.Size = New System.Drawing.Size(125, 69)
+        Me.btnresetgrid.Size = New System.Drawing.Size(230, 69)
         Me.btnresetgrid.TabIndex = 9
         Me.btnresetgrid.Text = "Reset Grid"
         Me.btnresetgrid.UseVisualStyleBackColor = False
@@ -243,7 +243,7 @@ Partial Class Presetchooser
         Me.btnclosepresetchooser.ForeColor = System.Drawing.Color.White
         Me.btnclosepresetchooser.Location = New System.Drawing.Point(407, 933)
         Me.btnclosepresetchooser.Name = "btnclosepresetchooser"
-        Me.btnclosepresetchooser.Size = New System.Drawing.Size(155, 69)
+        Me.btnclosepresetchooser.Size = New System.Drawing.Size(230, 69)
         Me.btnclosepresetchooser.TabIndex = 10
         Me.btnclosepresetchooser.Text = "Use This Preset Pattern"
         Me.btnclosepresetchooser.UseVisualStyleBackColor = False

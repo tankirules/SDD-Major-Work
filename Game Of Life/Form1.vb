@@ -546,10 +546,10 @@ Public Class Form1
         btnchangemusic.Font = New Font(btnchangemusic.Font.FontFamily, btnchangemusic.Font.Size - 3, FontStyle.Regular)
     End Sub
     Private Sub btnstartstop_MouseEnter(sender As Object, e As EventArgs) Handles btnstartstop.MouseEnter
-        btnstartstop.Font = New Font(btnstartstop.Font.FontFamily, btnstartstop.Font.Size + 3, FontStyle.Bold)
+        btnstartstop.Font = New Font(btnstartstop.Font.FontFamily, btnstartstop.Font.Size + 2, FontStyle.Bold)
     End Sub
     Private Sub btnstartstop_MouseLeave(sender As Object, e As EventArgs) Handles btnstartstop.MouseLeave
-        btnstartstop.Font = New Font(btnstartstop.Font.FontFamily, btnstartstop.Font.Size - 3, FontStyle.Regular)
+        btnstartstop.Font = New Font(btnstartstop.Font.FontFamily, btnstartstop.Font.Size - 2, FontStyle.Regular)
     End Sub
     Private Sub btnsave_MouseEnter(sender As Object, e As EventArgs) Handles btnsave.MouseEnter
         btnsave.Font = New Font(btnsave.Font.FontFamily, btnsave.Font.Size + 3, FontStyle.Bold)
@@ -564,10 +564,10 @@ Public Class Form1
         btnopen.Font = New Font(btnopen.Font.FontFamily, btnopen.Font.Size - 3, FontStyle.Regular)
     End Sub
     Private Sub btnreset_MouseEnter(sender As Object, e As EventArgs) Handles btnreset.MouseEnter
-        btnreset.Font = New Font(btnreset.Font.FontFamily, btnreset.Font.Size + 3, FontStyle.Bold)
+        btnreset.Font = New Font(btnreset.Font.FontFamily, btnreset.Font.Size + 2, FontStyle.Bold)
     End Sub
     Private Sub btnreset_MouseLeave(sender As Object, e As EventArgs) Handles btnreset.MouseLeave
-        btnreset.Font = New Font(btnreset.Font.FontFamily, btnreset.Font.Size - 3, FontStyle.Regular)
+        btnreset.Font = New Font(btnreset.Font.FontFamily, btnreset.Font.Size - 2, FontStyle.Regular)
     End Sub
     Private Sub btncancelpresetplacement_MouseEnter(sender As Object, e As EventArgs) Handles btncancelpresetplacement.MouseEnter
         btncancelpresetplacement.Font = New Font(btncancelpresetplacement.Font.FontFamily, btncancelpresetplacement.Font.Size + 3, FontStyle.Bold)

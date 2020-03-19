@@ -319,7 +319,6 @@ Public Class Presetchooser
                 End If
             Next
             For Each ptemparray As Array In ptemplist
-
                 If ptemparray.Length > 1 Then
                     Dim tempstring As String
                     tempstring = ptemparray(1)
@@ -328,7 +327,8 @@ Public Class Presetchooser
                             MsgBox("center coordinates corrupt/do not exist! recommend deleting c:\gameoflife\presets.txt and restarting program!")
                             loadederror = "center coordinates aren't numbers or the comma is missing" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                             lstbox.Items.Add(loadederror)
-                        ElseIf (CStr(tempstring(1) + tempstring(2)) > 50) Or (CStr(tempstring(1) + tempstring(2)) < 0) Or CStr(tempstring(4) + tempstring(5)) > 50 Or (CStr(tempstring(4) + tempstring(5)) < 0) Then
+                        ElseIf (CStr(tempstring(1) + tempstring(2)) > 50) Or (CStr(tempstring(1) + tempstring(2)) < 0) Or
+                            CStr(tempstring(4) + tempstring(5)) > 50 Or (CStr(tempstring(4) + tempstring(5)) < 0) Then
                             MsgBox("center coordinates out of range! recommend deleting c:\gameoflife\presets.txt and restarting program!")
                             loadederror = "center coordinates are out of range" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                             lstbox.Items.Add(loadederror)
@@ -349,7 +349,8 @@ Public Class Presetchooser
                                 MsgBox("coordinates format corrupt! recommend deleting c:\gameoflife\presets.txt and restarting program!")
                                 loadederror = "grid coords aren't numbers or the comma is missing" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                                 lstbox.Items.Add(loadederror)
-                            ElseIf (CStr(tempstring(0) + tempstring(1)) > 50) Or (CStr(tempstring(0) + tempstring(1)) < 0) Or (CStr(tempstring(3) + tempstring(4)) > 50) Or (CStr(tempstring(3) + tempstring(4)) < 0) Then
+                            ElseIf (CStr(tempstring(0) + tempstring(1)) > 50) Or (CStr(tempstring(0) + tempstring(1)) < 0) Or
+                                (CStr(tempstring(3) + tempstring(4)) > 50) Or (CStr(tempstring(3) + tempstring(4)) < 0) Then
                                 MsgBox("coordinates out of range! recommend deleting c:\gameoflife\presets.txt and restarting program!")
                                 loadederror = "grid coords are out of range" + " at preset" + CStr(ptemplist.IndexOf(ptemparray) + 1)
                                 lstbox.Items.Add(loadederror)
@@ -451,44 +452,51 @@ Public Class Presetchooser
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
         If centerbeingset = True Then
-            If rbtnpreset1.Checked And cpreset1.val = True Then
-                centeralreadyset()
-            ElseIf rbtnpreset2.Checked And cpreset2.val = True Then
-                centeralreadyset()
-            ElseIf rbtnpreset3.Checked And cpreset3.val = True Then
-                centeralreadyset()
-            ElseIf rbtnpreset4.Checked And cpreset4.val = True Then
-                centeralreadyset()
-            ElseIf rbtnpreset5.Checked And cpreset5.val = True Then
-                centeralreadyset()
-            ElseIf rbtnpreset6.Checked And cpreset6.val = True Then
-                centeralreadyset()
+            For Each radiobutton In radiobuttonlist
+                If radiobutton.Checked = True Then
+                    If listofcenterpreset(radiobuttonlist.IndexOf(radiobutton)).val = True Then
+                        centeralreadyset()
+                    Else
+                        Grid(xpos, ypos).BackColor = Color.Yellow
+                        presetchecked(xpos, ypos) = 2
+                        centerbeingset = False
+                        MsgBox("Center set!")
+                        btncenter.Text = "Set Center"
+                        For Each rbtn In radiobuttonlist
+                            If rbtn.Checked = True Then
+                                listofcenterpreset(radiobuttonlist.IndexOf(rbtn)).val = True
+                            End If
+                        Next
+                        'If rbtnpreset1.Checked = True Then
+                        '    cpreset1.val = True
+                        'ElseIf rbtnpreset2.Checked = True Then
+                        '    cpreset2.val = True
+                        'ElseIf rbtnpreset3.Checked = True Then
+                        '    cpreset3.val = True
+                        'ElseIf rbtnpreset4.Checked = True Then
+                        '    cpreset4.val = True
+                        'ElseIf rbtnpreset5.Checked = True Then
+                        '    cpreset5.val = True
+                        'ElseIf rbtnpreset6.Checked = True Then
+                        '    cpreset6.val = True
+                        'End If
 
-            Else
-                Grid(xpos, ypos).BackColor = Color.Yellow
-                presetchecked(xpos, ypos) = 2
-                centerbeingset = False
-                MsgBox("Center set!")
-                btncenter.Text = "Set Center"
-                If rbtnpreset1.Checked = True Then
-                    cpreset1.val = True
-                ElseIf rbtnpreset2.Checked = True Then
-                    cpreset2.val = True
-                ElseIf rbtnpreset3.Checked = True Then
-                    cpreset3.val = True
-                ElseIf rbtnpreset4.Checked = True Then
-                    cpreset4.val = True
-                ElseIf rbtnpreset5.Checked = True Then
-                    cpreset5.val = True
-                ElseIf rbtnpreset6.Checked = True Then
-                    cpreset6.val = True
-
-
-
+                    End If
                 End If
 
-
-            End If
+            Next
+            'If rbtnpreset1.Checked And cpreset1.val = True Then
+            '    centeralreadyset()
+            'ElseIf rbtnpreset2.Checked And cpreset2.val = True Then
+            '    centeralreadyset()
+            'ElseIf rbtnpreset3.Checked And cpreset3.val = True Then
+            '    centeralreadyset()
+            'ElseIf rbtnpreset4.Checked And cpreset4.val = True Then
+            '    centeralreadyset()
+            'ElseIf rbtnpreset5.Checked And cpreset5.val = True Then
+            '    centeralreadyset()
+            'ElseIf rbtnpreset6.Checked And cpreset6.val = True Then
+            '    centeralreadyset()
         Else
             If presetchecked(xpos, ypos) = 0 Then
                 Grid(xpos, ypos).BackColor = Color.Black
@@ -498,6 +506,9 @@ Public Class Presetchooser
                 presetchecked(xpos, ypos) = 0
             End If
         End If
+
+
+
 
 
     End Sub
@@ -770,12 +781,12 @@ Public Class Presetchooser
     Private Sub reminderssavedata_Tick(sender As Object, e As EventArgs) Handles reminderssavedata.Tick
         If remindercount > 8 Then
             reminderssavedata.Stop()
-            btnsave.BackColor = SystemColors.ControlLight
+            btnsave.BackColor = Color.Transparent
         Else
             If remindercount Mod 2 = 0 Then
                 btnsave.BackColor = Color.Yellow
             Else
-                btnsave.BackColor = SystemColors.ControlLight
+                btnsave.BackColor = Color.Transparent
             End If
             remindercount = remindercount + 1
         End If
@@ -836,6 +847,10 @@ Public Class Presetchooser
 
     End Sub
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+        If reminderssavedata.Enabled = True Then
+            reminderssavedata.Stop()
+            btnsave.BackColor = Color.Transparent
+        End If
         Dim tempx, tempy As String
         Using FS As New IO.StreamWriter("C:\Gameoflife\presets.txt")
             'save preset1
@@ -1065,6 +1080,7 @@ Public Class Presetchooser
 
 
         End Using
+        MsgBox("File Saved!")
     End Sub
     Private Sub centeralreadyset()
         btncenter.Text = "Set Center"
@@ -1091,10 +1107,10 @@ Public Class Presetchooser
         btnsavepreset.Font = New Font(btnsavepreset.Font.FontFamily, btnsavepreset.Font.Size - 3, FontStyle.Regular)
     End Sub
     Private Sub btnresetgrid_MouseEnter(sender As Object, e As EventArgs) Handles btnresetgrid.MouseEnter
-        btnresetgrid.Font = New Font(btnresetgrid.Font.FontFamily, btnresetgrid.Font.Size + 3, FontStyle.Bold)
+        btnresetgrid.Font = New Font(btnresetgrid.Font.FontFamily, btnresetgrid.Font.Size + 2, FontStyle.Bold)
     End Sub
     Private Sub btnresetgrid_MouseLeave(sender As Object, e As EventArgs) Handles btnresetgrid.MouseLeave
-        btnresetgrid.Font = New Font(btnresetgrid.Font.FontFamily, btnresetgrid.Font.Size - 3, FontStyle.Regular)
+        btnresetgrid.Font = New Font(btnresetgrid.Font.FontFamily, btnresetgrid.Font.Size - 2, FontStyle.Regular)
     End Sub
     Private Sub btncenter_MouseEnter(sender As Object, e As EventArgs) Handles btncenter.MouseEnter
         btncenter.Font = New Font(btncenter.Font.FontFamily, btncenter.Font.Size + 3, FontStyle.Bold)
@@ -1115,9 +1131,9 @@ Public Class Presetchooser
         btnshowerrors.Font = New Font(btnshowerrors.Font.FontFamily, btnshowerrors.Font.Size - 3, FontStyle.Regular)
     End Sub
     Private Sub btnclosepresetchooser_MouseEnter(sender As Object, e As EventArgs) Handles btnclosepresetchooser.MouseEnter
-        btnclosepresetchooser.Font = New Font(btnclosepresetchooser.Font.FontFamily, btnclosepresetchooser.Font.Size + 3, FontStyle.Bold)
+        btnclosepresetchooser.Font = New Font(btnclosepresetchooser.Font.FontFamily, btnclosepresetchooser.Font.Size + 2, FontStyle.Bold)
     End Sub
     Private Sub btnclosepresetchooser_MouseLeave(sender As Object, e As EventArgs) Handles btnclosepresetchooser.MouseLeave
-        btnclosepresetchooser.Font = New Font(btnclosepresetchooser.Font.FontFamily, btnclosepresetchooser.Font.Size - 3, FontStyle.Regular)
+        btnclosepresetchooser.Font = New Font(btnclosepresetchooser.Font.FontFamily, btnclosepresetchooser.Font.Size - 2, FontStyle.Regular)
     End Sub
 End Class
