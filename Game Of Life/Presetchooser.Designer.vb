@@ -147,7 +147,7 @@ Partial Class Presetchooser
         Me.btnsavepreset.Name = "btnsavepreset"
         Me.btnsavepreset.Size = New System.Drawing.Size(290, 75)
         Me.btnsavepreset.TabIndex = 6
-        Me.btnsavepreset.Text = "Save Current grid to Preset"
+        Me.btnsavepreset.Text = "Save Pattern on grid"
         Me.btnsavepreset.UseVisualStyleBackColor = True
         '
         'rbtnpreset6
@@ -243,9 +243,9 @@ Partial Class Presetchooser
         Me.btnclosepresetchooser.ForeColor = System.Drawing.Color.White
         Me.btnclosepresetchooser.Location = New System.Drawing.Point(407, 933)
         Me.btnclosepresetchooser.Name = "btnclosepresetchooser"
-        Me.btnclosepresetchooser.Size = New System.Drawing.Size(230, 69)
+        Me.btnclosepresetchooser.Size = New System.Drawing.Size(344, 69)
         Me.btnclosepresetchooser.TabIndex = 10
-        Me.btnclosepresetchooser.Text = "Use This Preset Pattern"
+        Me.btnclosepresetchooser.Text = "Use This Preset Pattern Onto Main Grid"
         Me.btnclosepresetchooser.UseVisualStyleBackColor = False
         '
         'reminderssavedata

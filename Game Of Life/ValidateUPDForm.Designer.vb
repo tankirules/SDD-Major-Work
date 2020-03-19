@@ -56,6 +56,7 @@ Partial Class ValidateUPDForm
         'txtusername
         '
         Me.txtusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txtusername.ForeColor = System.Drawing.Color.Black
         Me.txtusername.Location = New System.Drawing.Point(111, 66)
         Me.txtusername.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusername.Name = "txtusername"
@@ -75,7 +76,10 @@ Partial Class ValidateUPDForm
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(10, 117)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 20)
@@ -106,6 +110,8 @@ Partial Class ValidateUPDForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.matrixbackground
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(314, 291)
         Me.Controls.Add(Me.btnshowhide)
         Me.Controls.Add(Me.Label3)

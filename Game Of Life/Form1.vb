@@ -343,6 +343,13 @@ Public Class Form1
     Private Sub btnopen_Click(sender As Object, e As EventArgs) Handles btnopen.Click
         updatetimer.Stop()
         btnstartstop.Text = "Start"
+        For x = 1 To 50
+            For y = 1 To 50
+                TempGrid(x, y) = Checked(x, y)
+                Checked(x, y) = 0
+                Grid(x, y).BackColor = uncheckedcolor
+            Next
+        Next
         Dim fd As OpenFileDialog = New OpenFileDialog()
         Dim strFileName As String
         Dim valid As Boolean
@@ -371,13 +378,6 @@ Public Class Form1
                     loadedu = loadedu.Remove(0, 9)
                     loadedp = loadedfile(1)
                     loadedp = loadedp.Remove(0, 9)
-                    For x = 1 To 50
-                        For y = 1 To 50
-                            TempGrid(x, y) = Checked(x, y)
-                            Checked(x, y) = 0
-                            Grid(x, y).BackColor = uncheckedcolor
-                        Next
-                    Next
                     If enteredu = loadedu And enteredp = loadedp Then
                         valid = True
                         For i = 2 To loadedfile.Length - 1

@@ -133,12 +133,12 @@ Partial Class Form1
         Me.btnopen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnopen.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnopen.ForeColor = System.Drawing.Color.Blue
-        Me.btnopen.Location = New System.Drawing.Point(1617, 826)
+        Me.btnopen.Location = New System.Drawing.Point(1597, 826)
         Me.btnopen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnopen.Name = "btnopen"
-        Me.btnopen.Size = New System.Drawing.Size(240, 66)
+        Me.btnopen.Size = New System.Drawing.Size(257, 131)
         Me.btnopen.TabIndex = 11
-        Me.btnopen.Text = "Import Grid"
+        Me.btnopen.Text = "Import Grid State From File"
         Me.btnopen.UseVisualStyleBackColor = False
         '
         'btnsave
@@ -150,9 +150,9 @@ Partial Class Form1
         Me.btnsave.Location = New System.Drawing.Point(1198, 826)
         Me.btnsave.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsave.Name = "btnsave"
-        Me.btnsave.Size = New System.Drawing.Size(240, 66)
+        Me.btnsave.Size = New System.Drawing.Size(259, 131)
         Me.btnsave.TabIndex = 10
-        Me.btnsave.Text = "Export Grid"
+        Me.btnsave.Text = "Export Current Grid State"
         Me.btnsave.UseVisualStyleBackColor = False
         '
         'Label4
@@ -224,7 +224,7 @@ Partial Class Form1
         '
         Me.btncancelpresetplacement.BackColor = System.Drawing.Color.Transparent
         Me.btncancelpresetplacement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncancelpresetplacement.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelpresetplacement.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelpresetplacement.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btncancelpresetplacement.Location = New System.Drawing.Point(1273, 524)
         Me.btncancelpresetplacement.Name = "btncancelpresetplacement"

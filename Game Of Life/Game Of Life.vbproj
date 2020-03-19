@@ -147,6 +147,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\matrixbackground" />
     <None Include="weregilded.wav" />
     <None Include="chaser.wav" />
     <None Include="cancel.png" />
@@ -159,6 +160,7 @@
     <None Include="Resources\KvatchBackground.png" />
     <None Include="Resources\hammerinverted.png" />
     <None Include="Resources\ben-hale-cave01.png" />
+    <None Include="Resources\matrixbackground.png" />
     <Content Include="smallereyes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

@@ -467,36 +467,11 @@ Public Class Presetchooser
                                 listofcenterpreset(radiobuttonlist.IndexOf(rbtn)).val = True
                             End If
                         Next
-                        'If rbtnpreset1.Checked = True Then
-                        '    cpreset1.val = True
-                        'ElseIf rbtnpreset2.Checked = True Then
-                        '    cpreset2.val = True
-                        'ElseIf rbtnpreset3.Checked = True Then
-                        '    cpreset3.val = True
-                        'ElseIf rbtnpreset4.Checked = True Then
-                        '    cpreset4.val = True
-                        'ElseIf rbtnpreset5.Checked = True Then
-                        '    cpreset5.val = True
-                        'ElseIf rbtnpreset6.Checked = True Then
-                        '    cpreset6.val = True
-                        'End If
 
                     End If
                 End If
 
             Next
-            'If rbtnpreset1.Checked And cpreset1.val = True Then
-            '    centeralreadyset()
-            'ElseIf rbtnpreset2.Checked And cpreset2.val = True Then
-            '    centeralreadyset()
-            'ElseIf rbtnpreset3.Checked And cpreset3.val = True Then
-            '    centeralreadyset()
-            'ElseIf rbtnpreset4.Checked And cpreset4.val = True Then
-            '    centeralreadyset()
-            'ElseIf rbtnpreset5.Checked And cpreset5.val = True Then
-            '    centeralreadyset()
-            'ElseIf rbtnpreset6.Checked And cpreset6.val = True Then
-            '    centeralreadyset()
         Else
             If presetchecked(xpos, ypos) = 0 Then
                 Grid(xpos, ypos).BackColor = Color.Black
@@ -522,27 +497,23 @@ Public Class Presetchooser
 
     End Sub
     Private Sub btnresetgrid_Click(sender As Object, e As EventArgs) Handles btnresetgrid.Click
+        'empties the grid
         cleargrid()
-
     End Sub
 
     Private Sub btnsavepreset_Click(sender As Object, e As EventArgs) Handles btnsavepreset.Click
-        If rbtnpreset1.Checked = True And cpreset1.val = True Then
-            savepresettopreset()
-        ElseIf rbtnpreset2.Checked = True And cpreset2.val = True Then
-            savepresettopreset()
-        ElseIf rbtnpreset3.Checked = True And cpreset3.val = True Then
-            savepresettopreset()
-        ElseIf rbtnpreset4.Checked = True And cpreset4.val = True Then
-            savepresettopreset()
-        ElseIf rbtnpreset5.Checked = True And cpreset5.val = True Then
-            savepresettopreset()
-        ElseIf rbtnpreset6.Checked = True And cpreset6.val = True Then
-            savepresettopreset()
-        Else
-            MsgBox("You have not set a center!")
+        For Each radiobutton In radiobuttonlist
+            If radiobutton.Checked = True Then
+                If listofcenterpreset(radiobuttonlist.IndexOf(radiobutton)).val = True Then
+                    savepresettopreset()
+                Else
+                    MsgBox("You have not set a center!")
+                End If
 
-        End If
+            End If
+        Next
+
+
         If savetofilereminder = False Then
             savetofilereminder = True
             MsgBox("Don't forget to save your work to the file by clicking Save Data to file otherwise you will lose your data once you close this form!")
