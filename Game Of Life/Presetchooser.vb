@@ -104,19 +104,19 @@ Public Class Presetchooser
     Private Sub Presetchooser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Initializevaluesandlists()
-        'For x = 1 To 50
-        '    For y = 1 To 50
-        '        Grid(x, y) = New Panel
-        '        Grid(x, y).Location = New Point(x * SideLength, y * SideLength)
-        '        Grid(x, y).Size = New Size(SideLength, SideLength)
-        '        Grid(x, y).BackgroundImageLayout = ImageLayout.Zoom
-        '        Grid(x, y).BackColor = Color.White
-        '        Grid(x, y).BorderStyle = BorderStyle.FixedSingle
-        '        Controls.Add(Grid(x, y))
-        '        presetchecked(x, y) = 0
-        '        AddHandler Grid(x, y).Click, AddressOf Grid_Select
-        '    Next
-        'Next
+        For x = 1 To 50
+            For y = 1 To 50
+                Grid(x, y) = New Panel
+                Grid(x, y).Location = New Point(x * SideLength, y * SideLength)
+                Grid(x, y).Size = New Size(SideLength, SideLength)
+                Grid(x, y).BackgroundImageLayout = ImageLayout.Zoom
+                Grid(x, y).BackColor = Color.White
+                Grid(x, y).BorderStyle = BorderStyle.FixedSingle
+                Controls.Add(Grid(x, y))
+                presetchecked(x, y) = 0
+                AddHandler Grid(x, y).Click, AddressOf Grid_Select
+            Next
+        Next
 
         If File.Exists(Path) And loadedfile.Length >= 6 Then
             For i = 0 To loadedfile.Length - 1
@@ -548,11 +548,6 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset2_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset2.CheckedChanged
-        If Grid(50, 50) Is Nothing Then
-
-        Else
-            cleargrid()
-        End If
         If rbtnpreset2.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -570,11 +565,6 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset3_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset3.CheckedChanged
-        If Grid(50, 50) Is Nothing Then
-
-        Else
-            cleargrid()
-        End If
         If rbtnpreset3.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -592,11 +582,6 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset4_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset4.CheckedChanged
-        If Grid(50, 50) Is Nothing Then
-
-        Else
-            cleargrid()
-        End If
         If rbtnpreset4.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -614,11 +599,6 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset5_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset5.CheckedChanged
-        If Grid(50, 50) Is Nothing Then
-
-        Else
-            cleargrid()
-        End If
         If rbtnpreset5.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -636,11 +616,6 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset6_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset6.CheckedChanged
-        If Grid(50, 50) Is Nothing Then
-
-        Else
-            cleargrid()
-        End If
         If rbtnpreset6.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
