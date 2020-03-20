@@ -548,6 +548,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset2_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset2.CheckedChanged
+        cleargrid()
         If rbtnpreset2.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -565,6 +566,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset3_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset3.CheckedChanged
+        cleargrid()
         If rbtnpreset3.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -582,6 +584,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset4_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset4.CheckedChanged
+        cleargrid()
         If rbtnpreset4.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -599,6 +602,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset5_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset5.CheckedChanged
+        cleargrid()
         If rbtnpreset5.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
@@ -616,6 +620,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub rbtnpreset6_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset6.CheckedChanged
+        cleargrid()
         If rbtnpreset6.Checked Then
             For x = 1 To 50
                 For y = 1 To 50
