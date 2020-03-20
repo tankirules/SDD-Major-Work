@@ -104,19 +104,19 @@ Public Class Presetchooser
     Private Sub Presetchooser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Initializevaluesandlists()
-        For x = 1 To 50
-            For y = 1 To 50
-                Grid(x, y) = New Panel
-                Grid(x, y).Location = New Point(x * SideLength, y * SideLength)
-                Grid(x, y).Size = New Size(SideLength, SideLength)
-                Grid(x, y).BackgroundImageLayout = ImageLayout.Zoom
-                Grid(x, y).BackColor = Color.White
-                Grid(x, y).BorderStyle = BorderStyle.FixedSingle
-                Controls.Add(Grid(x, y))
-                presetchecked(x, y) = 0
-                AddHandler Grid(x, y).Click, AddressOf Grid_Select
-            Next
-        Next
+        'For x = 1 To 50
+        '    For y = 1 To 50
+        '        Grid(x, y) = New Panel
+        '        Grid(x, y).Location = New Point(x * SideLength, y * SideLength)
+        '        Grid(x, y).Size = New Size(SideLength, SideLength)
+        '        Grid(x, y).BackgroundImageLayout = ImageLayout.Zoom
+        '        Grid(x, y).BackColor = Color.White
+        '        Grid(x, y).BorderStyle = BorderStyle.FixedSingle
+        '        Controls.Add(Grid(x, y))
+        '        presetchecked(x, y) = 0
+        '        AddHandler Grid(x, y).Click, AddressOf Grid_Select
+        '    Next
+        'Next
 
         If File.Exists(Path) And loadedfile.Length >= 6 Then
             For i = 0 To loadedfile.Length - 1
@@ -520,6 +520,8 @@ Public Class Presetchooser
             reminderssavedata.Start()
 
         End If
+
+
     End Sub
 
     Private Sub rbtnpreset1_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset1.CheckedChanged
@@ -527,22 +529,22 @@ Public Class Presetchooser
 
         Else
             cleargrid()
-        End If
-        Console.WriteLine("Center being sets: " + CStr(centerbeingset))
-        If rbtnpreset1.Checked Then
-            For x = 1 To 50
-                For y = 1 To 50
-                    If preset1(x, y) = 1 Then
-                        Grid(x, y).BackColor = Color.Black
-                        presetchecked(x, y) = 1
-                    ElseIf preset1(x, y) = 2 Then
+            If rbtnpreset1.Checked Then
+                For x = 1 To 50
+                    For y = 1 To 50
+                        If preset1(x, y) = 1 Then
+                            Grid(x, y).BackColor = Color.Black
+                            presetchecked(x, y) = 1
+                        ElseIf preset1(x, y) = 2 Then
 
-                        Grid(x, y).BackColor = Color.Yellow
-                        presetchecked(x, y) = 2
-                    End If
+                            Grid(x, y).BackColor = Color.Yellow
+                            presetchecked(x, y) = 2
+                        End If
+                    Next
                 Next
-            Next
+            End If
         End If
+
     End Sub
 
     Private Sub rbtnpreset2_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnpreset2.CheckedChanged
