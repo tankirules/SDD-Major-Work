@@ -41,12 +41,15 @@ Partial Class Presetchooser
         Me.btnresetgrid = New System.Windows.Forms.Button()
         Me.btnclosepresetchooser = New System.Windows.Forms.Button()
         Me.reminderssavedata = New System.Windows.Forms.Timer(Me.components)
+        Me.btnresetfile = New System.Windows.Forms.Button()
+        Me.btnresetfileicon = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.btnresetfile)
         Me.GroupBox1.Controls.Add(Me.btnresetcenter)
         Me.GroupBox1.Controls.Add(Me.btnshowerrors)
         Me.GroupBox1.Controls.Add(Me.lstbox)
@@ -60,6 +63,7 @@ Partial Class Presetchooser
         Me.GroupBox1.Controls.Add(Me.rbtnpreset3)
         Me.GroupBox1.Controls.Add(Me.rbtnpreset2)
         Me.GroupBox1.Controls.Add(Me.rbtnpreset1)
+        Me.GroupBox1.Controls.Add(Me.btnresetfileicon)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(1082, 12)
@@ -98,7 +102,7 @@ Partial Class Presetchooser
         Me.lstbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstbox.FormattingEnabled = True
         Me.lstbox.ItemHeight = 20
-        Me.lstbox.Location = New System.Drawing.Point(7, 726)
+        Me.lstbox.Location = New System.Drawing.Point(6, 754)
         Me.lstbox.Name = "lstbox"
         Me.lstbox.Size = New System.Drawing.Size(813, 264)
         Me.lstbox.TabIndex = 11
@@ -252,6 +256,34 @@ Partial Class Presetchooser
         '
         Me.reminderssavedata.Interval = 500
         '
+        'btnresetfile
+        '
+        Me.btnresetfile.BackColor = System.Drawing.Color.Transparent
+        Me.btnresetfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnresetfile.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnresetfile.ForeColor = System.Drawing.Color.Transparent
+        Me.btnresetfile.Location = New System.Drawing.Point(695, 31)
+        Me.btnresetfile.Name = "btnresetfile"
+        Me.btnresetfile.Size = New System.Drawing.Size(99, 80)
+        Me.btnresetfile.TabIndex = 14
+        Me.btnresetfile.Text = "Reset File"
+        Me.btnresetfile.UseVisualStyleBackColor = False
+        '
+        'btnresetfileicon
+        '
+        Me.btnresetfileicon.BackColor = System.Drawing.Color.Transparent
+        Me.btnresetfileicon.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.reset
+        Me.btnresetfileicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnresetfileicon.FlatAppearance.BorderSize = 0
+        Me.btnresetfileicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnresetfileicon.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnresetfileicon.ForeColor = System.Drawing.Color.Transparent
+        Me.btnresetfileicon.Location = New System.Drawing.Point(609, 31)
+        Me.btnresetfileicon.Name = "btnresetfileicon"
+        Me.btnresetfileicon.Size = New System.Drawing.Size(80, 80)
+        Me.btnresetfileicon.TabIndex = 15
+        Me.btnresetfileicon.UseVisualStyleBackColor = False
+        '
         'Presetchooser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -291,4 +323,6 @@ Partial Class Presetchooser
     Friend WithEvents btnclosepresetchooser As Button
     Friend WithEvents btnresetcenter As Button
     Friend WithEvents reminderssavedata As Timer
+    Friend WithEvents btnresetfile As Button
+    Friend WithEvents btnresetfileicon As Button
 End Class
