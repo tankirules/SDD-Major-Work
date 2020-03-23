@@ -161,6 +161,7 @@
     <None Include="Resources\hammerinverted.png" />
     <None Include="Resources\ben-hale-cave01.png" />
     <None Include="Resources\matrixbackground.png" />
+    <None Include="Resources\reset.png" />
     <Content Include="smallereyes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
