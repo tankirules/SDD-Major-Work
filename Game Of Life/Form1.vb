@@ -407,7 +407,7 @@ Public Class Form1
                                     MsgBox("Invalid coordinates! Loading Stopped!")
                                     Exit For
                                 End If
-                                If CInt(tempx) < 0 Or CInt(tempx) > 50 Or CInt(tempy) < 0 Or CInt(tempy) > 50 Then
+                                If CInt(tempx) < 1 Or CInt(tempx) > 50 Or CInt(tempy) < 1 Or CInt(tempy) > 50 Then
                                     valid = False
                                     MsgBox("Coordinates out of range!")
                                     Exit For

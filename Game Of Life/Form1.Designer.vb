@@ -117,14 +117,14 @@ Partial Class Form1
         '
         Me.btnpreset.BackColor = System.Drawing.Color.Transparent
         Me.btnpreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnpreset.Font = New System.Drawing.Font("Algerian", 33.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpreset.Font = New System.Drawing.Font("Algerian", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnpreset.ForeColor = System.Drawing.Color.White
         Me.btnpreset.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnpreset.Location = New System.Drawing.Point(1455, 682)
         Me.btnpreset.Name = "btnpreset"
         Me.btnpreset.Size = New System.Drawing.Size(321, 128)
         Me.btnpreset.TabIndex = 8
-        Me.btnpreset.Text = "Preset patterns"
+        Me.btnpreset.Text = "Preset pattern builder"
         Me.btnpreset.UseVisualStyleBackColor = False
         '
         'btnopen
