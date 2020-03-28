@@ -120,8 +120,8 @@ Public Class Form1
                 End Try
             Next
             puttinginpreset = False
+            btncancelpresetplacement.Text = "Repeat last pattern"
             Button3.Hide()
-            btncancelpresetplacement.Hide()
             oldcoords.Clear()
         ElseIf isdown = True Then
 
@@ -515,18 +515,29 @@ Public Class Form1
     End Sub
 
     Private Sub btncancelpresetplacement_Click(sender As Object, e As EventArgs) Handles btncancelpresetplacement.Click
-        puttinginpreset = False
-        Button3.Hide()
-        btncancelpresetplacement.Hide()
-        For x = 1 To 50
-            For y = 1 To 50
-                If Checked(x, y) = 0 Then
-                    Grid(x, y).BackColor = uncheckedcolor
-                Else
-                    Grid(x, y).BackColor = checkedcolor
-                End If
+
+        If puttinginpreset = True Then
+            puttinginpreset = False
+            For x = 1 To 50
+                For y = 1 To 50
+                    If Checked(x, y) = 0 Then
+                        Grid(x, y).BackColor = uncheckedcolor
+                    Else
+                        Grid(x, y).BackColor = checkedcolor
+                    End If
+                Next
             Next
-        Next
+            btncancelpresetplacement.Text = "Repeat previous pattern"
+        Else
+            If presetcoordslist Is Nothing Then
+                MsgBox("You have not previously selected a preset pattern!")
+            Else
+                puttinginpreset = True
+                btncancelpresetplacement.Text = "Cancel Preset Placement"
+            End If
+        End If
+
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

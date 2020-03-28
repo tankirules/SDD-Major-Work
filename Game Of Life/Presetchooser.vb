@@ -704,6 +704,7 @@ Public Class Presetchooser
                         End If
                     Next
                     Form1.puttinginpreset = True
+                    Form1.btncancelpresetplacement.Text = "Cancel Placement"
                 Else
                     MsgBox("Preset invalid! Please select or create a valid preset! at " + button.Text)
                     Console.WriteLine("Preset invalid! Please select or create a valid preset! at " + button.Text)

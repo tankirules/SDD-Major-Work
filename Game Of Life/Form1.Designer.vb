@@ -224,7 +224,7 @@ Partial Class Form1
         '
         Me.btncancelpresetplacement.BackColor = System.Drawing.Color.Transparent
         Me.btncancelpresetplacement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncancelpresetplacement.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelpresetplacement.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelpresetplacement.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btncancelpresetplacement.Location = New System.Drawing.Point(1273, 524)
         Me.btncancelpresetplacement.Name = "btncancelpresetplacement"
