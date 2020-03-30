@@ -106,6 +106,7 @@ Partial Class InputUPDForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Game_Of_Life.My.Resources.Resources.matrixbackground
         Me.ClientSize = New System.Drawing.Size(314, 291)
         Me.Controls.Add(Me.btnshowhide)
         Me.Controls.Add(Me.Label3)

@@ -39,10 +39,14 @@ Public Class Presetchooser
         Public xcoord As Integer
         Public ycoord As Integer
     End Structure
+    'coords used to store x and y coord sin one index value
     Public Class RefBool
         Public val As Boolean
     End Class
+    'classes are reference values when in list - boolean by itself is not
     Private Sub Initializevaluesandlists()
+
+        'below code adds varaibles to lists in order - important as their index will be used to reference each other
         rbtnpreset1.Checked = True
         remindercount = 0
         savetofilereminder = False
@@ -98,6 +102,7 @@ Public Class Presetchooser
         listofbuttons.Add(btnclosepresetchooser)
         For Each button In listofbuttons
             button.FlatAppearance.MouseOverBackColor = Color.Transparent
+            'ensure hovering over them leaves them transparent
         Next
 
     End Sub
@@ -109,6 +114,7 @@ Public Class Presetchooser
             Dim fs As FileStream = File.Create(Path)
             loadedfile = IO.File.ReadAllLines(Path)
         End If
+        'ensure file exists otherwise exception will occur
         Initializevaluesandlists()
         For x = 1 To 50
             For y = 1 To 50
@@ -123,6 +129,7 @@ Public Class Presetchooser
                 AddHandler Grid(x, y).Click, AddressOf Grid_Select
             Next
         Next
+        'create grid first so any references to it will not null reference exception
         If loadedfile IsNot Nothing Then
             If File.Exists(Path) And loadedfile.Length >= 6 Then
                 For i = 0 To loadedfile.Length - 1
@@ -132,6 +139,7 @@ Public Class Presetchooser
                         lstbox.Items.Add(loadederror)
                     End If
                 Next
+
                 If loadederror = "" Then
                     If loadedfile(0)(0) + loadedfile(0)(1) = "P1" Then
                         presetlinelist.Add(0)
@@ -152,7 +160,6 @@ Public Class Presetchooser
                                     Console.WriteLine("Corrupt 2")
                                     loadederror = "Error when testing for preset line prefix at P2, it is either missing or out of order"
                                     lstbox.Items.Add(loadederror)
-                                    'Exit For
                                 End If
                             End If
                             If loadedfile(i)(0) + loadedfile(i)(1) = "P3" Then
@@ -167,7 +174,6 @@ Public Class Presetchooser
                                     loadederror = "Error when testing for preset line prefix at P3 , it is either missing or out of order"
                                     lstbox.Items.Add(loadederror)
                                     Console.WriteLine("Corrupt 3")
-                                    'Exit For
                                 End If
                             End If
                             If loadedfile(i)(0) + loadedfile(i)(1) = "P4" Then
@@ -182,7 +188,6 @@ Public Class Presetchooser
                                     loadederror = "Error when testing for preset line prefix at P4 , it is either missing or out of order"
                                     lstbox.Items.Add(loadederror)
                                     Console.WriteLine("Corrupt 4")
-                                    'Exit For
                                 End If
                             End If
                             If loadedfile(i)(0) + loadedfile(i)(1) = "P5" Then
@@ -197,7 +202,6 @@ Public Class Presetchooser
                                     loadederror = "Error when testing for preset line prefix at P5 , it is either missing or out of order"
                                     lstbox.Items.Add(loadederror)
                                     Console.WriteLine("Corrupt 5")
-                                    'Exit For
                                 End If
                             End If
                             If loadedfile(i)(0) + loadedfile(i)(1) = "P6" Then
@@ -212,7 +216,6 @@ Public Class Presetchooser
                                     loadederror = "Error when testing for preset line prefix at P6, it is either missing or out of order"
                                     lstbox.Items.Add(loadederror)
                                     Console.WriteLine("Corrupt 6")
-                                    'Exit For
                                 End If
                             End If
                         Next
@@ -222,6 +225,7 @@ Public Class Presetchooser
                             MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
                             loadederror = "Missing preset prefix lines - total not equal to 6 or some lines are out of order"
                             lstbox.Items.Add(loadederror)
+                            'if any preset line is out of order or there aren't 6 lines then this error will occur
                         End If
                     Else
                         MsgBox("Preset lines in file corrupt! Recommend deleting C:\Gameoflife\presets.txt and restarting program!")
@@ -231,7 +235,7 @@ Public Class Presetchooser
                         'if first line isn't P1
                     End If
                 End If
-
+                'above code finds the line numbers of the presets to be used below
                 If loadederror = "" Then
                     For i = 0 To presetlinelist(1) - 1
                         templist.Add(loadedfile(i))
@@ -290,7 +294,7 @@ Public Class Presetchooser
                         ptemp6(i) = CStr(ptemp6(i))
                     Next
                     templist.Clear()
-
+                    'put everything related to preset 6 into array
 
                     ptemplist.Add(ptemp1)
                     ptemplist.Add(ptemp2)
@@ -324,6 +328,7 @@ Public Class Presetchooser
 
                     End If
                 Next
+                'check if center coordinate is valid if it exists
                 For Each ptemparray As Array In ptemplist
                     If ptemparray.Length > 1 Then
                         Dim tempstring As String
@@ -435,7 +440,7 @@ Public Class Presetchooser
                             preset6(CInt(tempgrid(0) + tempgrid(1)), CInt(tempgrid(3) + tempgrid(4))) = 1
                         End If
                     Next
-
+                    'put all data into their respective arrays
 
                 Else
                     MsgBox("Are you big brain enough to fix the error yourself? If not, delete c:\gameoflife\presets.txt and restart the program ")
@@ -456,6 +461,7 @@ Public Class Presetchooser
 
     End Sub
     Private Sub Grid_Select(sender As Object, e As EventArgs)
+        'when mouse clicks on grid
         Dim xpos, ypos As Integer
         xpos = CInt(sender.location.x) / SideLength
         ypos = CInt(sender.location.y) / SideLength
@@ -497,6 +503,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub btneditname_Click(sender As Object, e As EventArgs) Handles btneditname.Click
+
         For Each button In radiobuttonlist
             If button.Checked = True Then
                 button.Text = InputBox("Enter name to change to ")
@@ -646,6 +653,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub btnshowerrors_Click(sender As Object, e As EventArgs) Handles btnshowerrors.Click
+        'debugging mode
         If bigbrain = False Then
             bigbrain = True
             lstbox.Show()

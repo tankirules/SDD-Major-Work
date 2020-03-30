@@ -138,7 +138,7 @@ Partial Class Form1
         Me.btnopen.Name = "btnopen"
         Me.btnopen.Size = New System.Drawing.Size(257, 131)
         Me.btnopen.TabIndex = 11
-        Me.btnopen.Text = "Import Grid State From File"
+        Me.btnopen.Text = "Import Grid Cells From File"
         Me.btnopen.UseVisualStyleBackColor = False
         '
         'btnsave
@@ -152,7 +152,7 @@ Partial Class Form1
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(259, 131)
         Me.btnsave.TabIndex = 10
-        Me.btnsave.Text = "Export Current Grid State"
+        Me.btnsave.Text = "Export Current Grid Cells"
         Me.btnsave.UseVisualStyleBackColor = False
         '
         'Label4
