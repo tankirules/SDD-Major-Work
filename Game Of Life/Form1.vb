@@ -513,6 +513,7 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         btnpreset.PerformClick()
     End Sub
+    'the image above the preset chooser - this clicks the preset builder button as otherwise the image may fool the user into thinking it is clickable
 
     Private Sub btncancelpresetplacement_Click(sender As Object, e As EventArgs) Handles btncancelpresetplacement.Click
 
@@ -539,6 +540,7 @@ Public Class Form1
 
 
     End Sub
+    'cancel preset placement or you can place last pattern
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         btncancelpresetplacement.PerformClick()
@@ -546,7 +548,9 @@ Public Class Form1
         btncancelpresetplacement.Hide()
 
     End Sub
+    'this code runs when you click the image and it also clicks the button the image is representing as the image may make the user think it is clickable
 
+    'the below subs are responsible for changing text size when you hover over a button
     Private Sub btnpreset_Click(sender As Object, e As EventArgs) Handles btnpreset.Click
         Presetchooser.Show()
     End Sub

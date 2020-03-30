@@ -142,7 +142,7 @@ Partial Class Presetchooser
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(290, 94)
         Me.btnsave.TabIndex = 8
-        Me.btnsave.Text = "Save Data to File"
+        Me.btnsave.Text = "Export Data to File"
         Me.btnsave.UseVisualStyleBackColor = False
         '
         'btneditname
@@ -164,7 +164,7 @@ Partial Class Presetchooser
         Me.btnsavepreset.Name = "btnsavepreset"
         Me.btnsavepreset.Size = New System.Drawing.Size(290, 75)
         Me.btnsavepreset.TabIndex = 6
-        Me.btnsavepreset.Text = "Save Pattern on grid"
+        Me.btnsavepreset.Text = "Save Your Pattern"
         Me.btnsavepreset.UseVisualStyleBackColor = True
         '
         'rbtnpreset6
