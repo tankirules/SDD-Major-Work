@@ -666,6 +666,7 @@ Public Class Presetchooser
     End Sub
 
     Private Sub btnclosepresetchooser_Click(sender As Object, e As EventArgs) Handles btnclosepresetchooser.Click
+        Form1.updatetimer.Stop()
         Form1.checkedgridbeforesettingpreset.Clear()
         Dim tempalreadychecked As coords
         'add to a list all the coordinates already checked in the form1 grid

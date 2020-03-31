@@ -519,6 +519,8 @@ Public Class Form1
 
         If puttinginpreset = True Then
             puttinginpreset = False
+            Button3.Hide()
+
             For x = 1 To 50
                 For y = 1 To 50
                     If Checked(x, y) = 0 Then
@@ -533,8 +535,24 @@ Public Class Form1
             If presetcoordslist Is Nothing Then
                 MsgBox("You have not previously selected a preset pattern!")
             Else
+                updatetimer.Stop()
+                btnstartstop.Text = "Start"
+                Button3.Show()
                 puttinginpreset = True
                 btncancelpresetplacement.Text = "Cancel Preset Placement"
+                checkedgridbeforesettingpreset.Clear()
+                Dim tempalreadychecked As Presetchooser.coords
+                'add to a list all the coordinates already checked in the form1 grid
+                For x = 1 To 50
+                    For y = 1 To 50
+                        If Checked(x, y) = 1 Then
+                            tempalreadychecked.xcoord = x
+                            tempalreadychecked.ycoord = y
+                            checkedgridbeforesettingpreset.Add(tempalreadychecked)
+                        End If
+                    Next
+                Next
+
             End If
         End If
 
